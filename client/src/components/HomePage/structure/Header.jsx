@@ -1,7 +1,6 @@
-import LastLogo from "./resources/images/last-logo.jfif";
+import LastLogo from "../resources/images/last-logo.jfif";
 
 export const Header = () => {
-    
     
     return (
         <header className="site-header">

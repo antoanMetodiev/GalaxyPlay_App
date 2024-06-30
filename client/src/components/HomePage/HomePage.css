@@ -15,7 +15,7 @@ h1,h2,h3,h4,h5,h6 {
 body {
     font-family: 'Roboto';
     position: relative;
-    width: 100%;   
+    width: 100%;
 }
 
 /* SITE-HEADER */
@@ -41,6 +41,7 @@ header.site-header > * {
     gap: 2em;
     margin-left: 2em;
     position: relative;
+    margin-top: -0.6em;
 }
 
 .logo-data-wrapper img {
@@ -109,7 +110,6 @@ header.site-header > * {
     height: 100%;
 }
 
-
 .first.section {
     position: relative;
     width: 100%;
@@ -146,7 +146,7 @@ header.site-header > * {
     display: block;
     position: absolute;
     font-size: 2.4em;
-    top: 49%;
+    top: 47%;
     right: 1.2%;
     color: #fff;
 }
@@ -155,10 +155,93 @@ header.site-header > * {
     display: block;
     position: absolute;
     font-size: 2.4em;
-    top: 49%;
+    top: 47%;
     left: 1.2%;
     color: #fff;
 }
 
 .on-left-icon:hover,
 .on-right-icon:hover { color: gold; }
+
+/* DEMO-WEBSITE-PREVIEW */
+
+.demo-website-preview {
+    margin-top: -0.4em;
+    height: 50em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3em;
+    background-color: grey;
+    padding-top: 2.4em;
+}
+
+.demo-website-preview > h2 {
+    height: fit-content;
+    margin-bottom: -0.6em;
+    font-size: 2em;
+    color: #000;
+    font-style: oblique;
+    font-weight: 600;
+}
+
+article.playstation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 17em;
+    gap: 1.5em;
+}
+
+.playstation._5 {
+    width: 28em;
+    height: 18em;
+    position: relative;
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fefefe;
+    text-align: center;
+    z-index: 2;
+}
+
+.content h2 {
+    font-size: 2em;
+    margin-bottom: 4px;
+}
+
+.content button {
+    background-color: rgb(87, 87, 255);
+    border: 1px solid #fefefe;
+    color: #fefefe;
+    width: 10em;
+}
+
+.bkg-color {
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.2;
+    border-radius: 12px;
+}
+
+.playstation._5 img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.8s;
+}
+
+.playstation._5 img:hover {
+    transform: scale(1.1);
+}
+
