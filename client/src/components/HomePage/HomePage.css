@@ -76,7 +76,7 @@ header.site-header > * {
 .logo-data-wrapper .title-border {
     position: absolute;
     background-color: #FFF;
-    height: 2.4px;
+    height: 2.2px;
     width: 9em;
     right: -2.53em;
 }
@@ -178,7 +178,7 @@ header.site-header > * {
 
 .demo-website-preview > h2 {
     height: fit-content;
-    margin-block: 1.2em -0.6em;
+    margin-block: 1.2em -0.8em;
     font-size: 2em;
     color: #000;
     font-style: oblique;
@@ -186,7 +186,7 @@ header.site-header > * {
 }
 
 .demo-website-preview > h2:first-of-type {
-    margin-block: 0.5em -0.6em;
+    margin-block: 0.5em -0.9em;
 }
 
 article.playstation {
@@ -199,8 +199,8 @@ article.playstation {
 }
 
 .playstation._5 {
-    width: 28em;
-    height: 18em;
+    width: 27em;
+    height: 16em;
     position: relative;
     box-shadow: 0 12px 24px rgba(0, 0, 0, 1);
     border-radius: 12px;
@@ -219,6 +219,7 @@ article.playstation {
 .content h2 {
     font-size: 2em;
     margin-bottom: 5px;
+    min-width: 280px;
 }
 
 .content button {
