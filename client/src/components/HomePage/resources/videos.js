@@ -10,12 +10,10 @@ import Video8 from "./videos/Need-For-Speed.mp4";
 import Video9 from "./videos/fortnite.mp4";
 import Video10 from "./videos/pubg.mp4";
 import Video11 from "./videos/tekken.mp4";
-import Video12 from "./videos/horizon zero dawn.mp4";
-import Video13 from "./videos/forza horizon.mp4";
-import Video14 from "./videos/lol.mp4";
-import Video15 from "./videos/apex legends.mp4";
-import Video16 from "./videos/red dead red.mp4";
+import Video12 from "./videos/lol.mp4";
+import Video13 from "./videos/apex legends.mp4";
+import Video14 from "./videos/red dead red.mp4";
 
 // games for add: Gta 5, nqkakuv Hunter, Minecraft, CS-GO, Red Dead Redemption, Santinela LOL
 
-export let allVideos = [Video0, Video1, Video2, Video3, Video4, Video5, Video6, Video7, Video8, Video9, Video10, Video11, Video12, Video13, Video14, Video15, Video16];
+export let allVideos = [Video0, Video1, Video2, Video3, Video4, Video5, Video6, Video7, Video8, Video9, Video10, Video11, Video12, Video13, Video14];
