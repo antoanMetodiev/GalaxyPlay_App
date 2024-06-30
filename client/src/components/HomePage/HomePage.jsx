@@ -1,3 +1,6 @@
+import LastLogo from "./images/last-logo.jfif";
+import "../HomePage/HomePage.css";
+
 export const HomePage = () => {
   
     return (
