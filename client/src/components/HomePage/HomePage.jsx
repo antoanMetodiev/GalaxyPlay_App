@@ -3,10 +3,8 @@ import { faAnglesRight, faAnglesLeft } from "@fortawesome/free-solid-svg-icons";
 import "../HomePage/HomePage.css";
 
 function getRandomIntInclusive(min, max) {
-  min = Math.floor(min);  // because can be double number
-  max = Math.max(max); 
-  // TODO: This function is not working soo good, maybe
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+  min = Math.floor(min);  
+  return Math.floor(Math.random() * (Math.floor(max) - min + 1)) + min;
 }
 
 // HomePage Component:
