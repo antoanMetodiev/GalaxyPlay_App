@@ -10,6 +10,10 @@ import Corsair from "../resources/images/corsair.jpg"
 import AcerPredator from "../resources/images/acer predator.webp"
 import AlienWare from "../resources/images/alienware pc.jpg"
 
+import LenovoLegion from "../resources/images/lenovo legion.jpg";
+import AsusTuf from "../resources/images/asus tuf.png";
+import AlienWareLaptop from "../resources/images/alienware laptop.jpg";
+
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faP } from "@fortawesome/free-solid-svg-icons";
 
@@ -142,6 +146,48 @@ export const DemoPreview = () => {
           />
           <div className="content">
             <h2>XBOX One X</h2>
+            <button>VIEW NOW</button>
+          </div>
+          <span className="bkg-color"></span>
+        </div>
+      </article>
+
+      {/* Laptops */}
+      <h2>Laptop</h2>
+
+      <article className="playstation">
+        <div className="playstation _5">
+          <img
+            className="playstation 5_img"
+            src={LenovoLegion}
+            alt="Playstation 5 image"
+          />
+          <div className="content">
+            <h2>Lenovo Legion</h2>
+            <button>VIEW NOW</button>
+          </div>
+          <span className="bkg-color"></span>
+        </div>
+        <div className="playstation _5">
+          <img
+            className="playstation 5_img"
+            src={AsusTuf}
+            alt="Playstation 5 image"
+          />
+          <div className="content">
+            <h2>Asus Tuf</h2>
+            <button>VIEW NOW</button>
+          </div>
+          <span className="bkg-color"></span>
+        </div>
+        <div className="playstation _5">
+          <img
+            className="playstation 5_img"
+            src={AlienWareLaptop}
+            alt="Playstation 5 image"
+          />
+          <div className="content">
+            <h2>Alienware</h2>
             <button>VIEW NOW</button>
           </div>
           <span className="bkg-color"></span>
