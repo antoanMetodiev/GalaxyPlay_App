@@ -22,7 +22,24 @@ import Video10 from "./videos/pubg.mp4";
 
 let allVideos = [Video0, Video1, Video2, Video3, Video4, Video5, Video6, Video7, Video8, Video9, Video10,];
 
+function getRandomIntInclusive(min, max) {
+	min = Math.floor(min);  // because can be double number
+	max = Math.max(max); 
+	// TODO: This function is not working soo good, maybe
+	return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+  
+// HomePage Component
+import { useEffect, useState } from "react";
+
 export const HomePage = () => {
+
+	const [currentIndex, setCurentIndex] = useState(0);
+
+	useEffect(() => {
+		const result = getRandomIntInclusive(0, allVideos.length - 1);
+		setCurentIndex(result);
+	}, []);
   
     return (
       <>
