@@ -1,5 +1,7 @@
-import LastLogo from "./images/last-logo.jfif";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAnglesRight, faAnglesLeft } from "@fortawesome/free-solid-svg-icons";
 import "../HomePage/HomePage.css";
+import LastLogo from "./images/last-logo.jfif";
 
 // TODO: Tova trqbwa da se iznese vuv funshen file:
 // VIDEOS
