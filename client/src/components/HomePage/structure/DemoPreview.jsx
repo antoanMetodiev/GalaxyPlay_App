@@ -1,6 +1,6 @@
 import Playstation5Image from "../resources/images/ps-5.webp";
 import Playstation4ProImage from "../resources/images/ps4 pro.jpg";
-import Playstation4SlimImage from "../resources/images/ps4 slim.jpg";
+import Playstation4SlimImage from "../resources/images/ps4 slim.png";
 
 import Xbox_X from "../resources/images/xbox x.jpg";
 import Xbox_S from "../resources/images/xbox s.jpg";
