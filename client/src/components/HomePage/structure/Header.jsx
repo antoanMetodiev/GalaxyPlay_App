@@ -1,4 +1,5 @@
 import LastLogo from "../resources/images/last-logo.jfif";
+import { HeaderContacts } from "./HeaderContacts";
 import { Link } from "react-router-dom";
 
 export const Header = () => {
@@ -14,11 +15,9 @@ export const Header = () => {
         <ul>
           <Link to="/">Sign In</Link>
           <Link to="/">Register</Link>
+		  <Link to="/">For Us</Link>
         </ul>
-        <ul>
-          <Link to="/">For Us</Link>
-          <Link to="/">Contacts</Link>
-        </ul>
+        <HeaderContacts />
       </nav>
     </header>
   );

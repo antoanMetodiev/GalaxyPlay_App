@@ -18,6 +18,23 @@ body {
     width: 100%;
 }
 
+/* FOR LATER MAYBE */
+
+/* .logo-section {
+    height: 5.5em;
+    text-align: center;
+    padding-top: 1.5em;
+    background: linear-gradient(45deg, #000000, #434343, #000000);
+}
+
+.logo-section h1 {
+    font-size: 2em;
+    color: #fefefe;
+    font-weight: 400;
+    font-style: oblique;
+} */
+
+
 /* SITE-HEADER */
 
 header.site-header {
@@ -27,7 +44,7 @@ header.site-header {
     height: 10em;
     display: flex;
     justify-content: space-between;
-    top: 0;
+    top: 0em;
 }
 
 header.site-header > * {
@@ -92,6 +109,10 @@ header.site-header > * {
     letter-spacing: 0.8px;
     color: #fefefe;
     font-weight: 900;
+}
+
+.header-nav a:hover {
+    color: #646cff;
 }
 
 .header-nav > * {
@@ -227,11 +248,15 @@ article.playstation {
     border: 1px solid #fefefe;
     color: #fefefe;
     width: 10em;
+    margin-top: 3px;
+    padding-block: 0.7em;
+    border-radius: 4px;
     transition: background-color 420ms;
 }
 
 .content button:hover {
     background-color: unset;
+    cursor: pointer;
 }
 
 .bkg-color {
@@ -283,7 +308,6 @@ footer section {
 footer > section > p {
     font-weight: 200;
     color: #fefefe;
-    transition: color 210ms;
 }
 
 footer > section > p:hover {
@@ -300,7 +324,6 @@ footer > p {
     font-size: 1.37em;
     font-weight: 200;
     margin-right: -5em;
-    transition: color 210ms;
 }
 
 footer > p:hover {
