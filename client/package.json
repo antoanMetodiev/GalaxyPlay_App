@@ -19,7 +19,7 @@
     "i": "^0.3.7",
     "npm": "^10.8.1",
     "react": "^18.2.0",
-    "react-bootstrap": "^2.10.3",
+    "react-bootstrap": "^2.10.4",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.24.0"
   },

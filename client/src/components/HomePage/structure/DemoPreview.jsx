@@ -24,7 +24,6 @@ import XboxGame from "../resources/images/forza horizon.jpg";
 export const DemoPreview = () => {
 
 
-
     
   return (
     <section className="demo-website-preview">
