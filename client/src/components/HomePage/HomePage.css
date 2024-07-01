@@ -182,7 +182,7 @@ header.site-header > * {
 }
 
 .on-left-icon:hover,
-.on-right-icon:hover { color: gold; }
+.on-right-icon:hover { color: #2a5298; }
 
 /* DEMO-WEBSITE-PREVIEW */
 
@@ -294,14 +294,15 @@ footer {
     align-items: center;
     color: #fefefe;
     margin-top: -0.6em;
-    gap: 20em;
+    gap: 19.4em;
+    position: relative;
 }
 
 footer section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 0.73em;
+    gap: 0.75em;
     margin: -0.9em 0em 0em -37em;
 }
 
@@ -323,7 +324,7 @@ footer section h2 {
 footer > p {
     font-size: 1.37em;
     font-weight: 200;
-    margin-right: -5em;
+    margin-right: -3em;
 }
 
 footer > p:hover {
@@ -333,5 +334,19 @@ footer > p:hover {
 
 footer > p span {
     font-style: oblique;
+}
+
+.to-Header {
+    position: absolute;
+    right: 3.5em;
+}
+
+.to-Header .up-Image {
+    font-size: 2em;
+}
+
+.to-Header .up-Image:hover {
+    color: #2a5298;
+    cursor: pointer;
 }
 

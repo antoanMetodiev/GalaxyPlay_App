@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export const Header = () => {
   return (
-    <header className="site-header">
+    <header className="site-header" id="HomePage-header">
       <div className="logo-data-wrapper">
         <img src={LastLogo} alt="GalaxyPlay-Logo" />
         <h1 className="site-title">GalaxyPlay</h1>
