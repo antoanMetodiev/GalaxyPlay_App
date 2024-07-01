@@ -11,7 +11,6 @@ export const Header = () => {
         <span className="title-border"></span>
       </div>
       <nav className="header-nav">
-        {/* TODO: Replace with Link components */}
         <ul>
           <Link to="/">Sign In</Link>
           <Link to="/">Register</Link>
