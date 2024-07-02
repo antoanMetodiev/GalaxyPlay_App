@@ -4,9 +4,6 @@ import { Link } from "react-router-dom";
 
 export const Header = (props) => {
 
-	function setRegisterHandler() {
-		props.wantRegister();
-	}
 
   return (
     <header className="site-header" id="HomePage-header">
@@ -17,8 +14,8 @@ export const Header = (props) => {
       </div>
       <nav className="header-nav">
         <ul>
-          <Link to="/">Sign In</Link>
-          <Link to="/register" onClick={setRegisterHandler}>Register</Link>
+          <Link to="/login">Login</Link>
+          <Link to="/register">Register</Link>
           <Link to="/">For Us</Link>
         </ul>
         <HeaderContacts />

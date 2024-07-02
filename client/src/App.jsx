@@ -1,28 +1,28 @@
 import { HomePage } from "./components/HomePage/HomePage";
 import { Register } from "./components/RegisterPage/Register";
-import { useState } from "react";
-
-import { Router, Routes, Route } from "react-router-dom";
+import { Login } from "./components/RegisterPage/Login";
+import { Routes, Route, useLocation } from "react-router-dom";
 
 function App() {
-  let [wantRegister, setWantRegister] = useState(false);
-
-  console.log(wantRegister);
-  function wantRegisterHandler() {
-    setWantRegister(true);
-  }
-
-  <Router>
-    <Routes>
-      <Route path="/register" element={<Register />} />
-    </Routes>
-  </Router>;
+  let location = useLocation();
 
   return (
     <>
-      {wantRegister == false && <HomePage wantRegister={wantRegisterHandler} />}
+	   {/* HomePage section */}
+      {location.pathname !== "/register" &&
+        location.pathname !== "/login" && <HomePage />}
 
-      {wantRegister && <Register />}
+
+      {/* Login & Register sections */}
+      <Routes>
+        <Route path="/register" element={<Register />} />
+      </Routes>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+      </Routes>
+
+
+
     </>
   );
 }

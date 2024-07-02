@@ -10,7 +10,7 @@ export const Register = (props) => {
         muted
         preload="auto"
         className="video-bkg"
-        src="../src/components/HomePage/resources/videos/register wallper video.mp4"
+        src="../src/components/HomePage/resources/videos/login wallper.mp4"
       >
         Your browser does not support the video tag.
       </video>

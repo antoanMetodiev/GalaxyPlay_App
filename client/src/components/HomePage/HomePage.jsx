@@ -10,7 +10,7 @@ export const HomePage = (props) => {
 
   return (
     <>
-      <Header wantRegister={props.wantRegister} />
+      <Header />
       <LiveWallperSection />
       <DemoPreview />
       <Footer />
