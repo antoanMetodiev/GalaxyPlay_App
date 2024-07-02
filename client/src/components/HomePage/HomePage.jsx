@@ -1,31 +1,18 @@
-import React, { useState, useEffect } from "react";
 import "../HomePage/HomePage.css";
 import { Header } from "./structure/Header";
 import { LiveWallperSection } from "./structure/LiveWallperSection";
 import { DemoPreview } from "./structure/DemoPreview";
 import { Footer } from "./structure/Footer";
 
-export const HomePage = () => {
-  const [showDemoPreview, setShowDemoPreview] = useState(false);
+export const HomePage = (props) => {
 
-  useEffect(() => {
-    setTimeout(() => {
-      setShowDemoPreview(true);
-    }, 800);
-  }, []);
 
-  function showDemoPreviewHandler(booleanValue) {
-    setShowDemoPreview(booleanValue);
-  }
 
   return (
     <>
-	
-      <Header />
-      <LiveWallperSection showDemoPreviewHandler={showDemoPreviewHandler} />
-
-      {showDemoPreview && <DemoPreview />}
-
+      <Header wantRegister={props.wantRegister} />
+      <LiveWallperSection />
+      <DemoPreview />
       <Footer />
     </>
   );

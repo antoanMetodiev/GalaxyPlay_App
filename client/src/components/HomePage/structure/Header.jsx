@@ -2,7 +2,12 @@ import LastLogo from "../resources/images/last-logo.jfif";
 import { HeaderContacts } from "./HeaderContacts";
 import { Link } from "react-router-dom";
 
-export const Header = () => {
+export const Header = (props) => {
+
+	function setRegisterHandler() {
+		props.wantRegister();
+	}
+
   return (
     <header className="site-header" id="HomePage-header">
       <div className="logo-data-wrapper">
@@ -13,8 +18,8 @@ export const Header = () => {
       <nav className="header-nav">
         <ul>
           <Link to="/">Sign In</Link>
-          <Link to="/">Register</Link>
-		  <Link to="/">For Us</Link>
+          <Link to="/register" onClick={setRegisterHandler}>Register</Link>
+          <Link to="/">For Us</Link>
         </ul>
         <HeaderContacts />
       </nav>

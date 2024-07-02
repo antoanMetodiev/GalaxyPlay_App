@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <video autoplay loop muted class="video-bkg">
+    <source src="../src/components/HomePage/resources/videos/register wallper video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <form action="#" class="register">
+    <header class="header">
+      <h1>Register</h1>
+    </header>
+
+    <fieldset>
+      <legend>Username & Email:</legend>
+
+      <div class="field text icon-username">
+        <input type="text" id="username" required>
+        <i class="fa fa-user"></i>
+        <label for="username">Username: </label>
+        <span class="helper">Hello there</span>
+      </div>
+
+      <div class="field text icon-email">
+        <input type="email" id="email" required>
+        <label for="email">Email: </label>
+        <i class="fa fa-envelope"></i>
+      </div>
+
+    </fieldset>
+
+    <fieldset>
+      <legend>Phone Number & Password:</legend>
+
+      <div class="field text icon-password">
+        <input class="phone-input" type="number" id="password" required>
+        <label for="password">Phone Number:</label>
+        <i class="fa-solid fa-phone phone-icon"></i>
+      </div>
+
+      <div class="field text icon-password">
+        <input type="password" id="re-password" required>
+        <label for="re-password">Password:</label>
+        <i class="fa fa-key"></i>
+      </div>
+
+    </fieldset>
+
+    <input type="submit" value="Register">
+
+  </form>
+</body>
+
+</html>

@@ -129,6 +129,8 @@ header.site-header > * {
 .background-clip {
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    aspect-ratio: 16/8;
 }
 
 .first.section {
@@ -136,7 +138,8 @@ header.site-header > * {
     width: 100%;
 }
 
-/* .first.section::after {
+/* THIS IS BLACK OPACITY COLOR FOR VIDEOS */
+.first.section::after {
     position: absolute;
     content: '';
     display: block;
@@ -147,9 +150,9 @@ header.site-header > * {
     width: 100%;
     height: 100%;
     opacity: 0.1;
-} */
+}
 
-@media (min-aspect-ratio: 16/9) {
+@media (min-aspect-ratio: 16/8) {
     .background-clip {
         width: 100%;
         height: auto;
@@ -170,6 +173,7 @@ header.site-header > * {
     top: 47%;
     right: 1.2%;
     color: #fff;
+    z-index: 5;
 }
 
 .on-left-icon {
@@ -179,6 +183,7 @@ header.site-header > * {
     top: 47%;
     left: 1.2%;
     color: #fff;
+    z-index: 5;
 }
 
 .on-left-icon:hover,
@@ -193,8 +198,8 @@ header.site-header > * {
     flex-direction: column;
     align-items: center;
     gap: 3em;
-    background-color: grey;
     padding-top: 2.4em;
+    background-color:  gray;
 }
 
 .demo-website-preview > h2 {
@@ -256,7 +261,7 @@ article.playstation {
 
 .content button:hover {
     background-color: unset;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 .bkg-color {
