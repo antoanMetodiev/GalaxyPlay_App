@@ -13,9 +13,12 @@ export const useForm = (initialValues) => {
     function onSubmitHandler(event) {
         event.preventDefault();
 
-        event.username = "";
-        event.password = "";
+        event.target.username.value = "";
+        event.target.password.value = "";
+        event.target.email.value = "";
+        event.target.phoneNumber.value = "";
 
+        event.target.password[1].value = "";
     }
 
     return [formValues, onChangeHandler, onSubmitHandler];

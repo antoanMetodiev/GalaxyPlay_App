@@ -3,7 +3,7 @@ import { useForm } from "./hooks/useForm";
 
 import backgroundVideo from "./videos/register wallper video.mp4";
 
-export const Register = (props) => {
+export const Register = () => {
   const [formValues, onChangeHandler, onSubmitHandler] = useForm({
     username: "",
     email: "",
@@ -24,7 +24,7 @@ export const Register = (props) => {
       >
         Your browser does not support the video tag.
       </video>
-      <form className={styles["register"]}>
+      <form onSubmit={onSubmitHandler} className={styles["register"]}>
         <header className={styles["header"]}>
           <h1>Register</h1>
         </header>
@@ -74,6 +74,7 @@ export const Register = (props) => {
             <i className="fa fa-key" />
           </div>
         </fieldset>
+
         <input type="submit" value="Register" />
       </form>
     </div>
