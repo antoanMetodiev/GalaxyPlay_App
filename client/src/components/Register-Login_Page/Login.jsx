@@ -22,17 +22,18 @@ export const Login = () => {
         <fieldset>
           <legend>Username &amp; Email:</legend>
           <div className={`${styles["field"]} ${styles["text"]} ${styles["icon-username"]}`}>
-            <input type="text" id="username" required="" />
+            <input name="username" type="text" id="username" required="" />
             <i className="fa fa-user" />
             <label htmlFor="username">Username: </label>
             <span className={styles["helper"]}>Hello there</span>
           </div>
           <div className={`${styles["field"]} ${styles["text"]} ${styles["icon-password"]}`}>
-            <input type="password" id="re-password" required="" />
+            <input name="password" type="password" id="re-password" />
             <label htmlFor="re-password">Password:</label>
             <i className="fa fa-key" />
           </div>
         </fieldset>
+
         <input type="submit" value="Login" />
       </form>
     </div>
