@@ -1,0 +1,66 @@
+.background-clip {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 16/7.8;
+}
+
+.first.section {
+    position: relative;
+    width: 100%;
+}
+
+/* THIS IS BLACK OPACITY COLOR FOR VIDEOS */
+.first.section::after {
+    position: absolute;
+    content: '';
+    display: block;
+    /* background-color: #000; */
+    z-index: 3;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+}
+
+@media (min-aspect-ratio: 16/8) {
+    .background-clip {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio: 16/9) {
+    .background-clip {
+        width: auto;
+        height: 100%;
+    }
+}
+
+.on-right-icon {
+    display: block;
+    position: absolute;
+    font-size: 2.7em;
+    top: 14%;
+    right: 1.2%;
+    color: #fff;
+    z-index: 5;
+    color: gray;
+}
+
+.on-left-icon {
+    display: block;
+    position: absolute;
+    font-size: 2.7em;
+    top: 14%;
+    left: 1.2%;
+    color: #fff;
+    z-index: 5;
+    color: gray;
+}
+
+.on-left-icon:hover,
+.on-right-icon:hover {
+    color: #2a5298;
+}

@@ -1,6 +1,6 @@
-import { HomePage } from "./components/HomePage/HomePage";
-import { Register } from "./components/RegisterPage/Register";
-import { Login } from "./components/RegisterPage/Login";
+import { DiscoverPage } from "./components/DiscoverPage/DiscoverPage";
+import { Register } from "./components/Register-Login_Page/Register";
+import { Login } from "./components/Register-Login_Page/Login";
 import { Routes, Route, useLocation } from "react-router-dom";
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
     <>
 	   {/* HomePage section */}
       {location.pathname !== "/register" &&
-        location.pathname !== "/login" && <HomePage />}
+        location.pathname !== "/login" && <DiscoverPage />}
 
 
       {/* Login & Register sections */}
@@ -20,7 +20,6 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
       </Routes>
-
 
 
     </>

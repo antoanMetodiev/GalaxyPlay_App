@@ -1,0 +1,66 @@
+footer {
+    /* background: linear-gradient(135deg, #000000, #434343); */
+    background: linear-gradient(45deg, #000000, #434343, #000000);
+    height: 9em;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fefefe;
+    margin-top: -0.6em;
+    gap: 19.4em;
+    position: relative;
+}
+
+footer section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.75em;
+    margin: -0.9em 0em 0em -37em;
+}
+
+footer > section > p {
+    font-weight: 200;
+    color: #fefefe;
+}
+
+footer > section > p:hover {
+    color: #7F7DEB;
+    cursor: default;
+}
+
+footer section h2 {
+    font-weight: 200;
+    color: #7F7DEB;
+}
+
+footer > p {
+    font-size: 1.37em;
+    font-weight: 200;
+    margin-right: -3em;
+}
+
+footer > p:hover {
+    color: #7F7DEB;
+    cursor: default;
+}
+
+footer > p span {
+    font-style: oblique;
+}
+
+.to-Header {
+    position: absolute;
+    right: 3.5em;
+}
+
+.to-Header .up-Image {
+    font-size: 2em;
+    color: #FFFF;
+}
+
+.to-Header .up-Image:hover {
+    color: #2a5298;
+    cursor: pointer;
+}
