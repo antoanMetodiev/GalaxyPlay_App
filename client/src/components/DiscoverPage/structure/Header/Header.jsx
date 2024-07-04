@@ -14,10 +14,10 @@ export const Header = () => {
       <nav className={styles["header-nav"]}>
         <ul style={{listStyle: 'none'}}>
           <li>
-            <Link to="/login">Login</Link>
+            <Link to="/login">Sign In</Link>
           </li>
           <li>
-            <Link to="/register">Register</Link>
+            <Link to="/register">Sign Up</Link>
           </li>
           <li>
             <Link to="/">About Us</Link>

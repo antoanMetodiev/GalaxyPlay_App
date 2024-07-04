@@ -46,7 +46,6 @@
     right: 1.2%;
     color: #fff;
     z-index: 5;
-    color: gray;
 }
 
 .on-left-icon {
@@ -57,7 +56,6 @@
     left: 1.2%;
     color: #fff;
     z-index: 5;
-    color: gray;
 }
 
 .on-left-icon:hover,
