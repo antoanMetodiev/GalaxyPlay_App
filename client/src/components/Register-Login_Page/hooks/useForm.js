@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import postRequest from "../services/requests";
+
 export const useForm = (initialValues) => {
     const [formValues, setFormValues] = useState(initialValues);
 
@@ -10,16 +12,29 @@ export const useForm = (initialValues) => {
         }));
     };
 
-    function onSubmitHandler(event) {
+    async function onSubmitRegisterHandler(event) {
         event.preventDefault();
 
         event.target.username.value = "";
         event.target.password.value = "";
         event.target.email.value = "";
         event.target.phoneNumber.value = "";
-
         event.target.password[1].value = "";
-    }
 
-    return [formValues, onChangeHandler, onSubmitHandler];
+        // TODO:
+
+    };
+
+    async function onSubmitLoginHandler(event) {
+        event.preventDefault();
+
+        const result = await postRequest("/users/login", {
+            email: event.target.email.value,
+            password: event.target.password.value,
+        });
+
+        return result;
+    };
+
+    return { formValues, onChangeHandler, onSubmitLoginHandler , onSubmitRegisterHandler};
 }

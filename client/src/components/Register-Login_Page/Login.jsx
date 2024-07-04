@@ -4,15 +4,30 @@ import { useForm } from "./hooks/useForm";
 import backgroundVideo from "./videos/login wallper.mp4";
 import { useNavigate } from 'react-router-dom';
 
-export const Login = () => {
-  const [formValues, onChangeHandler, onSubmitHandler] = useForm({
-    username: "",
+export const Login = (props) => {
+  const {formValues, onChangeHandler, onSubmitLoginHandler} = useForm({
+    email: "",
     password: "",
   });
 
   const navigate = useNavigate();
   const onClickSignUpHandler = () => {
     navigate('/register');
+  };
+
+  async function doLogin(event) {
+    const result = await onSubmitLoginHandler(event);
+
+	console.log(formValues.password);
+
+    if (result.accessToken) {
+
+		const newData = {email: formValues.email, password: formValues.password };
+		props.setUsDataHandler(newData);
+		navigate("/categories");
+    }
+
+    console.log(result);
   }
 
   return (
@@ -27,16 +42,16 @@ export const Login = () => {
       >
         Your browser does not support the video tag.
       </video>
-      <form onSubmit={onSubmitHandler} className={`${styles["register"]} ${styles["other"]}}`}>
+      <form onSubmit={doLogin} className={`${styles["register"]} ${styles["other"]}}`}>
         <header className={styles["header"]}>
           <h1>Sign In</h1>
         </header>
         <fieldset>
-          <legend>Username &amp; Email:</legend>
+          <legend>Email &amp; Password:</legend>
           <div className={`${styles["field"]} ${styles["text"]} ${styles["icon-username"]}`}>
-            <input onChange={onChangeHandler} name="username" type="text" id="username" placeholder="Username..."/>
+            <input onChange={onChangeHandler} name="email" type="email" id="username" placeholder="Email..."/>
             <i className="fa fa-user" />
-            <label htmlFor="username">Username: </label>
+            <label htmlFor="username">Email: </label>
             <span className={styles["helper"]}>Hello there</span>
           </div>
           <div className={`${styles["field"]} ${styles["text"]} ${styles["icon-password"]}`}>
