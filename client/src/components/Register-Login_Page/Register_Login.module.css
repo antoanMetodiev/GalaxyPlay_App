@@ -179,7 +179,7 @@ input:is([type="text"], [type="email"], [type="password"], [type="number"]){
 }
 
 .register .other {
-    padding: 2.2em 2em;
+    padding: 2.2em 2.2em;
 }
 
 .register .header {
