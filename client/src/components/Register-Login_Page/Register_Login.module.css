@@ -24,6 +24,31 @@ html {
     margin-bottom: -1em;
 }
 
+@media (min-aspect-ratio: 16/8) {
+    .video-bkg {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio: 16/9) {
+    .video-bkg {
+        width: auto;
+        height: 100%;
+    }
+}
+
+.sign-up-option {
+    color: #85FF7A;
+    font-style: oblique;
+    text-decoration: underline;
+}
+
+.sign-up-option:hover {
+    color: #fefefe;
+    cursor: pointer;
+}
+
 .phone-icon {
     color: #85FF7A;
 }
@@ -60,6 +85,14 @@ fieldset {
     margin: 0 0 1em 0;
 }
 
+/* MY BORDERS: */
+/* fieldset {
+    padding: 1em 1.5em;
+    border: 1px solid #000;
+    border-radius: 0.2em;
+    margin: 0 0 1em 0;
+} */
+
 legend {
     padding: 0.5em;
     margin-left: -0.5em;
@@ -83,7 +116,7 @@ input[type="submit"] {
     border: none;
     border-radius: 0.4em;
     color: rgba(133, 255, 122, 1);
-    margin-block: 2em -0.4em;
+    margin-block: 0.6em -0.4em;
     /* margin-top: 2em; */
     cursor: pointer;
     transition: background-color 300ms;
@@ -97,6 +130,7 @@ input[type="submit"]:hover {
 
 input:is([type="text"], [type="email"], [type="password"], [type="number"]){
     border: 2px solid rgba(44, 63, 82, 1);
+    /* border: 0.2px solid #000; */
     border-radius: 0.4em;
     background-color: transparent;
     color:#fefefe;
@@ -144,6 +178,10 @@ input:is([type="text"], [type="email"], [type="password"], [type="number"]){
     transform: translate(-50%, -50%);
 }
 
+.register .other {
+    padding: 2.2em 2em;
+}
+
 .register .header {
     position: relative;
     padding: 2em 0;
@@ -169,6 +207,8 @@ input:is([type="text"], [type="email"], [type="password"], [type="number"]){
     left: 50%;
     transform: translate(-50%, -50%);
     letter-spacing: 0.1em;
+    font-weight: 500; 
+    font-style: oblique;
 }
 
 .field {
@@ -188,7 +228,8 @@ input:is([type="text"], [type="email"], [type="password"], [type="number"]){
     align-items: center;
     padding: 0 1em;
     color: rgba(133, 255, 122, 1);
-    border: 2px solid rgba(44, 63, 82, 1);
+    border: 1px solid rgba(44, 63, 82, 1);
+    /* border: 1px solid #000; */
     border-radius: 0.4em;
     border-right: 0;
     border-top-right-radius: 0;
