@@ -1,7 +1,14 @@
 import { images } from '../../resources/images';
 import styles from '../Overview/Overview.module.css'; // Import на CSS модул стиловете
 
+import { useNavigate } from 'react-router-dom';
+
 export const Overview = () => {
+  const navigate = useNavigate();
+
+  function onClickButtonHandler() {
+    navigate('/login');
+  }
 
   
   return (
@@ -18,7 +25,7 @@ export const Overview = () => {
           />
           <div className={styles.content}>
             <h2>PS5</h2>
-            <button>VIEW NOW</button>
+            <button onClick={onClickButtonHandler}>VIEW NOW</button>
           </div>
           <span className={styles['bkg-color']}></span>
         </div>
@@ -30,7 +37,7 @@ export const Overview = () => {
           />
           <div className={styles.content}>
             <h2>PS4</h2>
-            <button>VIEW NOW</button>
+            <button onClick={onClickButtonHandler}>VIEW NOW</button>
           </div>
           <span className={styles['bkg-color']}></span>
         </div>
@@ -42,7 +49,7 @@ export const Overview = () => {
           />
           <div className={styles.content}>
             <h2>XBOX</h2>
-            <button>VIEW NOW</button>
+            <button onClick={onClickButtonHandler}>VIEW NOW</button>
           </div>
           <span className={styles['bkg-color']}></span>
         </div>
@@ -60,7 +67,7 @@ export const Overview = () => {
           />
           <div className={styles.content}>
             <h2>Corsair</h2>
-            <button>VIEW NOW</button>
+            <button onClick={onClickButtonHandler}>VIEW NOW</button>
           </div>
           <span className={styles['bkg-color']}></span>
         </div>
@@ -72,7 +79,7 @@ export const Overview = () => {
           />
           <div className={styles.content}>
             <h2>Acer Predator</h2>
-            <button>VIEW NOW</button>
+            <button onClick={onClickButtonHandler}>VIEW NOW</button>
           </div>
           <span className={styles['bkg-color']}></span>
         </div>
@@ -84,7 +91,7 @@ export const Overview = () => {
           />
           <div className={styles.content}>
             <h2>Alienware</h2>
-            <button>VIEW NOW</button>
+            <button onClick={onClickButtonHandler}>VIEW NOW</button>
           </div>
           <span className={styles['bkg-color']}></span>
         </div>
@@ -102,7 +109,7 @@ export const Overview = () => {
           />
           <div className={styles.content}>
             <h2>Playstation 5</h2>
-            <button>VIEW NOW</button>
+            <button onClick={onClickButtonHandler}>VIEW NOW</button>
           </div>
           <span className={styles['bkg-color']}></span>
         </div>
@@ -114,7 +121,7 @@ export const Overview = () => {
           />
           <div className={styles.content}>
             <h2>Playstation 4 Pro</h2>
-            <button>VIEW NOW</button>
+            <button onClick={onClickButtonHandler}>VIEW NOW</button>
           </div>
           <span className={styles['bkg-color']}></span>
         </div>
@@ -126,7 +133,7 @@ export const Overview = () => {
           />
           <div className={styles.content}>
             <h2>Playstation 4 Slim</h2>
-            <button>VIEW NOW</button>
+            <button onClick={onClickButtonHandler}>VIEW NOW</button>
           </div>
           <span className={styles['bkg-color']}></span>
         </div>
@@ -144,7 +151,7 @@ export const Overview = () => {
           />
           <div className={styles.content}>
             <h2>XBOX X</h2>
-            <button>VIEW NOW</button>
+            <button onClick={onClickButtonHandler}>VIEW NOW</button>
           </div>
           <span className={styles['bkg-color']}></span>
         </div>
@@ -156,7 +163,7 @@ export const Overview = () => {
           />
           <div className={styles.content}>
             <h2>XBOX S</h2>
-            <button>VIEW NOW</button>
+            <button onClick={onClickButtonHandler}>VIEW NOW</button>
           </div>
           <span className={styles['bkg-color']}></span>
         </div>
@@ -168,7 +175,7 @@ export const Overview = () => {
           />
           <div className={styles.content}>
             <h2>XBOX One X</h2>
-            <button>VIEW NOW</button>
+            <button onClick={onClickButtonHandler}>VIEW NOW</button>
           </div>
           <span className={styles['bkg-color']}></span>
         </div>
@@ -186,7 +193,7 @@ export const Overview = () => {
           />
           <div className={styles.content}>
             <h2>Lenovo Legion</h2>
-            <button>VIEW NOW</button>
+            <button onClick={onClickButtonHandler}>VIEW NOW</button>
           </div>
           <span className={styles['bkg-color']}></span>
         </div>
@@ -198,7 +205,7 @@ export const Overview = () => {
           />
           <div className={styles.content}>
             <h2>Asus Tuf</h2>
-            <button>VIEW NOW</button>
+            <button onClick={onClickButtonHandler}>VIEW NOW</button>
           </div>
           <span className={styles['bkg-color']}></span>
         </div>
@@ -210,7 +217,7 @@ export const Overview = () => {
           />
           <div className={styles.content}>
             <h2>Alienware</h2>
-            <button>VIEW NOW</button>
+            <button onClick={onClickButtonHandler}>VIEW NOW</button>
           </div>
           <span className={styles['bkg-color']}></span>
         </div>
