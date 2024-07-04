@@ -26,7 +26,7 @@ export const Register = () => {
       </video>
       <form onSubmit={onSubmitHandler} className={styles["register"]}>
         <header className={styles["header"]}>
-          <h1>Register</h1>
+          <h1>Sign Up</h1>
         </header>
         <fieldset>
           <legend>Username &amp; Email:</legend>
@@ -41,7 +41,7 @@ export const Register = () => {
           <div
             className={`${styles["field"]} ${styles["text"]} ${styles["icon-email"]}`}
           >
-            <input onChange={onChangeHandler} name="email" type="text" id="email" />
+            <input onChange={onChangeHandler} name="email" type="email" id="email" />
             <label htmlFor="email">Email: </label>
             <i className="fa fa-envelope" />
           </div>
@@ -75,7 +75,7 @@ export const Register = () => {
           </div>
         </fieldset>
 
-        <input type="submit" value="Register" />
+        <input type="submit" value="Sign Up" />
       </form>
     </div>
   );
