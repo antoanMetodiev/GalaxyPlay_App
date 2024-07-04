@@ -10,9 +10,9 @@ import Corsair from "../resources/images/corsair.jpg"
 import AcerPredator from "../resources/images/acer predator.webp"
 import AlienWare from "../resources/images/alienware pc.jpg"
 
-import LenovoLegion from "../resources/images/lenovo legion.jpg";
-import AsusTuf from "../resources/images/asus tuf.png";
-import AlienWareLaptop from "../resources/images/alienware laptop.jpg";
+import Lenovo from "../resources/images/lenovo legion.jpg";
+import Mac from "../resources/images/mac.jpg";
+import Acer from "../resources/images/acer laptop.png";
 
 import Ps5Game from "../resources/images/ps5 game.jpg";
 import Ps4Game from "../resources/images/the last of us.jpg";
@@ -27,9 +27,9 @@ export let images = {
     Corsair: Corsair,
     AcerPredator: AcerPredator,
     AlienWare: AlienWare,
-    LenovoLegion: LenovoLegion,
-    AsusTuf: AsusTuf,
-    AlienWareLaptop: AlienWareLaptop,
+    LenovoLegion: Lenovo,
+    AsusTuf: Mac,
+    AlienWareLaptop: Acer,
     Ps5Game: Ps5Game,
     Ps4Game: Ps4Game,
     XboxGame: XboxGame,

@@ -78,7 +78,7 @@ export const Overview = () => {
             alt="Playstation 5 image"
           />
           <div className={styles.content}>
-            <h2>Acer Predator</h2>
+            <h2>Acer</h2>
             <button onClick={onClickButtonHandler}>VIEW NOW</button>
           </div>
           <span className={styles['bkg-color']}></span>
@@ -192,7 +192,7 @@ export const Overview = () => {
             alt="Playstation 5 image"
           />
           <div className={styles.content}>
-            <h2>Lenovo Legion</h2>
+            <h2>Lenovo</h2>
             <button onClick={onClickButtonHandler}>VIEW NOW</button>
           </div>
           <span className={styles['bkg-color']}></span>
@@ -204,7 +204,7 @@ export const Overview = () => {
             alt="Playstation 5 image"
           />
           <div className={styles.content}>
-            <h2>Asus Tuf</h2>
+            <h2>Mac</h2>
             <button onClick={onClickButtonHandler}>VIEW NOW</button>
           </div>
           <span className={styles['bkg-color']}></span>
@@ -216,7 +216,7 @@ export const Overview = () => {
             alt="Playstation 5 image"
           />
           <div className={styles.content}>
-            <h2>Alienware</h2>
+            <h2>Acer</h2>
             <button onClick={onClickButtonHandler}>VIEW NOW</button>
           </div>
           <span className={styles['bkg-color']}></span>
