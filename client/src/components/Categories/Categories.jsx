@@ -2,7 +2,7 @@ import styles from "../Categories/Categories.module.css";
 
 import backgroundVideo from "./resources/videos/background-video.mp4";
 
-import gamesImage from "./resources/images/games.webp";
+import gamesImage from "./resources/images/games.jpg";
 import pc from "./resources/images/pc.webp";
 import ps5 from "./resources/images/ps5.jpg";
 import ps4 from "./resources/images/ps4.jpg";
