@@ -4,7 +4,7 @@ import { useForm } from "./hooks/useForm";
 import backgroundVideo from "./videos/register wallper video.mp4";
 
 export const Register = () => {
-  const [formValues, onChangeHandler, onSubmitHandler] = useForm({
+  const {formValues, onChangeHandler, onSubmitRegisterHandler} = useForm({
     username: "",
     email: "",
     phoneNumber: "",
@@ -24,7 +24,7 @@ export const Register = () => {
       >
         Your browser does not support the video tag.
       </video>
-      <form onSubmit={onSubmitHandler} className={styles["register"]}>
+      <form onSubmit={onSubmitRegisterHandler} className={styles["register"]}>
         <header className={styles["header"]}>
           <h1>Sign Up</h1>
         </header>
