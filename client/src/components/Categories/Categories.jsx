@@ -1,4 +1,5 @@
 import styles from "../Categories/Categories.module.css";
+import { useNavigate } from "react-router-dom";
 
 import backgroundVideo from "./resources/videos/background-video.mp4";
 
@@ -10,6 +11,12 @@ import xbox from "./resources/images/xbox.png";
 import mac from "./resources/images/mac.jpg";
 
 export const Categories = () => {
+  const navigate = useNavigate();
+
+  function navigateToPathHandler(event) {
+	  navigate(`${(event.target.previousSibling.textContent).toLowerCase()}`)
+  }
+
   return (
     <article className={styles["container"]}>
       <video
@@ -29,7 +36,7 @@ export const Categories = () => {
             <img src={gamesImage} alt="games-image" />
             <div className={styles.content}>
               <h2>Games</h2>
-              <button>View Now</button>
+              <button onClick={navigateToPathHandler}>View Now</button>
             </div>
             <span className={styles["bkg-color"]}></span>
           </div>
@@ -37,7 +44,7 @@ export const Categories = () => {
             <img src={pc} alt="games-image" />
             <div className={styles.content}>
               <h2>PC</h2>
-              <button>View Now</button>
+              <button onClick={navigateToPathHandler}>View Now</button>
             </div>
             <span className={styles["bkg-color"]}></span>
           </div>
@@ -45,7 +52,7 @@ export const Categories = () => {
             <img src={ps5} alt="games-image" />
             <div className={styles.content}>
               <h2>PS5</h2>
-              <button>View Now</button>
+              <button onClick={navigateToPathHandler}>View Now</button>
             </div>
             <span className={styles["bkg-color"]}></span>
           </div>
@@ -55,7 +62,7 @@ export const Categories = () => {
             <img src={ps4} alt="games-image" />
             <div className={styles.content}>
               <h2>PS4</h2>
-              <button>View Now</button>
+              <button onClick={navigateToPathHandler}>View Now</button>
             </div>
             <span className={styles["bkg-color"]}></span>
           </div>
@@ -63,7 +70,7 @@ export const Categories = () => {
             <img src={xbox} alt="games-image" />
             <div className={styles.content}>
               <h2>XBOX</h2>
-              <button>View Now</button>
+              <button onClick={navigateToPathHandler}>View Now</button>
             </div>
             <span className={styles["bkg-color"]}></span>
           </div>
@@ -71,7 +78,7 @@ export const Categories = () => {
             <img src={mac} alt="games-image" />
             <div className={styles.content}>
               <h2>Laptop</h2>
-              <button>View Now</button>
+              <button onClick={navigateToPathHandler}>View Now</button>
             </div>
             <span className={styles["bkg-color"]}></span>
           </div>
