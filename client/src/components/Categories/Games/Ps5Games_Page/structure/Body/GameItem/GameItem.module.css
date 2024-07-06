@@ -1,0 +1,67 @@
+
+.game-item {
+    width: 18.5em;
+    height: 35em;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.8);
+}
+
+.game-item-image {
+    width: 100%;
+    height: 23em;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.game-stars-image {
+    width: 10em;
+    border-radius: 6px;
+}
+
+.game-content {
+    padding: 0.2em 0em 0em 0.4em;
+    height: 9em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 1em;
+    position: relative;
+    
+}
+
+.game-name {
+    font-size: 1.55em;
+    margin: -14px 0px 0px 4px;
+    color: #fefefe;
+    color: #000;
+    border-bottom: 3px solid goldenrod;
+    width: fit-content;
+}
+
+.game-button {
+    padding: 0.5em 5em;
+    border-radius: 6px;
+    border: none;
+    margin-top: -1.2em;
+    background-color: rgb(87, 87, 255);
+    align-self: center;
+    color: #fefefe;
+    transition: background-color 0.5s ease-in-out;
+}
+
+.game-button:hover {
+    background-color: unset;
+    cursor: pointer;
+    background-color: #000;
+}
+
+.game-price {
+    position: absolute;
+    right: 1em;
+    top: -1.86em;
+    font-size: 1.4em;
+    color: green;
+    font-weight: 600;
+    /* box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.8); */
+}
