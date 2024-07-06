@@ -18,16 +18,11 @@ export const Login = (props) => {
   async function doLogin(event) {
     const result = await onSubmitLoginHandler(event);
 
-	console.log(formValues.password);
-
     if (result.accessToken) {
-
 		const newData = {email: formValues.email, password: formValues.password };
 		props.setUsDataHandler(newData);
 		navigate("/categories");
     }
-
-    console.log(result);
   }
 
   return (
