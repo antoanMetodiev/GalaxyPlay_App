@@ -1,0 +1,120 @@
+.create-game-container {
+    position: fixed;
+    top: 50%;
+    left: 14%;
+    transform: translate(-50%, -50%);
+    /* background-color: rgba(255, 255, 255, 0.1); */
+    background-image: url("../../../images/last-logo.jfif");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    object-fit: cover;
+    z-index: 2;
+    width: 30em;
+    height: 18em;
+    padding: 1.1em 1.7em ;
+    border-radius: 12px;
+    display: none;
+    opacity: 0.9;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 255, 0.6);
+}
+
+.create-game-container form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2em;
+    z-index: 1;
+    justify-content: center;
+    margin-top: 7.4em;
+}
+
+.create-game-container form input {
+    border: 1px solid #fefefe;
+}
+
+.create-game-container form label {
+    width: fit-content;
+    letter-spacing: 1px;
+    color: #fefefe;
+}
+
+.create-game-container form div textarea {
+    width: 100%;
+    height: 10em;
+    resize: none;
+    padding: 0.3em 0em 0em 0.3em;
+    background-color: unset;
+    border: 1px solid #000;
+    color: #fefefe;
+    border: 1px solid #fefefe;
+}
+
+.create-game-container form div textarea:focus {
+    border-color: rgba(133, 255, 122, 1);
+}
+
+.create-game-container form > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+}
+
+.create-game-container form button {
+    align-self: center;
+    padding: 0.7em 2em;
+    border-radius: 8px;
+    border: none;
+    background-color: darkcyan;
+    cursor: pointer;
+    color: #fefefe;
+}
+
+.create-game-container form button:hover {
+    background-color: rgba(0, 0, 255, 0.6);
+}
+
+.lets-goo-image {
+    position: absolute;
+    width: 7.6em;
+    object-fit: cover;
+    left: 2em;
+    top: 2px;
+}
+
+.x-button {
+    position: absolute;
+    top: -7.5em;
+    right: -0.5em;
+    align-self: flex-end;
+    background-color: red;
+    padding: 0.3em 0.5em;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.show-game-delete {
+    position: fixed;
+    z-index: 5;
+    bottom: 6em;
+    left: 2em;
+    padding: 0.69em 1.1em;
+    border-radius: 8px;
+    border: none;
+    background-color: gray;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.5s ease-in-out;
+}
+
+.show-game-delete:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.85);
+}
+
+.dont-do-it-image {
+    position: absolute;
+    top: 1px;
+    left: 3px;
+    width: 6.9em;
+    border-radius: 8px;
+}
