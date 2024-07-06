@@ -1,0 +1,44 @@
+.site-header {
+    height: 9em;
+    background-color: silver;
+    display: flex;
+    gap: 17em;
+}
+
+.site-logo-name-container {
+    display: flex;
+    align-items: center;
+}
+
+.site-header > form {
+    width: 33em;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.site-header > form input {
+    width: 80%;
+}
+
+.search-button { 
+    padding: 0.2em 1em;
+    border-radius: 6px;
+    border: none;
+    
+}
+
+.site-logo {
+    height: 88%;
+    width: 8em;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 0.8em;
+}
+
+h1.site-name {
+    margin: -1.5em 0em 0em 0.5em;
+    border-bottom: 3px solid black;
+    font-style: oblique;
+    font-weight: 500;
+}
