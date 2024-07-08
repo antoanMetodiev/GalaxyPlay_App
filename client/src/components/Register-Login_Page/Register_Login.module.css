@@ -264,3 +264,14 @@ input:is([type="text"], [type="email"], [type="password"], [type="number"]){
         display: none;
     }
 }
+
+h2.error-message-title {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.4em;
+    font-weight: 500;
+    color: red;
+    border-bottom: 2px solid red;
+}
