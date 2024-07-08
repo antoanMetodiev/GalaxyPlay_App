@@ -1,6 +1,6 @@
 .site-header {
     height: 9em;
-    background-color: silver;
+    /* background-color: silver; */
     display: flex;
     gap: 17em;
 }
@@ -38,7 +38,8 @@
 
 h1.site-name {
     margin: -1.5em 0em 0em 0.5em;
-    border-bottom: 3px solid black;
+    border-bottom: 3px solid #fefefe;
     font-style: oblique;
     font-weight: 500;
+    color: #fefefe;
 }

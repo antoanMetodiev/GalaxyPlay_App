@@ -1,7 +1,7 @@
 .create-game-container {
     position: fixed;
-    top: 50%;
-    left: 14%;
+    top: 51%;
+    left: 50%;
     transform: translate(-50%, -50%);
     /* background-color: rgba(255, 255, 255, 0.1); */
     background-image: url("../../../images/last-logo.jfif");
@@ -9,9 +9,10 @@
     background-position: center;
     background-size: cover;
     object-fit: cover;
-    z-index: 2;
-    width: 30em;
-    padding: 1.1em 1.7em ;
+    z-index: 6;
+    width: 40em;
+    height: 50em;
+    padding: 1.1em 1.7em 0.4em 1.7em;
     border-radius: 12px;
     display: none;
     opacity: 0.9;
@@ -22,19 +23,24 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 1.2em;
+    gap: 1.3em;
     z-index: 1;
-    
+    font-weight: bold;
+    margin-bottom: -1em;
+    border-radius: 8px;
 }
 
 .create-game-container form input {
     border: 1px solid #fefefe;
+    color: rgba(133, 255, 122, 1);
 }
 
 .create-game-container form label {
     width: fit-content;
     letter-spacing: 1px;
     color: #fefefe;
+    background-color: gray;
+    font-weight: 900;
 }
 
 .create-game-container form div textarea {
@@ -46,6 +52,7 @@
     border: 1px solid #000;
     color: #fefefe;
     border: 1px solid #fefefe;
+    color: rgba(133, 255, 122, 1);
 }
 
 .create-game-container form div textarea:focus {
@@ -72,10 +79,18 @@
     background-color: rgba(0, 0, 255, 0.6);
 }
 
+.lets-goo-image {
+    position: absolute;
+    width: 9em;
+    object-fit: cover;
+    right: 15em;
+    top: 2px;
+}
+
 .x-button {
     align-self: flex-end;
     background-color: red;
-    margin-top: -0.2em;
+    margin-bottom: -1.2em;
     padding: 0.3em 0.5em;
     cursor: pointer;
     font-weight: 700;
@@ -84,7 +99,7 @@
 .show-game-create {
     position: fixed;
     z-index: 5;
-    bottom: 2em;
+    bottom: 10em;
     left: 2em;
     padding: 0.69em 1.1em;
     border-radius: 8px;
@@ -96,5 +111,5 @@
 }
 
 .show-game-create:hover {
-    background-color: unset;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.85);
 }

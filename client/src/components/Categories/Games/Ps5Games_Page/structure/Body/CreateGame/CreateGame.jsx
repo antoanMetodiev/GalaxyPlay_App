@@ -3,7 +3,9 @@ import style from "../CreateGame/CreateGame.module.css";
 import { database } from '../../../../../../../firebase/firebase';
 import { ref, push, set } from "firebase/database";
 
-export const CreateGame = (props) => {
+import letsGooImage from "../../../images/lets-goo-image.png";
+
+export const CreateGame = () => {
   const containerRef = useRef();
 
   // Функция за обработка на изпращането на формата
@@ -12,27 +14,37 @@ export const CreateGame = (props) => {
 
     // Събиране на данни от формата
     const formData = new FormData(event.target);
+
+    const descriptionText = formData.get('description').split(',# ');
+    const otherImagesUrl = formData.get('other_images_url').split(', ');
+
     const gameData = {
       name: formData.get('game_name'),
       price: formData.get('price'),
       imageUrl: formData.get('image_url'),
-      description: formData.get('description'),
+	    otherImageUrl: otherImagesUrl,
+      description: descriptionText,
+      trailer: formData.get('trailer'),
     };
 
     event.target.game_name.value = "";
     event.target.price.value = "";
     event.target.image_url.value = "";
     event.target.description.value = "";
+    event.target.other_images_url.value = "";
+    event.target.trailer.value = "";
+
 
     try {
-      // Създаване на препратка към колекцията "game/ps5-games" и добавяне на нова игра
+      // Създаване на request към колекцията "game/ps5-games" и добавяне на нова игра
       const gameListRef = ref(database, 'game/ps5-games');
       const newGameRef = push(gameListRef);
       
       // Изпращане на данните на играта към Firebase
-      await set(newGameRef, gameData);
+      const resultMaybe = await set(newGameRef, gameData);
       
-      props.createGameHandler(gameData); // this is my code
+      console.log(resultMaybe);
+      // props.createGameHandler(gameData); // this is my code
 
       console.log('Game added successfully');
       // Може да добавите код за известяване или обновяване на списъка с игри
@@ -52,7 +64,12 @@ export const CreateGame = (props) => {
 
   return (
     <>
+      
+
       <article className={style["create-game-container"]} ref={containerRef}>
+
+      {/* <img className={style['lets-goo-image']} src={letsGooImage} alt="lets-goo-image" /> */}
+
         <form onSubmit={onSubmitFormHandler}>
           <span onClick={hideGameCreateHandler} className={style["x-button"]}>X</span>
           <div>
@@ -66,8 +83,18 @@ export const CreateGame = (props) => {
           </div>
 
           <div>
-            <label htmlFor="img-url">Url</label>
+            <label htmlFor="img-url">Game Picture Url</label>
             <input type="text" id="img-url" name="image_url" required />
+          </div>
+
+          <div>
+            <label htmlFor="img-url">Other Pictures Url</label>
+            <input type="text" id="img-url" name="other_images_url" required />
+          </div>
+
+          <div>
+            <label htmlFor="trailer-video">Trailer Video</label>
+            <input type="text" id="trailer-video" name="trailer" required />
           </div>
 
           <div>
@@ -79,13 +106,14 @@ export const CreateGame = (props) => {
               required
             ></textarea>
           </div>
+          
 
           <button type="submit">Create Game</button>
         </form>
       </article>
 
       <button onClick={showGameCreateHandler} className={style["show-game-create"]}>
-        Show Game Create
+      Create Game 
       </button>
     </>
   );

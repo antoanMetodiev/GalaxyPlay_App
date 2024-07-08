@@ -35,6 +35,7 @@
     width: fit-content;
     letter-spacing: 1px;
     color: #fefefe;
+    background-color: blue;
 }
 
 .create-game-container form div textarea {

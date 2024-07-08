@@ -2,8 +2,16 @@ import LastLogo from "../../resources/images/last-logo.jfif";
 import { HeaderContacts } from "../HeaderContacts";
 import { Link } from "react-router-dom";
 import styles from "./Header.module.css"; // Импорт на CSS модул стиловете
+import { useState } from "react";
 
 export const Header = () => {
+  const [imLogOut, setImLogOut] = useState(false);
+
+  function logOutUserHandler() {
+    localStorage.removeItem("user");
+    setImLogOut(true);
+  }
+
   return (
     <header className={styles["site-header"]} id="HomePage-header">
       <div className={styles["logo-data-wrapper"]}>
@@ -12,16 +20,33 @@ export const Header = () => {
         <span className={styles["title-border"]}></span>
       </div>
       <nav className={styles["header-nav"]}>
-        <ul style={{listStyle: 'none'}}>
+        <ul style={{ listStyle: "none" }}>
+          {!localStorage.getItem("user") && (
+            <>
+              <li>
+                <Link to="/login">Sign In</Link>
+              </li>
+              <li>
+                <Link to="/register">Sign Up</Link>
+              </li>
+            </>
+          )}
+
+          {localStorage.getItem("user") && (
+            <>
+              <Link to="/categories">Categories</Link>
+            </>
+          )}
+
           <li>
-            <Link to="/login">Sign In</Link>
+            <Link to="/register">About Us</Link>
           </li>
-          <li>
-            <Link to="/register">Sign Up</Link>
-          </li>
-          <li>
-            <Link to="/">About Us</Link>
-          </li>
+
+          {localStorage.getItem("user") && (
+            <li onClick={logOutUserHandler}>
+              <Link>Log Out</Link>
+            </li>
+          )}
         </ul>
         <HeaderContacts />
       </nav>

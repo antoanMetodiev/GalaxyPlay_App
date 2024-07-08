@@ -4,9 +4,11 @@ import { database, ref, onValue } from "../../../../../../../firebase/firebase";
 import style from "../Body.module.css";
 import { GameItem } from "../GameItem/GameItem";
 
-export const GameList = () => {
-    const [gameList, setGameList] = useState([]);
-
+export const GameList = ({
+	gameList,
+	setGameListHandler,
+}) => {
+    
     useEffect(() => {
         const gameListRef = ref(database, 'game/ps5-games');
 
@@ -17,9 +19,11 @@ export const GameList = () => {
                     _id: key,
                     ...games[key]
                 }));
-                setGameList(gameArray);
+
+                console.log(gameArray);  // look here
+                setGameListHandler(gameArray);
             } else {
-                setGameList([]);
+                setGameListHandler([]);
             }
         });
 
@@ -28,10 +32,6 @@ export const GameList = () => {
             unsubscribe();
         };
     }, []);
-
-    function createGameHandler(newGame) {
-        setGameList(gameList => [...gameList, newGame]);
-    };
 
   return (
     <section className={style["game-row"]}>

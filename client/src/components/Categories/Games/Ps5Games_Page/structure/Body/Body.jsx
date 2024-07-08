@@ -1,48 +1,33 @@
 import style from "../Body/Body.module.css";
+import { useState } from "react";
+
 import { GameList } from "./GameList/GameList";
 import { CreateGame } from "./CreateGame/CreateGame";
-import { useEffect, useState } from "react";
-import { database, ref, onValue } from "../../../../../../firebase/firebase";
+import { DeleteGame } from "./DeleteGame/DeleteGame";
+import { UpdateGame } from "./UpdateGame/UpdateGame";
 
 export const Body = () => {
-    const [gameList, setGameList] = useState([]);
+  const [gameList, setGameList] = useState([]);
 
-    useEffect(() => {
-        const gameListRef = ref(database, 'game/ps5-games');
+  function setGameListHandler(value) {
+    setGameList(value);
+  }
 
-        const unsubscribe = onValue(gameListRef, (snapshot) => {
-            const games = snapshot.val();
-            if (games) {
-                const gameArray = Object.keys(games).map((key) => ({
-                    _id: key,
-                    ...games[key]
-                }));
-                setGameList(gameArray);
-            } else {
-                setGameList([]);
-            }
-        });
+  return (
+    <>
+      <DeleteGame gameList={gameList} setGameListHandler={setGameListHandler} />
+      <CreateGame />
+      <UpdateGame gameList={gameList} />
 
-        return () => {
-            // Cleanup функция
-            unsubscribe();
-        };
-    }, []);
-
-    function createGameHandler(newGame) {
-        setGameList(gameList => [...gameList, newGame]);
-    };
-
-    return (
-        <>
-            <CreateGame createGameHandler={createGameHandler} />
-
-            <article>
-                <div className={style["background"]}></div>
-                <div className={style["content"]}>
-                    <GameList />
-                </div>
-            </article>
-        </>
-    );
+      <article>
+        <div className={style["background"]}></div>
+        <div className={style["content"]}>
+          <GameList
+            gameList={gameList}
+            setGameListHandler={setGameListHandler}
+          />
+        </div>
+      </article>
+    </>
+  );
 };

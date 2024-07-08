@@ -37,6 +37,7 @@
     width: fit-content;
     letter-spacing: 1px;
     color: #fefefe;
+    background-color: blue;
 }
 
 .create-game-container form div textarea {
@@ -96,7 +97,7 @@
 .show-game-delete {
     position: fixed;
     z-index: 5;
-    bottom: 6em;
+    bottom: 2em;
     left: 2em;
     padding: 0.69em 1.1em;
     border-radius: 8px;

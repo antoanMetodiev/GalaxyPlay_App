@@ -1,11 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleRight, faAngleLeft } from "@fortawesome/free-solid-svg-icons"; 
+import { faAngleRight, faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 import { allVideos } from "../../resources/videos.js";
-import styles from "./LiveWallperSection.module.css"; 
+import styles from "./LiveWallperSection.module.css";
 
 function getRandomIntInclusive(min, max) {
-  min = Math.ceil(min); 
+  min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -19,23 +19,13 @@ export const LiveWallperSection = (props) => {
   }, []);
 
   function onRightWallperHandler() {
-    if (currentIndex + 1 >= allVideos.length) {
-      setCurrentIndex(0);
-      props.showDemoPreviewHandler(true);
-    } else {
-      setCurrentIndex(currentIndex + 1);
-      props.showDemoPreviewHandler(true);
-    }
+    if (currentIndex + 1 >= allVideos.length) setCurrentIndex(0);
+    else setCurrentIndex(currentIndex + 1);
   }
 
   function onLeftWallperHandler() {
-    if (currentIndex - 1 < 0) {
-      setCurrentIndex(allVideos.length - 1);
-      props.showDemoPreviewHandler(true);
-    } else {
-      setCurrentIndex(currentIndex - 1);
-      props.showDemoPreviewHandler(true);
-    }
+    if (currentIndex - 1 < 0) setCurrentIndex(allVideos.length - 1);
+    else setCurrentIndex(currentIndex - 1);
   }
 
   return (

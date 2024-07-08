@@ -1,39 +1,63 @@
 import { useState } from "react";
-import postRequest from "../services/requests";
+import { auth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "../../../firebase/firebase"; // Импортирайте правилно
 
 export const useForm = (initialValues) => {
-    const [formValues, setFormValues] = useState(initialValues);
+  const [formValues, setFormValues] = useState(initialValues);
+  const [error, setError] = useState("");
 
-    function onChangeHandler(event) {
-        setFormValues(state => ({
-            ...state,
-            [event.target.name]: event.target.value,
-        }));
-    };
+  function onChangeHandler(event) {
+    setFormValues(state => ({
+      ...state,
+      [event.target.name]: event.target.value,
+    }));
+  };
 
-    async function onSubmitRegisterHandler(event) {
-        event.preventDefault();
+  function cleariInputValues() {
+    setFormValues({
+      email: "",
+      password: "",
+    });
+  };
 
-        event.target.username.value = "";
-        event.target.password.value = "";
-        event.target.email.value = "";
-        event.target.phoneNumber.value = "";
-        event.target.password[1].value = "";
+  function cleariRegisterValues() {
+    setFormValues({
+      username: "",
+      email: "",
+      phoneNumber: "",
+      password: "",
+      repassword: "",
+    });
+  }
 
-        // TODO:
+  async function onSubmitRegisterHandler(event) {
+    event.preventDefault();
 
-    };
+    try {
+      await createUserWithEmailAndPassword(auth, formValues.email, formValues.password);
+      setFormValues(initialValues);
 
-    async function onSubmitLoginHandler(event) {
-        event.preventDefault();
+	  cleariRegisterValues();
+      console.log('User Registered!');
 
-        const result = await postRequest("/users/login", {
-            email: event.target.email.value,
-            password: event.target.password.value,
-        });
+    } catch (error) {
+	  cleariRegisterValues();
+      setError(error.message);
+    }
+  };
 
-        return result;
-    };
+  async function onSubmitLoginHandler(event) {
 
-    return { formValues, onChangeHandler, onSubmitLoginHandler , onSubmitRegisterHandler};
-}
+    try {
+      const result = await signInWithEmailAndPassword(auth, formValues.email, formValues.password);
+      cleariInputValues();
+      setError('Successful login.');
+      return result;
+
+    } catch (error) {
+	  cleariInputValues();
+      setError("This user does not exist.");
+    }
+  };
+
+  return { formValues, onChangeHandler, onSubmitLoginHandler, onSubmitRegisterHandler, error, cleariInputValues };
+};
