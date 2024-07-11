@@ -1,0 +1,18 @@
+input.search-engine {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30em;
+    color: #fff;
+    border: 0.3px solid silver;
+    border-radius: 1.5em;
+}
+
+.search-engine::placeholder {
+    color: silver;
+}
+
+input.search-engine:focus {
+    border: 0.3px solid silver;
+}
