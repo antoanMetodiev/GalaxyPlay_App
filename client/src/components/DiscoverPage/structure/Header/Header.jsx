@@ -1,8 +1,10 @@
 import LastLogo from "../../resources/images/last-logo.jfif";
-import { HeaderContacts } from "../HeaderContacts";
+
 import { Link } from "react-router-dom";
 import styles from "./Header.module.css"; // Импорт на CSS модул стиловете
 import { useState } from "react";
+
+import {HeaderContacts} from "../HeaderContacts";
 
 export const Header = () => {
   const [imLogOut, setImLogOut] = useState(false);
@@ -48,6 +50,7 @@ export const Header = () => {
             </li>
           )}
         </ul>
+        
         <HeaderContacts />
       </nav>
     </header>

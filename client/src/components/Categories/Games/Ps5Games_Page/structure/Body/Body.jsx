@@ -6,6 +6,8 @@ import { CreateGame } from "./CreateGame/CreateGame";
 import { DeleteGame } from "./DeleteGame/DeleteGame";
 import { UpdateGame } from "./UpdateGame/UpdateGame";
 
+import backVideo from "../../../../../DiscoverPage/resources/videos/Grand-Theft-Auto-VI.mp4";
+
 export const Body = () => {
   const [gameList, setGameList] = useState([]);
 
@@ -20,7 +22,15 @@ export const Body = () => {
       <UpdateGame gameList={gameList} />
 
       <article>
-        <div className={style["background"]}></div>
+        <div className={style["background"]}>
+          <video
+            className={style["background-video"]}
+            src={backVideo}
+            autoPlay
+            muted
+            loop
+          ></video>
+        </div>
         <div className={style["content"]}>
           <GameList
             gameList={gameList}

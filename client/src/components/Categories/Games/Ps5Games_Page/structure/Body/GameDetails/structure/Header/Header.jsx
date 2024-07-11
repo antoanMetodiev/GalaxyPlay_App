@@ -1,23 +1,57 @@
-
-import style from "./Header.module.css";
+import { useNavigate } from "react-router-dom";
+import style from "../Header/Header.module.css";
 
 export const Header = () => {
+  const navigate = useNavigate();
 
-    return (
-        <header className={styles['site-header']}>
-            <div className={styles['site-logo-name-container']}>
-                <img className={styles['site-logo']} src={site_logo} alt="site-logo" />
-                <h1 className={styles['site-name']}>GalaxyPlay</h1>
-            </div>
+  const logOutUserHandler = (event) => {
+    event.preventDefault();
+    localStorage.clear();
+	navigate('/');
+  };
 
-            <form>
-                <input type="text" placeholder="What will you search for today?"/>
-                <button className={styles['search-button']}>Search</button>
-            </form>
+  return (
+    <>
+      <header className={style["site-header"]} id="HomePage-header">
+        <div className={style["logo-data-wrapper"]}>
+          <img src={LastLogo} alt="GalaxyPlay-Logo" />
+          <h1 className={style["site-title"]}>GalaxyPlay</h1>
+          <span className={style["title-border"]}></span>
+        </div>
+        <nav className={style["header-nav"]}>
+          <ul style={{ listStyle: "none" }}>
+            {!localStorage.getItem("user") && (
+              <>
+                <li>
+                  <Link to="/login">Sign In</Link>
+                </li>
+                <li>
+                  <Link to="/register">Sign Up</Link>
+                </li>
+              </>
+            )}
 
-            <div className={styles['user-container']}>
-                <h2>User1</h2>
-            </div>
-        </header>
-    );
-}
+            {localStorage.getItem("user") && (
+              <>
+                <li>
+                  <Link to="/categories">Categories</Link>
+                </li>
+              </>
+            )}
+
+            <li>
+              <Link to="/register">About Us</Link>
+            </li>
+
+            {localStorage.getItem("user") && (
+              <li>
+                <Link to="/" onClick={logOutUserHandler}>Log Out</Link>
+              </li>
+            )}
+          </ul>
+          <HeaderContacts />
+        </nav>
+      </header>
+    </>
+  );
+};

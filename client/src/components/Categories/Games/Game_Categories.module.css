@@ -2,7 +2,9 @@
 
 .container {
     height: 100vh;
-    background-image: url("images/1.jpg")
+    background-image: url("images/1.jpg");
+    object-fit: cover;
+    background-size: cover;
 }
 
 .demo-website-preview {
@@ -15,7 +17,7 @@
     padding-top: 2.4em;
     position: absolute;
     z-index: 1;
-    top: 50%;
+    top: 42%;
     left: 50%;
     transform: translate(-50%, -50%);
 }

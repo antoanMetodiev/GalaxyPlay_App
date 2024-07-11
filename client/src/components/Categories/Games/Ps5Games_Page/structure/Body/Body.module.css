@@ -1,15 +1,25 @@
-/* Задаване на стилове за фиксирания фон */
 .background {
     position: fixed;
     top: 0;
     left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1; /* Фиксиран фон зад съдържанието */
+    aspect-ratio: 16/9;
+  }
+  
+  .background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
     width: 100%;
     height: 100%;
-    background-image: url('../../images/playstation-games.jpg'); /* Сложи пътя до твоето фоново изображение */
-    background-size: cover;
-    background-position: center;
+    transform: translate(-50%, -50%);
     z-index: -1; /* Фиксиран фон зад съдържанието */
-}
+    aspect-ratio: 16/9;
+    object-fit: cover;
+  }
 
 /* Основни стилове за съдържанието */
 body, html {
@@ -38,7 +48,7 @@ h1 {
     flex-wrap: wrap;
     justify-content: center;
     width: 75em;
-    margin: 2em auto;
+    margin: 11em auto;
     flex-wrap: wrap;
     gap: 2.3em;
     row-gap: 3em;

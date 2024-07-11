@@ -1,18 +1,23 @@
 .game-details-container {
     display: flex;
     width: 100%;
-    margin: 1em 0;
+    margin: 9em 0;
     background-color: #fff;
+    border-radius: 0.9em;
+    padding-top: 0.1em;
+    padding-left: 0.1em;
+    background-color: rgba(255, 255, 255, 0); 
 }
 
 .game-details-container > img {
     width: 25em;
     height: 32em;
     object-fit: cover;
+    border-radius: 1em;
 }
 
 .game-details-container .game-content {
-    padding: 1em 1.2em;
+    padding: 1em 0.5em 0em 1em;
 }
 
 .game-details-container .game-content .game-stars {
@@ -29,7 +34,13 @@
 }
 
 .stars-wrapper > span {
-    padding-top: 0.38em;
+    /* padding-top: 0.38em; */
+    margin-left: 0.5em;
+}
+
+.stars-wrapper > div {
+    display: flex;
+    gap: 0.3em;
 }
 
 .additional-info {
@@ -112,7 +123,7 @@
     width: 38.1em;
     font-size: 0.95em;
     margin-block: 1em 0.5em;
-    line-height: 1.7;
+    line-height: 1.9;
 }
 
 .our-shops-places {
@@ -124,7 +135,7 @@
     padding-left: 1.4em;
     border-bottom: 5px solid #F3712E;
     cursor: pointer;
-    margin-top: 2em;
+    margin-top: 2.5em;
     width: 34em;
     border-radius: 8px;
 }
@@ -176,10 +187,12 @@ ul.our-shops-container li:nth-of-type(even) {
     align-items: center;
     gap: 1.7em;
     flex-direction: column;
-    height: 20em;
+    height: 22.5em;
     background-color: #F5F5F5;
-    width: 14em;
-    margin-left: -1.6em;
+    width: 100%;
+    padding-top: 1em;
+    border-radius: 5px;
+    margin-top: 0.2em;
 }
 
 .game-price-container p:first-of-type {
@@ -222,9 +235,14 @@ div .add-to-favorites-container {
     flex-direction: column;
     align-items: center;
     background-color: #F5F5F5;
-    width: 14em;
-    margin-left: -1.6em;
-    height: 10em;
+    min-width: 17em;
+    height: 8.6em;
     justify-content: center;
     gap: 1em;
+    border-radius: 5px;
 }
+
+div.game-price-wrapper {
+    background-color: rgba(255, 255, 255, 0);
+}
+

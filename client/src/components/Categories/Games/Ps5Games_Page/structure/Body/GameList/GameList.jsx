@@ -28,7 +28,7 @@ export const GameList = ({
         });
 
         return () => {
-            // Cleanup функция
+            
             unsubscribe();
         };
     }, []);

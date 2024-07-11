@@ -14,6 +14,7 @@ body, html {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    padding-top: 0.1em;
 }
 
 .content-main-container {
@@ -21,9 +22,15 @@ body, html {
     height: auto;
     margin: 0 auto;
     background-color: #fff;
-    padding-bottom: 2em;
+    padding-bottom: 7em;
     position: relative;
     z-index: 1; 
+    border-bottom-left-radius: 14em;
+    border-bottom-right-radius: 14em;
+    border-top-right-radius: 1em;
+    border-top-left-radius: 1em;
+    box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.6);
+    background-color: rgba(255, 255, 255, 0.6); 
 }
 
 .navigate-to-trailer {

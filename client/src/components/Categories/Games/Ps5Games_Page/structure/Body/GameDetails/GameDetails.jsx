@@ -9,6 +9,7 @@ export const GameDetails = () => {
        <Header />
 
        <Body />
+
       
     </>
   );

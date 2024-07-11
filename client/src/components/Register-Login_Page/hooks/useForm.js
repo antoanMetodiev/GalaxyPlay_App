@@ -1,63 +1,88 @@
 import { useState } from "react";
 import { auth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "../../../firebase/firebase"; // Импортирайте правилно
 
+import { email, password, phoneNumber, username } from "../utils/formValidations.js";
+import { updateProfile } from "firebase/auth";
+
 export const useForm = (initialValues) => {
-  const [formValues, setFormValues] = useState(initialValues);
-  const [error, setError] = useState("");
+	const [formValues, setFormValues] = useState(initialValues);
+	const [error, setError] = useState("");
 
-  function onChangeHandler(event) {
-    setFormValues(state => ({
-      ...state,
-      [event.target.name]: event.target.value,
-    }));
-  };
 
-  function cleariInputValues() {
-    setFormValues({
-      email: "",
-      password: "",
-    });
-  };
+	let formValidationFunctions = { email, password, phoneNumber, username };
 
-  function cleariRegisterValues() {
-    setFormValues({
-      username: "",
-      email: "",
-      phoneNumber: "",
-      password: "",
-      repassword: "",
-    });
-  }
+	function onChangeHandler(event) {
+		setFormValues(state => ({
+			...state,
+			[event.target.name]: event.target.value,
+		}));
 
-  async function onSubmitRegisterHandler(event) {
-    event.preventDefault();
+		if (event.target.name === 'repassword' && formValidationFunctions.password(event.target.value)) {
 
-    try {
-      await createUserWithEmailAndPassword(auth, formValues.email, formValues.password);
-      setFormValues(initialValues);
+			console.log(event.target.value);
+			if (event.target.value === formValues.password) event.target.style.border = "1px solid green";
+			else event.target.style.border = "1px solid red";
 
-	  cleariRegisterValues();
-      console.log('User Registered!');
+		} else if (event.target.name !== 'repassword' && formValidationFunctions[event.target.name](event.target.value)) {
+			event.target.style.border = "1px solid green";
+		} else {
+			event.target.style.border = "1px solid red";
+		}
+	};
 
-    } catch (error) {
-	  cleariRegisterValues();
-      setError(error.message);
-    }
-  };
+	function cleariInputValues() {
+		setFormValues({
+			email: "",
+			password: "",
+		});
+	};
 
-  async function onSubmitLoginHandler(event) {
+	function cleariRegisterValues() {
+		setFormValues({
+			username: "",
+			email: "",
+			phoneNumber: "",
+			password: "",
+			repassword: "",
+		});
+	}
 
-    try {
-      const result = await signInWithEmailAndPassword(auth, formValues.email, formValues.password);
-      cleariInputValues();
-      setError('Successful login.');
-      return result;
+	async function onSubmitRegisterHandler(event) {
+		event.preventDefault();
 
-    } catch (error) {
-	  cleariInputValues();
-      setError("This user does not exist.");
-    }
-  };
+		try {
+			const userCredential = await createUserWithEmailAndPassword(auth, formValues.email, formValues.password, );
+			const user = userCredential.user;
 
-  return { formValues, onChangeHandler, onSubmitLoginHandler, onSubmitRegisterHandler, error, cleariInputValues };
+
+			// Set additional user data
+			await updateProfile(user, {
+				displayName: formValues.username,
+			});
+
+			setFormValues(initialValues);
+			cleariRegisterValues();
+			console.log('User Registered!');
+
+		} catch (error) {
+			cleariRegisterValues();
+			setError(error.message);
+		}
+	};
+
+	async function onSubmitLoginHandler(event) {
+
+		try {
+			const result = await signInWithEmailAndPassword(auth, formValues.email, formValues.password);
+			cleariInputValues();
+			setError('Successful login.');
+			return result;
+
+		} catch (error) {
+			cleariInputValues();
+			setError("This user does not exist.");
+		}
+	};
+
+	return { formValues, onChangeHandler, onSubmitLoginHandler, onSubmitRegisterHandler, error, cleariInputValues };
 };

@@ -55,10 +55,11 @@ header.site-header > * {
 .logo-data-wrapper .title-border {
     position: absolute;
     background-color: #FFF;
-    height: 3px;
+    height: 2px;
     width: 10.3em;
     top: 5.1em;
     left: 8.15em;
+    border-radius: 8px;
 }
 
 .logo-data-wrapper .title-border:hover {
