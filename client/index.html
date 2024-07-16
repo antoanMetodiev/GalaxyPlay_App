@@ -2,55 +2,51 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="./src/components/DiscoverPage/resources/images/last-logo.jfif" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title class="title">GalaxyPlay</title>
-  <style>
-    /* Стилове за скролера */
-    ::-webkit-scrollbar {
-      width: 8px;
-      /* Ширина на скролера */
-    }
+	<meta charset="UTF-8" />
+	<link rel="icon" type="image/svg+xml" href="./src/components/DiscoverPage/resources/images/last-logo.jfif" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title class="title">GalaxyPlay</title>
+	<style>
+		/* Стилове за скролера */
+		::-webkit-scrollbar {
+			width: 10px;
+			/* Ширина на скролера */
+			border-radius: 1em;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+		}
 
-    ::-webkit-scrollbar-track {
-      background: #f1f1f1;
-      /* Цвят на трака на скролера */
-    }
+		::-webkit-scrollbar-track {
+			background: #f1f1f1;
+			/* Цвят на трака на скролера */
+		}
 
-    ::-webkit-scrollbar-thumb {
-      /* background: #87ceeb; */
-      background: #1e90ff;
-      /* Светло син цвят за скролера */
-      /* box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.6); */
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-      border-radius: 1em;
-      /* Закръглени ъгл на скролера */
-    }
+		::-webkit-scrollbar-thumb {
+			/* background: #87ceeb; */
+			background: #1e90ff;
+			/* Светло син цвят за скролера */
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+			border-radius: 1em;
+			/* Закръглени ъгл на скролера */
+		}
 
-    ::-webkit-scrollbar-thumb:hover {
-      /* background: #1e90ff; */
-      background-color: #000;
-      /* Тъмен син цвят за скролера при hover */
-    }
-
-    /* Останалите стилове за твоите елементи */
-    .search-engine {
-      /* Твоите стилове за input полето */
-    }
-  </style>
+		::-webkit-scrollbar-thumb:hover {
+			/* background: #1e90ff; */
+			background-color: rgba(255, 166, 0, 0.849);
+			/* Тъмен син цвят за скролера при hover */
+		}
+	</style>
 </head>
 
-<body>
-  <!-- <audio id="backgroundMusic" loop autoplay>
+<body id="main-babach">
+	<!-- <audio id="backgroundMusic" loop autoplay>
     <source src="./page-music/Saints Row - Theme Song.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
-  </audio> -->
+    </audio> -->
 
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
+	<div id="root"></div>
+	<script type="module" src="/src/main.jsx"></script>
 
-  <!-- <script>
+	<!-- <script>
     const music = document.getElementById('backgroundMusic');
     music.play();
   </script> -->
