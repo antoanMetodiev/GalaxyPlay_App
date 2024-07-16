@@ -1,0 +1,55 @@
+
+
+.pagination-container {
+    background-color: unset;
+    width: auto;
+    border-radius: 1em;
+    display: flex;
+    position: absolute;
+    list-style-type: none;
+    height: 0.8em;
+    gap: 0.2em;
+    z-index: 10;
+    position: relative;
+    font-size: 1.1em;
+}
+
+.pagination-container li {
+    position: relative;
+    top: -1.5em;
+    left: 25%;
+    padding: 0.5em 1em;
+    background-color: gray;
+    color: #fff;
+    margin-top: -2em;
+    cursor: pointer;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 100, 0.5);
+    border-radius: 0.5em;
+}
+
+.pagination-container li:hover {
+    background-color: orange;
+}
+
+.goTo-search-engine {
+    position: absolute;
+    right: 3.8em;
+    bottom: 2em;
+    z-index: 16;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 100, 0.5);
+    border-radius: 50%;
+}
+
+.goTo-search-engine i {
+    font-size: 1.7em;
+    /* background-color: rgba(255, 165, 0, 0.7); */
+    background-color: unset;
+    border-radius: 50%;
+    padding: 0.3em;
+    color: #fff;
+    cursor: pointer;
+}
+
+.goTo-search-engine i:hover {
+    color: #000;
+}
