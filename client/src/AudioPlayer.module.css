@@ -1,0 +1,21 @@
+
+
+.audio-control-input {
+    position: fixed;
+    width: 6.5em;
+    height: 1.9em;    
+    /* top: 46.8em; */
+    top: 88.2%;
+    z-index: 14;
+    transform: rotate(-90deg); /* Завъртане на слайдера */
+    left: -0.9em;
+    -webkit-appearance: none; /* Отменяйте стилизацията по подразбиране на браузъра */
+    appearance: none;
+    background: gray;
+    outline: none;
+    transform: rotate(-90deg); /* Завъртане на слайдера */
+    transform-origin: 50% 50%;
+    border-radius: 3em;
+    box-shadow: 0px 10px 30px rgba(0, 0, 255, 0.8); /* Син цвят с 80% непрозрачност */
+    animate: 0.2s;
+}
