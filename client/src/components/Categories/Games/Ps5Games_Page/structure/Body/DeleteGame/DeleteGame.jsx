@@ -3,7 +3,13 @@ import style from "../DeleteGame/DeleteGame.module.css";
 
 import dontDoItImage from "../../../images/dont-do-it.png";
 
-export const DeleteGame = ({ gameList, setGameListHandler }) => {
+export const DeleteGame = ({
+  gameList, 
+  setGameListHandler, 
+  renderGameList,
+  allGames,
+  setAllGamesListHandler,
+}) => {
   const containerRef = useRef();
   const [inputText, setInputText] = useState("");
 
@@ -13,7 +19,9 @@ export const DeleteGame = ({ gameList, setGameListHandler }) => {
 
   function deleteGameHandler(event) {
     event.preventDefault();
-    const gameForDelete = gameList.filter((game) => game.name === inputText)[0];
+	debugger;
+    const gameForDelete = allGames.find((game) => game.name === inputText);
+    // debugger;
     const gameKey = gameForDelete._id;
 
     // Изпращане на DELETE заявка към Firebase
@@ -24,6 +32,11 @@ export const DeleteGame = ({ gameList, setGameListHandler }) => {
       }
     ).then((response) => {
         if (response.ok) setInputText("");
+
+        const newGameList = gameList.filter(game => game._id != gameKey);
+        renderGameList.current = true;
+        setGameListHandler(newGameList);
+        setAllGamesListHandler(allGames.filter(game => game._id != gameKey));
       })
       .catch((error) => {
         console.error("Error deleting game:", error);

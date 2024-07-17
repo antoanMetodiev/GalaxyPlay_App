@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
+import { Link } from "react-scroll";
 
 import style from "./GameInfo.module.css";
 import gameStarsImage from "../../../../../../../images/stars-image.png";
@@ -55,7 +56,7 @@ export const GameInfoHeader = ({ gameDetails, setGameDetailsHandler }) => {
     <div className={style["game-details-container"]}>
       <img src={gameDetails.imageUrl} alt={gameDetails.name} />
 
-      <section className={style["game-content"]}>
+      <section id="game-info-id" className={style["game-content"]}>
         <h2 className={style["game-title"]}>{gameDetails.name}</h2>
 
         <div className={style["stars-wrapper"]}>
@@ -143,7 +144,7 @@ export const GameInfoHeader = ({ gameDetails, setGameDetailsHandler }) => {
       <div className={style["game-price-wrapper"]}>
         <section className={style["game-price-container"]}>
           <p>RRP {gameDetails.price * 2 + 1}.99 eu.</p>
-          <h2 className={style["price"]}>{gameDetails.price}.99 EU.</h2>
+          <h2 className={style["price"]}>{gameDetails.price}.99 USD</h2>
           <p>Difference {Number(gameDetails.price) + 1}.00 eu.</p>
           <p>Price protection</p>
           <button className={style["buy-button"]}>BUY</button>
@@ -153,6 +154,17 @@ export const GameInfoHeader = ({ gameDetails, setGameDetailsHandler }) => {
           <p>Rate the product</p>
         </section>
       </div>
+
+      <Link
+          to="comment-section-id"
+          className={style["goTo-comment-section"]}
+          spy={true}
+          smooth={true}
+          duration={1300}
+          offset={-90}
+        >
+          <i className="fa-solid fa-arrow-down-long" />
+        </Link>
     </div>
   );
 };

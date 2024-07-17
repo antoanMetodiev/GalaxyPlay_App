@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 export const Game_Categories = () => {
   const navigate = useNavigate();
 
+  console.log('Game_Categories se renderira mamka  muuu!!!');
   function navigateToPathHandler(event) {
 	  navigate(`${event.target.previousSibling.textContent.toLowerCase().split(" ").join('-')}`);
   };
@@ -18,6 +19,7 @@ export const Game_Categories = () => {
         <h2>Game Categories</h2>
 
         <article className={styles.playstation}>
+
           <div className={`${styles.playstation} ${styles._5}`}>
             <img src={ps5GamesImage} alt="ps5 games" />
             <div className={styles.content}>
@@ -26,6 +28,7 @@ export const Game_Categories = () => {
             </div>
             <span className={styles["bkg-color"]}></span>
           </div>
+
           <div className={`${styles.playstation} ${styles._5}`}>
             <img src={ps4GamesImage} alt="ps4 games" />
             <div className={styles.content}>
@@ -34,6 +37,7 @@ export const Game_Categories = () => {
             </div>
             <span className={styles["bkg-color"]}></span>
           </div>
+
           <div className={`${styles.playstation} ${styles._5}`}>
             <img src={xboxGamesImage} alt="ps4 games" />
             <div className={styles.content}>
@@ -42,6 +46,7 @@ export const Game_Categories = () => {
             </div>
             <span className={styles["bkg-color"]}></span>
           </div>
+          
         </article>
       </section>
     </article>

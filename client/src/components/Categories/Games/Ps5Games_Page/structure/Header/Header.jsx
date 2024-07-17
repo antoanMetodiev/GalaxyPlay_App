@@ -3,11 +3,16 @@ import styles from "../Header/Header.module.css";
 import site_logo from "../../images/last-logo.jfif";
 
 import { Link, useNavigate } from "react-router-dom";
-import { SearchEngine } from "./structure/SearchEngine/SearchEngine";
+import { SearchEngine } from "../Body/SearchEngine/SearchEngine";
+import { animateScroll as scroll } from 'react-scroll';
+import { scroller } from 'react-scroll';
+import { useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 
 export const Header = () => {
   const navigate = useNavigate();
-  
+  let titleRef = useRef('');
+
   const logOutUser = (event) => {
     event.preventDefault();
     localStorage.clear();
@@ -15,11 +20,30 @@ export const Header = () => {
     navigate("/");
   };
 
+
+  useEffect(() => {
+    const titleElement = titleRef.current;
+    const text = titleElement.textContent;
+    titleElement.textContent = ""; // Изчиства текста
+
+    // Добавяме класа, за да започне анимацията
+    titleElement.classList.add(styles["title-animation"]);
+
+    // Възстановяваме текста буква по буква
+    for (let i = 0; i < text.length; i++) {
+      const letterSpan = document.createElement("span");
+	  letterSpan.classList.add('title-el');
+      letterSpan.textContent = text[i];
+      titleElement.appendChild(letterSpan);
+    }
+  }, []);
+
   return (
-    <header className={styles["site-header"]} id="HomePage-header">
-      <div className={styles["logo-data-wrapper"]}>
+    <>
+    
+      <div id="scroll-target" className={styles["logo-data-wrapper"]}>
         <img src={site_logo} alt="GalaxyPlay-Logo" />
-        <h1 className={styles["site-title"]}>GalaxyPlay</h1>
+        <h1 ref={titleRef} className={styles["site-title"]}>GalaxyPlay</h1>
         <span className={styles["title-border"]}></span>
       </div>
 
@@ -35,8 +59,6 @@ export const Header = () => {
               </li>
             </>
           )}
-
-          <SearchEngine />
 
           {localStorage.getItem("user") && (
             <>
@@ -63,6 +85,6 @@ export const Header = () => {
           )}
         </ul>
       </nav>
-    </header>
+    </>
   );
 };

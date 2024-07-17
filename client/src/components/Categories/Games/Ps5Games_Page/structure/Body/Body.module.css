@@ -27,6 +27,7 @@ body, html {
     padding: 0;
     font-family: Arial, sans-serif;
     height: 100%;
+    
 }
 
 .content {
@@ -47,9 +48,34 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 75em;
-    margin: 11em auto;
+    max-width: 75em;
+    margin: 10em auto;
     flex-wrap: wrap;
-    gap: 2.3em;
-    row-gap: 3em;
+    gap: 3.2em;
+    row-gap: 3.5em;
 }
+
+.goTo-pagination {
+    position: fixed;
+    top: 10em;
+    right: 3.8em;
+    z-index: 16;
+    scroll-behavior: smooth;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 100, 0.5);
+    border-radius: 50%;
+}
+
+.goTo-pagination i {
+    font-size: 1.7em;
+    /* background-color: rgba(255, 165, 0, 0.7); */
+    background-color: unset;
+    border-radius: 50%;
+    padding: 0.3em;
+    color: #fff;
+    cursor: pointer;
+}
+
+.goTo-pagination i:hover {
+    color: #000;
+}
+

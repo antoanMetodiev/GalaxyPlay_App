@@ -10,6 +10,9 @@ import { Ps5Games_Page } from "./components/Categories/Games/Ps5Games_Page/Ps5Ga
 import { GameDetails } from "./components/Categories/Games/Ps5Games_Page/structure/Body/GameDetails/GameDetails";
 
 import LoginOrNotContext from "./contexts/loginContext";
+import ScrollToTop from "./components/Categories/Games/Ps5Games_Page/structure/Body/GameDetails/structure/ScrollToTop/ScrollToTop";
+
+import AudioPlayer from "./AudioPlayer";
 
 function App() {
   const [userData, setUserData] = useState({});
@@ -23,7 +26,9 @@ function App() {
 
   return (
     <>
-      <LoginOrNotContext.Provider value={""}>
+      <ScrollToTop />
+      <AudioPlayer />
+      <LoginOrNotContext.Provider>
         <Routes>
           <Route path="/" element={<DiscoverPage />} />
           <Route path="/register" element={<Register />} />

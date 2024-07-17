@@ -1,30 +1,58 @@
-header.site-header {
+/* Animations: */
+.title-animation {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: revealText 2.8s steps(40, end);
+}
+
+.site-header {
     position: absolute;
-    z-index: 4;
+    z-index: 1;
     width: 100%;
     height: 10em;
     display: flex;
     justify-content: space-between;
     top: 0em;
+    letter-spacing: 2px;
+    
 }
 
-header.site-header > * {
+h1 span {
+    font-weight: 500;
+}
+
+
+@keyframes revealText {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+header.site-header>* {
     height: 100%;
 }
 
 .logo-data-wrapper {
-    width: 14em;
+    position: absolute;
+    top: 8em;
+    width: 18.7em;
     display: flex;
     align-items: center;
     gap: 2.5em;
     margin-left: 2em;
     position: relative;
-    margin-top: -0.6em;
+    margin-top: -6.6em;
 }
 
 .logo-data-wrapper img {
-    height: 60%;
-    width: 60%;
+    position: relative;
+    z-index: 1;
+    height: 6em;
+    width: 6em;
     border-radius: 50%;
     object-fit: cover;
     transform: scale(1.3);
@@ -32,28 +60,60 @@ header.site-header > * {
 }
 
 .header-nav {
+    position: absolute;
+    top: 8em;
+    z-index: 4;
+    right: 0;
     display: flex;
-    gap: 4em;
+    gap: 4.4em;
     align-items: flex-start;
     margin: 2em 2em 0em 1em;
+    font-size: 0.9em;
+    width: 27em;
+    justify-content: center;
+}
+
+.header-nav ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 2em;
+    backdrop-filter: blur(30px);
+    box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37);
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    justify-content: center;
+    border-radius: 1em;
+
+}
+
+.header-nav ul a {
+    font-size: 1.12em;
+    font-weight: 500;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.header-nav ul a:hover {
+    color: #000000d3;
 }
 
 .logo-data-wrapper h1.site-title {
-    margin-top: 1.3em;
+    position: relative;
+    margin-top: 0.3em;
     align-self: flex-start;
     color: #FFF;
     font-style: oblique;
     font-size: 1.8em;
     margin-left: -0.2em;
     /* border-bottom: 3px solid #fefefe; */
+    z-index: 12;
 }
 
 .logo-data-wrapper span.title-border {
     position: absolute;
-    background-color: #FFF;
+    z-index: 3;
     height: 2px;
     width: 10.3em;
-    top: 5.1em;
+    top: 3.3em;
     left: 8.3em;
     border-radius: 8px;
 }
@@ -75,7 +135,7 @@ header.site-header > * {
 
 .logo-data-wrapper .title-border:hover {
     background-color: #646cff;
-    
+
 }
 
 .header-nav a {
@@ -91,7 +151,7 @@ header.site-header > * {
     color: #646cff;
 }
 
-.header-nav > * {
+.header-nav>* {
     display: flex;
     gap: 1em;
 }

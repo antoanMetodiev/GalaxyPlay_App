@@ -1,4 +1,5 @@
 import style from "./CommentSection.module.css";
+import { Link } from "react-scroll";
 import starsImage from "./images/reviews-stars-image.jpg";
 import { CommentsList } from "./structure/CommentsList/CommentsList";
 import { CommentForm } from "../CommentSection/structure/CommentForm/CommentForm";
@@ -49,7 +50,7 @@ export const CommentSection = ({ gameDetails }) => {
     };
 
     return (
-        <article className={style['comment-section-container']}>
+        <article id="comment-section-id" className={style['comment-section-container']}>
             <h2 className={style['comment-section-title']}>Comments...</h2>
 
             <CommentForm
@@ -67,7 +68,16 @@ export const CommentSection = ({ gameDetails }) => {
             setCommentsHandler={setCommentsHandler} 
             gameDetails={gameDetails} />
 
-            
+            <Link
+            to="game-info-id"
+            className={style["goTo-game-info"]}
+            spy={true}
+            smooth={true}
+            duration={1300}
+            offset={-300}
+            >
+                <i className="fa-solid fa-angles-up" />
+            </Link>
         </article>
     );
 };
