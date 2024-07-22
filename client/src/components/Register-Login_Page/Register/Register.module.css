@@ -20,7 +20,7 @@ html {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    aspect-ratio: 16/7.77;
+    aspect-ratio: 16/7.68;
     margin-bottom: -1em;
 }
 
@@ -171,7 +171,7 @@ input:is([type="text"], [type="email"], [type="password"], [type="number"]) {
     background-color: rgba(255, 255, 255, 0.1);
     /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9); */
     box-shadow: 0 20px 40px rgba(0, 0, 0, 1);
-    border-radius: 0.5em;
+    border-radius: 1em;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -207,7 +207,7 @@ input:is([type="text"], [type="email"], [type="password"], [type="number"]) {
     left: 50%;
     transform: translate(-50%, -50%);
     letter-spacing: 0.1em;
-    font-weight: 500;
+    font-weight: 400;
     font-style: oblique;
 }
 
@@ -289,7 +289,6 @@ h2.error-message-title {
     z-index: 1;
     left: -27.8em;
     bottom: 10.5em;
-    background-color: red;
     background-color: #599956;
     width: 10em;
     height: 3em;
@@ -299,6 +298,7 @@ h2.error-message-title {
     padding-top: 0.7em;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     letter-spacing: 1px;
+    font-weight: 300;
     cursor: pointer;
 }
 
@@ -316,3 +316,43 @@ h2.error-message-title {
     object-fit: cover;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9); 
 }
+
+.gender-container {
+    position: absolute;
+    bottom: 3em;
+    right: 50em;
+}
+
+.gender-container p {
+    font-size: 1.2em;
+    margin-bottom: 3px;
+    color: #fefefe;
+    font-weight: 200;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    letter-spacing: 2px;
+    font-style: oblique;
+}
+
+.gender-container option {
+    background-color: #2B4252;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: oblique;
+}
+
+.gender-container div {
+    border-radius: 0.7em;
+}
+
+.gender-container select {
+    padding: 0.2em; 
+    background-color: rgba(89, 153, 86, 0.6);
+    color: #fff;
+    border-radius: 0.5em;
+    border: none;
+    letter-spacing: 1.1px;
+    font-size: 1.1em;
+    width: 10em;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: oblique;
+}
+

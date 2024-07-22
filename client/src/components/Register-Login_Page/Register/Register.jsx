@@ -4,34 +4,53 @@ import { useForm } from "../hooks/useForm";
 import backgroundVideo from "../videos/register wallper video.mp4";
 import profileImageModel from "../images/ROiiCZmW_400x400.jpg";
 
+import { AvatarSection } from "../Register/structure/AvatarSection/AvatarSection";
+
 export const Register = () => {
   const allInputsReferences = useRef({});
   const [imageState, setImageState] = useState(profileImageModel);
-  const [imageAddress, setImageAddress] = useState(""); // State for image address
 
-  const { formValues, onChangeHandler, onSubmitRegisterHandler, error } = useForm({
-    username: "",
-    email: "",
-    phoneNumber: "",
-    password: "",
-    repassword: "",
-    profileImage: "",
-  }, allInputsReferences);
+  let showAvatarContainerRef = useRef(null);
+  let choosenAvatarImage = useRef("");
 
-  function changeProfileImageHandler(event) {
-    const file = event.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setImageState(reader.result); // Update the image state with the file data URL
-        setImageAddress(file.name);   // Update the image address state with the file name
-      };
-       reader.readAsDataURL(file);
-    }
+  const { formValues, onChangeHandler, onSubmitRegisterHandler, error } =
+    useForm(
+      {
+        username: "",
+        email: "",
+        phoneNumber: "",
+        password: "",
+        repassword: "",
+        profileImage: "",
+        gender: "",
+      },
+      allInputsReferences
+    );
+
+  function showAvatarSectionHandler() {
+    showAvatarContainerRef.current.classList.remove(
+      showAvatarContainerRef.current.classList[1]
+    );
+    showAvatarContainerRef.current.style.display = "flex";
+  }
+
+  function setNewAvatarHandler(avatarUrl) {
+    choosenAvatarImage.current = avatarUrl;
+    setImageState(avatarUrl);
+  }
+
+  function callOnSubmitRegisterFunction(event) {
+    event.preventDefault();
+    onSubmitRegisterHandler(event, choosenAvatarImage);
   }
 
   return (
     <div className={styles["register-page-container"]}>
+      <AvatarSection
+        showAvatarContainerRef={showAvatarContainerRef}
+        setNewAvatarHandler={setNewAvatarHandler}
+      />
+
       <video
         autoPlay
         loop
@@ -42,7 +61,10 @@ export const Register = () => {
       >
         Your browser does not support the video tag.
       </video>
-      <form onSubmit={onSubmitRegisterHandler} className={styles["register"]}>
+      <form
+        onSubmit={callOnSubmitRegisterFunction}
+        className={styles["register"]}
+      >
         <header className={styles["header"]}>
           <h1>Sign Up</h1>
         </header>
@@ -52,15 +74,29 @@ export const Register = () => {
             className={`${styles["field"]} ${styles["text"]} ${styles["icon-username"]}`}
           >
             <label htmlFor="username">Username: </label>
-            <input ref={allInputsReferences.username} onChange={onChangeHandler} name="username" type="text" id="username" value={formValues.username} />
+            <input
+              ref={allInputsReferences.username}
+              onChange={onChangeHandler}
+              name="username"
+              type="text"
+              id="username"
+              value={formValues.username}
+            />
             <i className="fa fa-user" />
-            
+
             <span className={styles["helper"]}>Hello there</span>
           </div>
           <div
             className={`${styles["field"]} ${styles["text"]} ${styles["icon-email"]}`}
           >
-            <input ref={allInputsReferences.email} onChange={onChangeHandler} name="email" type="email" id="email" value={formValues.email} />
+            <input
+              ref={allInputsReferences.email}
+              onChange={onChangeHandler}
+              name="email"
+              type="email"
+              id="email"
+              value={formValues.email}
+            />
             <label htmlFor="email">Email: </label>
             <i className="fa fa-envelope" />
           </div>
@@ -80,7 +116,7 @@ export const Register = () => {
               onChange={onChangeHandler}
               value={formValues.phoneNumber}
             />
-            
+
             <i className="fa-solid fa-phone phone-icon" />
           </div>
           <div
@@ -95,7 +131,7 @@ export const Register = () => {
               onChange={onChangeHandler}
               value={formValues.password}
             />
-            
+
             <i className="fa fa-key" />
           </div>
           <div
@@ -110,7 +146,7 @@ export const Register = () => {
               onChange={onChangeHandler}
               value={formValues.repassword}
             />
-            
+
             <i className="fa fa-key" />
           </div>
         </fieldset>
@@ -118,9 +154,30 @@ export const Register = () => {
         <input type="submit" value="Sign Up" />
         {error && <p className={styles["error"]}>{error}</p>}
 
-        <img src={imageState} className={styles['profile-image-item']} alt="profile-image-item" />
-        <label className={styles['profile-image-title']} htmlFor="profile-image">Profile Image</label>
-        <input onChange={changeProfileImageHandler} name="profileImage" className={styles['profile-image']} type="file" id="profile-image"/>
+        <img
+          ref={allInputsReferences.profileImage}
+          src={imageState}
+          className={styles["profile-image-item"]}
+          alt="profile-image-item"
+          name="profileImage"
+        />
+
+        <label
+          onClick={showAvatarSectionHandler}
+          className={styles["profile-image-title"]}
+        >
+          Choose Avatar
+        </label>
+
+        <div className={styles["gender-container"]}>
+          <p>Gender:</p>
+          <select ref={allInputsReferences.gender} name="gender">
+            {/* <option disabled hidden>Gender</option> */}
+
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
       </form>
     </div>
   );

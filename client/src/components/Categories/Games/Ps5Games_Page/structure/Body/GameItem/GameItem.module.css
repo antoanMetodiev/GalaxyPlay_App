@@ -1,6 +1,6 @@
 .game-item {
-    width: 19em;
-    height: 35em;
+    width: 270px;
+    min-height: 500px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.8);
@@ -26,7 +26,7 @@
 .game-item-image {
     width: 100%;
     height: 23em;
-    border-radius: 0px;
+    border-radius: 8px;
     object-fit: cover;
 }
 
@@ -59,7 +59,7 @@
     padding: 0.5em 4em;
     border-radius: 6px;
     border: none;
-    margin-top: -1.2em;
+    margin-top: -0.55em;
     background-color: rgb(87, 87, 255);
     align-self: center;
     color: #fefefe;
@@ -75,10 +75,22 @@
 
 .game-price {
     position: absolute;
-    right: 1em;
-    top: -1.86em;
+    right: 7px;
+    top: -1.80em;
     font-size: 1.4em;
-    color: green;
+    color: rgb(135, 188, 135);
     font-weight: 600;
     /* box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.8); */
+}
+
+#add-to-favourites {
+    color: silver;
+    position: absolute;
+    right: 0.7em;
+    bottom: 0.2em;
+    font-size: 1.7em;
+}
+
+#add-to-favourites:hover {
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* черна текстова сянка */
 }

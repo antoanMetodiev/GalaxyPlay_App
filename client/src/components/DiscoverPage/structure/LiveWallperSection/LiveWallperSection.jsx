@@ -12,6 +12,7 @@ function getRandomIntInclusive(min, max) {
 
 export const LiveWallperSection = (props) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [fading, setFading] = useState(false);
 
   useEffect(() => {
     const result = getRandomIntInclusive(0, allVideos.length - 1);
@@ -19,19 +20,27 @@ export const LiveWallperSection = (props) => {
   }, []);
 
   function onRightWallperHandler() {
-    if (currentIndex + 1 >= allVideos.length) setCurrentIndex(0);
-    else setCurrentIndex(currentIndex + 1);
+    setFading(true);
+    setTimeout(() => {
+      if (currentIndex + 1 >= allVideos.length) setCurrentIndex(0);
+      else setCurrentIndex(currentIndex + 1);
+      setFading(false);
+    }, 500);
   }
 
   function onLeftWallperHandler() {
-    if (currentIndex - 1 < 0) setCurrentIndex(allVideos.length - 1);
-    else setCurrentIndex(currentIndex - 1);
+    setFading(true);
+    setTimeout(() => {
+      if (currentIndex - 1 < 0) setCurrentIndex(allVideos.length - 1);
+      else setCurrentIndex(currentIndex - 1);
+      setFading(false);
+    }, 500);
   }
 
   return (
     <section className={styles["first-section"]}>
       <video
-        className={styles["background-clip"]}
+        className={`${styles["background-clip"]} ${fading ? styles.fading : ""}`}
         src={allVideos[currentIndex]}
         autoPlay
         loop
@@ -41,12 +50,12 @@ export const LiveWallperSection = (props) => {
       <FontAwesomeIcon
         onClick={onRightWallperHandler}
         className={styles["on-right-icon"]}
-        icon={faAngleRight} // Промяна на faAnglesRight на faAngleRight
+        icon={faAngleRight}
       />
       <FontAwesomeIcon
         onClick={onLeftWallperHandler}
         className={styles["on-left-icon"]}
-        icon={faAngleLeft} // Промяна на faAnglesLeft на faAngleLeft
+        icon={faAngleLeft}
       />
     </section>
   );

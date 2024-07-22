@@ -1,26 +1,57 @@
 import { useEffect, useRef } from "react";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import { Link } from "react-scroll";
 
 import style from "./GameInfo.module.css";
 import gameStarsImage from "../../../../../../../images/stars-image.png";
 
 export const GameInfoHeader = ({ gameDetails, setGameDetailsHandler }) => {
+  let doCheck = useRef(false);
   const { gameId } = useParams();
+  let location = useLocation();
 
-  const shopsContainerRef = useRef("none");
+  window.scrollTo(0, 0);
+
+  //Refercences:
   const shopsContainerTitleRef = useRef("none");
 
+  const shopsContainerRef = useRef("none");
+  let infoUnderTheTruckRef = useRef(null);
+  let shopsContainerWrapper = useRef();
+
+  if (doCheck.current === true && gameDetails.name.includes("(")) {
+    // debugger;
+    infoUnderTheTruckRef.current.textContent =
+      "Delivery date is estimated and depends on the location and the chosen courier company. The exact date when the product will reach you, as well as the final shipping cost.";
+    shopsContainerWrapper.current.style.bottom = "0em";
+  }
+
   useEffect(() => {
+    let paths = location.pathname.split("/");
+    paths.shift();
+
+    //   Example:
+    let specificCategory = paths[1]; // Games
+    let subCategory = paths[2]; // Ps5-Games
+
+    //   debugger;
+    if (specificCategory.toLocaleLowerCase() === "games")
+      specificCategory = "game";
+
+    let concreteUrl = `https://galaxyplay-15910-default-rtdb.europe-west1.firebasedatabase.app/${specificCategory}/${subCategory}/${gameId}.json`;
+
+    if (subCategory == undefined || subCategory == "details") {
+      concreteUrl = `https://galaxyplay-15910-default-rtdb.europe-west1.firebasedatabase.app/${specificCategory}/${gameId}.json`;
+    }
+
     const fetchGameDetails = async () => {
       try {
-        const response = await fetch(
-          `https://galaxyplay-15910-default-rtdb.europe-west1.firebasedatabase.app/game/ps5-games/${gameId}.json`
-        );
+        const response = await fetch(concreteUrl);
         if (!response.ok) {
           throw new Error("Failed to fetch game details.");
         }
         const data = await response.json();
+
         setGameDetailsHandler(data);
       } catch (error) {
         console.error("Error fetching game details:", error);
@@ -28,6 +59,7 @@ export const GameInfoHeader = ({ gameDetails, setGameDetailsHandler }) => {
     };
 
     fetchGameDetails();
+    doCheck.current = true;
   }, [gameId]);
 
   if (!gameDetails) return <p style={{ fontSize: "2em" }}>Please, Wait...</p>;
@@ -61,11 +93,26 @@ export const GameInfoHeader = ({ gameDetails, setGameDetailsHandler }) => {
 
         <div className={style["stars-wrapper"]}>
           <div>
-            <i className="fa-solid fa-star fa-flip" style={{ color: "#f7a309", fontSize: '1.22em' }} />
-            <i className="fa-solid fa-star fa-flip" style={{ color: "#f7a309", fontSize: '1.22em' }} />
-            <i className="fa-solid fa-star fa-flip" style={{ color: "#f7a309", fontSize: '1.22em' }} />
-            <i className="fa-solid fa-star fa-flip" style={{ color: "#f7a309", fontSize: '1.22em' }} />
-            <i className="fa-solid fa-star fa-flip" style={{ color: "#f7a309", fontSize: '1.22em' }} />
+            <i
+              className="fa-solid fa-star fa-flip"
+              style={{ color: "#f7a309", fontSize: "1.22em" }}
+            />
+            <i
+              className="fa-solid fa-star fa-flip"
+              style={{ color: "#f7a309", fontSize: "1.22em" }}
+            />
+            <i
+              className="fa-solid fa-star fa-flip"
+              style={{ color: "#f7a309", fontSize: "1.22em" }}
+            />
+            <i
+              className="fa-solid fa-star fa-flip"
+              style={{ color: "#f7a309", fontSize: "1.22em" }}
+            />
+            <i
+              className="fa-solid fa-star fa-flip"
+              style={{ color: "#f7a309", fontSize: "1.22em" }}
+            />
           </div>
           <span>5.0 от 5 (5) |SKU: VGP50000032N</span>
         </div>
@@ -107,14 +154,17 @@ export const GameInfoHeader = ({ gameDetails, setGameDetailsHandler }) => {
           </p>
         </div>
 
-        <p className={style["info-under-the-truck-icon"]}>
+        {/* The exact date when the product will reach you, as well as the final shipping cost. */}
+        <p
+          ref={infoUnderTheTruckRef}
+          className={style["info-under-the-truck-icon"]}
+        >
           Delivery date is estimated and depends on the location and the chosen
-          courier company. The exact date when the product will reach you, as
-          well as the final shipping cost, will be provided upon completion of
-          the order.
+          courier company.
         </p>
 
         <section
+          ref={shopsContainerWrapper}
           onClick={openShopsHandler}
           className={style["our-shops-places"]}
         >
@@ -123,6 +173,7 @@ export const GameInfoHeader = ({ gameDetails, setGameDetailsHandler }) => {
             Buy from <span>our store</span>
           </p>
         </section>
+
         <div>
           <p
             ref={shopsContainerTitleRef}
@@ -156,15 +207,15 @@ export const GameInfoHeader = ({ gameDetails, setGameDetailsHandler }) => {
       </div>
 
       <Link
-          to="comment-section-id"
-          className={style["goTo-comment-section"]}
-          spy={true}
-          smooth={true}
-          duration={1300}
-          offset={-90}
-        >
-          <i className="fa-solid fa-arrow-down-long" />
-        </Link>
+        to="comment-section-id"
+        className={style["goTo-comment-section"]}
+        spy={true}
+        smooth={true}
+        duration={1300}
+        offset={-90}
+      >
+        <i className="fa-solid fa-arrow-down-long" />
+      </Link>
     </div>
   );
 };

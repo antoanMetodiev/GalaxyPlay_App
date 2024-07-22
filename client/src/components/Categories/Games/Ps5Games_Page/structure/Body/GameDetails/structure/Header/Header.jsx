@@ -3,12 +3,23 @@ import style from "../Header/Header.module.css";
 
 export const Header = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const cleanUpForGameDetails = location.state?.cleanUpForGameDetails;
 
   const logOutUserHandler = (event) => {
     event.preventDefault();
     localStorage.clear();
-	navigate('/');
+	  navigate('/');
   };
+
+  function navigateToWantedPath(event) {
+
+    debugger;
+    cleanUpForGameDetails();
+
+    let path = event.target.value;
+    navigate(path);
+  }
 
   return (
     <>
@@ -34,18 +45,18 @@ export const Header = () => {
             {localStorage.getItem("user") && (
               <>
                 <li>
-                  <Link to="/categories">Categories</Link>
+                  <button value="/categories" onClick={navigateToWantedPath}>Categories</button>
                 </li>
               </>
             )}
 
             <li>
-              <Link to="/register">About Us</Link>
+              <button value="/about-us" onClick={navigateToWantedPath}>About Us</button>
             </li>
 
             {localStorage.getItem("user") && (
               <li>
-                <Link to="/" onClick={logOutUserHandler}>Log Out</Link>
+                <button value="/" onClick={navigateToWantedPath}>Log Out</button>
               </li>
             )}
           </ul>

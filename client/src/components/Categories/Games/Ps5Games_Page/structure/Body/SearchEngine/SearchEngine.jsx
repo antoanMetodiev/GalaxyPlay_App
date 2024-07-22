@@ -14,16 +14,16 @@ export const SearchEngine = ({
 
   savedFirstCollection,
   setSavedFirstCollection,
-}) => {
-	
-  // because allGamesWithPattern will be empty after some renders:
-  console.log('im in search enginge vutre');
 
+}) => {
+
+  let location = useLocation();
+
+  // because allGamesWithPattern will be empty after some renders:
   const searchGameWithName = async (event) => {
 
-    debugger;
     if (firstRender) {
-		console.log('Purvi render');
+		
       setAllGamesListHandler(allGamesWithPattern);
 
       let neededGames = allGamesWithPattern.filter((game) => {
@@ -43,7 +43,7 @@ export const SearchEngine = ({
 
       setSavedFirstCollection(allGamesWithPattern);
       setAllGamesWithPatternHandler(neededGames);
-
+      
     } else {
 
       let neededGames = allGames.filter((game) => {

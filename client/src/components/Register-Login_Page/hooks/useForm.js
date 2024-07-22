@@ -5,7 +5,7 @@ import { email, password, phoneNumber, username } from "../utils/formValidations
 import { updateProfile } from "firebase/auth";
 
 export const useForm = (initialValues) => {
-	const [formValues, setFormValues] = useState(initialValues);
+	const [formValues, setFormValues, choosenAvatarImage] = useState(initialValues);
 	const [error, setError] = useState("");
 
 
@@ -47,18 +47,47 @@ export const useForm = (initialValues) => {
 		});
 	}
 
-	async function onSubmitRegisterHandler(event) {
-		event.preventDefault();
+
+	async function onSubmitRegisterHandler(event, choosenAvatarImage) {
+
+		console.log(choosenAvatarImage);
 
 		try {
-			const userCredential = await createUserWithEmailAndPassword(auth, formValues.email, formValues.password, );
+			const userCredential = await createUserWithEmailAndPassword(auth, formValues.email, formValues.password,
+			);
+
 			const user = userCredential.user;
+			let number = event.target.phoneNumber.value;
+
+			debugger;
+			// Send Datas in Firebase Database:
+
+			let myCustomKey = formValues.username;
+
+			fetch(`https://galaxyplay-15910-default-rtdb.europe-west1.firebasedatabase.app/users/${myCustomKey}.json`, {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({
+					username: formValues.username,
+					email: formValues.email,
+					phoneNumber: number,
+					password: formValues.password,
+					photoURL: choosenAvatarImage.current,
+					gender: event.target.gender.value,
+				}),
+			});
 
 
 			// Set additional user data
 			await updateProfile(user, {
 				displayName: formValues.username,
+				phoneNumber: number,
+				photoURL: choosenAvatarImage.current,
+				gender: event.target.gender.value,
 			});
+
 
 			setFormValues(initialValues);
 			cleariRegisterValues();
@@ -68,7 +97,10 @@ export const useForm = (initialValues) => {
 			cleariRegisterValues();
 			setError(error.message);
 		}
+
 	};
+
+
 
 	async function onSubmitLoginHandler(event) {
 

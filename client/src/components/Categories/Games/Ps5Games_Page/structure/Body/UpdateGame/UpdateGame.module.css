@@ -10,11 +10,11 @@
     background-size: cover;
     object-fit: cover;
     z-index: 2;
-    width: 40em;
-    padding: 1.1em 1.7em ;
-    border-radius: 12px;
+    width: 43em;
+    height: 56em;
+    padding: 1.6em 1.7em;
+    border-radius: 1em;
     display: none;
-    opacity: 0.9;
     box-shadow: 0 0 20px 0 rgba(0, 0, 255, 0.6);
 }
 
@@ -24,18 +24,23 @@
     flex-direction: column;
     gap: 1.2em;
     z-index: 1;
-    
+    margin-top: -0.4em;
 }
 
 .create-game-container form input {
-    border: 1px solid #fefefe;
+    border: none;
+    border-radius: 1em;
+    background-color: rgba(128, 128, 128, 0.5);
+    color: rgba(133, 255, 122, 1);
 }
 
 .create-game-container form label {
     width: fit-content;
     letter-spacing: 1px;
-    color: #fefefe;
-    background-color: silver;
+    color: rgba(133, 255, 122, 1);
+    background-color: gray;
+    border-radius: 1em;
+    padding-inline: 6px;
 }
 
 .create-game-container form div textarea {
@@ -45,8 +50,11 @@
     padding: 0.3em 0em 0em 0.3em;
     background-color: unset;
     border: 1px solid #000;
-    color: #fefefe;
-    border: 1px solid #fefefe;
+    color: rgba(133, 255, 122, 1);
+    border-radius: 1em;
+    background-color: rgba(128, 128, 128, 0.6);
+    font-size: 1.1em;
+    margin-top: 1px;
 }
 
 .create-game-container form div textarea:focus {
@@ -84,7 +92,7 @@
 .x-button {
     align-self: flex-end;
     background-color: red;
-    margin-top: -0.2em;
+    margin-bottom: -1em;
     padding: 0.3em 0.5em;
     cursor: pointer;
     font-weight: 700;
@@ -96,7 +104,6 @@
     bottom: 24em;
     left: 1.3em;
     padding: 0.69em 1.1em;
-    
     border: none;
     background-color: rgba(243, 113, 46, 0.89);
     color: #fff;
@@ -107,6 +114,7 @@
     padding-left: -2em;
     padding-right: 1em;
     border-radius: 1em;
+    font-style: oblique;
 }
 
 .show-game-create:hover {

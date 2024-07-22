@@ -29,8 +29,8 @@
 
 .goTo-game-info {
     position: absolute;
-    top: 20em;
-    right: 3.8em;
+    top: 6em;
+    right: 0.8em;
     z-index: 16;
     scroll-behavior: smooth;
     box-shadow: 0 0 10px 5px rgba(0, 0, 100, 0.5);

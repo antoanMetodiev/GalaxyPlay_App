@@ -4,14 +4,16 @@ import ps5GamesImage from "./images/ps5 games.webp";
 import ps4GamesImage from "./images/ps4 games.jpg";
 import xboxGamesImage from "./images/xbox games.jpg";
 import { useNavigate } from "react-router-dom";
+import { useRef } from "react";
 
 export const Game_Categories = () => {
   const navigate = useNavigate();
+  
 
-  console.log('Game_Categories se renderira mamka  muuu!!!');
   function navigateToPathHandler(event) {
 	  navigate(`${event.target.previousSibling.textContent.toLowerCase().split(" ").join('-')}`);
   };
+
 
   return (
     <article className={styles["container"]}>

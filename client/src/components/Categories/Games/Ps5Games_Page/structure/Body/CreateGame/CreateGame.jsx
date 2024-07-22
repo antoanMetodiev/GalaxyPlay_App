@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import style from "../CreateGame/CreateGame.module.css";
+import { useLocation } from "react-router-dom";
 
 export const CreateGame = ({
   gameList,
@@ -9,6 +10,7 @@ export const CreateGame = ({
   setAllGamesListHandler,
 }) => {
   const containerRef = useRef();
+  let location = useLocation();
 
   // Функция за обработка на изпращането на формата
   const onSubmitFormHandler = async (event) => {
@@ -37,8 +39,24 @@ export const CreateGame = ({
     event.target.trailer.value = "";
 
     try {
-      // Изпращане на POST заявка към бекенда
-      const response = await fetch("https://galaxyplay-15910-default-rtdb.europe-west1.firebasedatabase.app/game/ps5-games.json", {
+      let paths = location.pathname.split("/");
+      paths.shift();
+
+      //   Example:
+      let specificCategory = paths[1]; // Games
+      let subCategory = paths[2]; // Ps5-Games
+
+      if (specificCategory.toLocaleLowerCase() === "games")
+        specificCategory = "game";
+
+      let concreteUrl = `https://galaxyplay-15910-default-rtdb.europe-west1.firebasedatabase.app/${specificCategory}/${subCategory}.json`;
+
+	    debugger;
+      if (subCategory == undefined || subCategory === 'details') {
+        concreteUrl = `https://galaxyplay-15910-default-rtdb.europe-west1.firebasedatabase.app/${specificCategory}.json`;
+      }
+
+      const response = await fetch(concreteUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -50,7 +68,6 @@ export const CreateGame = ({
         throw new Error("Network response was not ok");
       }
 
-      debugger;
       const result = await response.json();
       gameData._id = result.name; // в result.name се намира id-то на играта!!!
 
@@ -64,7 +81,6 @@ export const CreateGame = ({
       }
 
       setAllGamesListHandler([...allGames, gameData]);
-
       console.log("Game added successfully");
     } catch (error) {
       console.error("Error adding game: ", error);
@@ -92,12 +108,12 @@ export const CreateGame = ({
           </div>
 
           <div>
-            <label htmlFor="price">Price (EU)</label>
+            <label htmlFor="price">Price (USD)</label>
             <input type="number" id="price" name="price" required />
           </div>
 
           <div>
-            <label htmlFor="img-url">Game Picture Url</label>
+            <label htmlFor="img-url">Cover Picture Url</label>
             <input type="text" id="img-url" name="image_url" required />
           </div>
 
@@ -134,15 +150,6 @@ export const CreateGame = ({
     </>
   );
 };
-
-
-
-
-
-
-
-
-
 
 // import { useRef } from "react";
 // import style from "../CreateGame/CreateGame.module.css";
@@ -275,4 +282,3 @@ export const CreateGame = ({
 //     </>
 //   );
 // };
-

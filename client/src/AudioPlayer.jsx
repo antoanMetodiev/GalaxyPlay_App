@@ -7,8 +7,9 @@ import song3 from "../page-music/FIFA 21 song.mp3";
 import song4 from "../page-music/pop like this.mp3";
 import song5 from "../page-music/Skrillex - Bangarang Best part.mp3";
 import song6 from "../page-music/TU JOGA PA TRÁS (Super Slowed).mp3";
+import song7 from "../page-music/Gta 5 nesesera.mp3";
 
-let songs = [song5, song1, song3, song2, song4, song6];
+let songs = [song5, song1, song3, song2, song4, song6, song7];
 
 function getRandomIntInclusive() {
   let min = Math.ceil(0);

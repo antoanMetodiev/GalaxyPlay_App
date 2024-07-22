@@ -1,27 +1,20 @@
+.first-section {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
 .background-clip {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    aspect-ratio: 16/7.77;
-}
-
-.first.section {
-    position: relative;
-    width: 100%;
-}
-
-/* THIS IS BLACK OPACITY COLOR FOR VIDEOS */
-.first.section::after {
+    aspect-ratio: 16/7.7;
+    overflow: hidden;
+    transition: opacity 0.8s ease-in-out;
     position: absolute;
-    content: '';
-    display: block;
-    /* background-color: #000; */
-    z-index: 3;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.1;
 }
 
 @media (min-aspect-ratio: 16/8) {
@@ -38,27 +31,32 @@
     }
 }
 
-.on-right-icon {
-    display: block;
-    position: absolute;
-    font-size: 2.7em;
-    top: 53%;
-    right: 1.2%;
-    color: #fff;
-    z-index: 5;
-}
-
+.on-right-icon,
 .on-left-icon {
     display: block;
     position: absolute;
     font-size: 2.7em;
-    top: 53%;
-    left: 1.2%;
+    top: 50%;
     color: #fff;
     z-index: 5;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.on-right-icon {
+    right: 1.2%;
+}
+
+.on-left-icon {
+    left: 1.2%;
 }
 
 .on-left-icon:hover,
 .on-right-icon:hover {
     color: #2a5298;
+}
+
+.fading {
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
 }

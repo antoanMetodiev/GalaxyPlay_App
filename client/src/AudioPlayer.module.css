@@ -5,7 +5,7 @@
     width: 6.5em;
     height: 1.9em;    
     /* top: 46.8em; */
-    top: 88.2%;
+    bottom: 4em;
     z-index: 14;
     transform: rotate(-90deg); /* Завъртане на слайдера */
     left: -0.9em;

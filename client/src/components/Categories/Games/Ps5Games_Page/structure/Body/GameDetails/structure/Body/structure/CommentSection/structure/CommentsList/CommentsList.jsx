@@ -6,9 +6,25 @@ import { useLocation } from "react-router-dom";
 
 const baseUrl = `https://galaxyplay-15910-default-rtdb.europe-west1.firebasedatabase.app/game/ps5-games`;
 
-export const CommentsList = ({ username, comments, setCommentsHandler }) => {
+export const CommentsList = ({
+  username, 
+  comments, 
+  setCommentsHandler,
+  userData,
+}) => {
   let location = useLocation();
   let pathArr = location.pathname.split("/");
+
+	debugger;
+	pathArr.shift();
+
+	let baseUrl = '';
+	if (pathArr[2] === undefined || pathArr[2] === 'details') {
+		baseUrl = `https://galaxyplay-15910-default-rtdb.europe-west1.firebasedatabase.app/${pathArr[1]}`;
+	} else {
+		baseUrl = `https://galaxyplay-15910-default-rtdb.europe-west1.firebasedatabase.app/${pathArr[1]}/${pathArr[2]}`;
+	}
+
   let gameId = pathArr[pathArr.length - 1];
 
   useEffect(() => {
@@ -51,6 +67,7 @@ export const CommentsList = ({ username, comments, setCommentsHandler }) => {
           setCommentsHandler={setCommentsHandler}
           allComments={comments}
           username={username}
+          userData={userData}
         />
       ))}
     </>

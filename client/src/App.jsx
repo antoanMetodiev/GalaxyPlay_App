@@ -9,8 +9,6 @@ import { Game_Categories } from "./components/Categories/Games/Game_Categories";
 import { Ps5Games_Page } from "./components/Categories/Games/Ps5Games_Page/Ps5Games_Page";
 import { GameDetails } from "./components/Categories/Games/Ps5Games_Page/structure/Body/GameDetails/GameDetails";
 
-import LoginOrNotContext from "./contexts/loginContext";
-import ScrollToTop from "./components/Categories/Games/Ps5Games_Page/structure/Body/GameDetails/structure/ScrollToTop/ScrollToTop";
 
 import AudioPlayer from "./AudioPlayer";
 
@@ -26,9 +24,7 @@ function App() {
 
   return (
     <>
-      <ScrollToTop />
       <AudioPlayer />
-      <LoginOrNotContext.Provider>
         <Routes>
           <Route path="/" element={<DiscoverPage />} />
           <Route path="/register" element={<Register />} />
@@ -39,20 +35,34 @@ function App() {
 
           {logStatus && (
             <>
+
               <Route path="/categories" element={<Categories />} />
               <Route path="/categories/games" element={<Game_Categories />} />
+
+
+              {/* Example: */}
+
               <Route
-                path="/categories/games/ps5-games"
+                path="/categories/:specificCategory/:subcategory?"
                 element={<Ps5Games_Page />}
               />
+              
+              {/* For All Game Categories: */}
               <Route
-                path="/categories/games/ps5-games/:gameId"
+                path="/categories/game/:subcategory/:gameId"
                 element={<GameDetails />}
               />
+
+
+              {/* For Others Categories without subCategory: */}
+              <Route
+                path="/categories/:specificCategory/details?/:gameId"
+                element={<GameDetails />}
+              />
+             
             </>
           )}
         </Routes>
-      </LoginOrNotContext.Provider>
     </>
   );
 }

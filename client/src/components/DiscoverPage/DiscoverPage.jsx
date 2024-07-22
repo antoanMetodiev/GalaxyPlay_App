@@ -10,8 +10,8 @@ export const DiscoverPage = () => {
     <>
       <Header />
       <LiveWallperSection />
-      <Overview />
-      <Footer />
+      {/* <Overview />
+      <Footer /> */}
     </>
   );
 };

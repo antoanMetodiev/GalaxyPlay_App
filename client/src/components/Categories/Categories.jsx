@@ -1,7 +1,7 @@
 import styles from "../Categories/Categories.module.css";
 import { useNavigate } from "react-router-dom";
 
-import backgroundVideo from "./resources/videos/background-video.mp4";
+import backgroundVideo from "./resources/videos/categories menu.mp4";
 
 import gamesImage from "./resources/images/games.jpg";
 import pc from "./resources/images/pc.webp";
@@ -14,7 +14,8 @@ export const Categories = () => {
   const navigate = useNavigate();
 
   function navigateToPathHandler(event) {
-	  navigate(`${(event.target.previousSibling.textContent).toLowerCase()}`)
+	  navigate(`${(event.target.previousSibling.textContent).toLowerCase()}`);
+    // window.location.reload();
   }
 
   return (

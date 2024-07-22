@@ -11,14 +11,29 @@ import {
   PUT,
 } from "../../../../../../../../../../../../../services/service";
 
-export const CommentItem = ({ comment, allComments, setCommentsHandler }) => {
+export const CommentItem = ({
+  comment, 
+  allComments,
+  setCommentsHandler,
+  userData,
+}) => {
+
   const location = useLocation();
-  const pathName = location.pathname.split("/");
-  const gameId = pathName[pathName.length - 1];
+  let pathName = location.pathname.split("/");
+  pathName.shift();
 
-  let baseUrl =
-  `https://galaxyplay-15910-default-rtdb.europe-west1.firebasedatabase.app/game/ps5-games/${gameId}/comments`;
+  let specificCategory = pathName[1];
+  let subCategory = pathName[2];
+  let productId = pathName[pathName.length - 1];
 
+  let baseUrl = '';
+  debugger;
+  if (subCategory === undefined || subCategory === 'details') {
+    baseUrl = `https://galaxyplay-15910-default-rtdb.europe-west1.firebasedatabase.app/${specificCategory}/${productId}/comments`;
+  } else {
+    baseUrl = `https://galaxyplay-15910-default-rtdb.europe-west1.firebasedatabase.app/${specificCategory}/${subCategory}/${productId}/comments`;
+  }
+  
 
   // References:
   const garbageImageRef = useRef();
@@ -78,11 +93,13 @@ export const CommentItem = ({ comment, allComments, setCommentsHandler }) => {
   }
 
   return (
-    <section className={style["comment-container"]}>
+    <section 
+    style={{ backgroundColor: comment.gender === 'Female' ? 'pink' : '#87CEEB' }}
+    className={style["comment-container"]}>
       <div className={style["profile-image_name-container"]}>
         <img
           className={style["profile-image"]}
-          src={profileImage}
+          src={comment.photoURL}
           alt="profile-image"
         />
         <h2 className={style["profile-name"]}>{comment.writer}</h2>

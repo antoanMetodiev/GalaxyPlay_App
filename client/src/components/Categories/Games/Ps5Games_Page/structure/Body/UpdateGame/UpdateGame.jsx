@@ -31,7 +31,6 @@ export const UpdateGame = ({
 
     // Намери играта по име
     const oldObjectGame = gameList.find((game) => game.name === searchedGame);
-    debugger;
     if (!oldObjectGame) {
       console.log(`Game ${searchedGame} not found!!!`);
       return;
@@ -40,7 +39,6 @@ export const UpdateGame = ({
     const desc = newDescription.split(",# ");
     const otherImages = newOtherImageUrl.split(", ");
 
-    debugger;
     const newObjectGame = {
       description: desc[0].trim().length > 0 ? desc : oldObjectGame.description,
       name: newGameName.trim() ? newGameName : oldObjectGame.name,
@@ -53,8 +51,25 @@ export const UpdateGame = ({
       trailer: newTrailerUrl.trim() ? newTrailerUrl : oldObjectGame.trailer,
     };
 
-    // Референция към конкретния запис
-    const gameRef = ref(database, `game/ps5-games/${oldObjectGame._id}`);
+    
+    let paths = location.pathname.split('/');
+	  paths.shift();
+	  
+	//   Example:
+	  let specifiCategory = paths[1];  // Games
+	  let subCategory = paths[2];      // Ps5-Games
+
+    debugger;
+	  if (specifiCategory.toLocaleLowerCase() === 'games') specifiCategory = "game";
+
+    let baseUrl = `${specifiCategory}/${subCategory}`;
+
+    if (subCategory == undefined) {
+      baseUrl = specifiCategory;
+    }
+
+
+    const gameRef = ref(database, `${baseUrl}/${oldObjectGame._id}`);
 
     // Изпрати заявка за актуализиране
     update(gameRef, newObjectGame).catch((error) => {
@@ -70,7 +85,6 @@ export const UpdateGame = ({
     let newCurrentList = gameList.filter(game => game.name !== oldObjectGame.name); 
     allGames = allGames.filter(game => game.name !== oldObjectGame.name);
 	
-    debugger;
 	  newCurrentList.splice(gameListIndex, 0, newObjectGame);
 	  allGames.splice(allGamesIndex, 0, newObjectGame);
 

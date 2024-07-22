@@ -1,4 +1,4 @@
-import LastLogo from "../../resources/images/last-logo.jfif";
+import LastLogo from "../../resources/images/old-log.jfif";
 
 import { Link } from "react-router-dom";
 import styles from "./Header.module.css"; // Импорт на CSS модул стиловете

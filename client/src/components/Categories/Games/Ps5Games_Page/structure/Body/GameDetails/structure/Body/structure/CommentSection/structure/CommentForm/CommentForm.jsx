@@ -5,7 +5,7 @@ import style from "./CommentForm.module.css";
 import { POST } from "../../../../../../../../../../../../../services/service";
 import { useLocation } from "react-router-dom";
 
-const baseUrl = `https://galaxyplay-15910-default-rtdb.europe-west1.firebasedatabase.app/game/ps5-games`;
+
 
 export const CommentForm = ({
 	gameDetails,
@@ -15,22 +15,34 @@ export const CommentForm = ({
 	comments,
 	commentForm,
 	showCommentFormHandler,
+	userData,
 }) => {
 	const [comment, setComment] = useState("");
 
 	const location = useLocation();
 	const pathName = location.pathname.split("/");
+	pathName.shift();
+
+	// debugger;
+
+	let baseUrl = '';
+	if (pathName[2] === undefined || pathName[2] === 'details') {
+		baseUrl = `https://galaxyplay-15910-default-rtdb.europe-west1.firebasedatabase.app/${pathName[1]}`;
+	} else {
+		baseUrl = `https://galaxyplay-15910-default-rtdb.europe-west1.firebasedatabase.app/${pathName[1]}/${pathName[2]}`;
+	}
+
 	const gameId = pathName[pathName.length - 1];
 
 	const makeCommentHandler = async (event) => {
 		event.preventDefault();
-		const newComment = { writer: username, text: comment };
+		const newComment = { writer: username, text: comment, gender: userData.gender, photoURL: userData.photoURL };
 
 		try {
 			const url = `${baseUrl}/${gameId}/comments.json`;
-
+			debugger;
 			const generatedId = await POST(
-				`${baseUrl}/${gameId}/comments.json`,
+				url,
 				newComment
 			);
 			newComment.id = generatedId.name;
@@ -54,10 +66,10 @@ export const CommentForm = ({
 						<div className={style["profile-image_name-container"]}>
 							<img
 								className={style["profile-image"]}
-								src={profileImage}
+								src={userData.photoURL}
 								alt="profile-image"
 							/>
-							<h2 className={style["profile-name"]}>{username}</h2>
+							<h2 className={style["profile-name"]}>{userData.username}</h2>
 						</div>
 
 						<form

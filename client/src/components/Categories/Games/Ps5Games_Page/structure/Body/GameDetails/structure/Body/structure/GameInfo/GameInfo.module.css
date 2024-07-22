@@ -6,6 +6,7 @@
     padding-top: 0.1em;
     background-color: rgba(255, 255, 255, 0); 
     /* margin-top: 4em; */
+    position: relative;
 }
 
 .game-details-container > img {
@@ -16,7 +17,7 @@
 }
 
 .game-details-container .game-content {
-    padding: 1em 0.5em 0em 1em;
+    padding: 0.8em 0.5em 0em 1em;
 }
 
 .game-details-container .game-content .game-stars {
@@ -25,7 +26,8 @@
 }
 
 .game-details-container .game-content .game-title {
-    font-size: 2em;
+    font-size: 1.9em;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .stars-wrapper {
@@ -121,7 +123,7 @@
 .info-under-the-truck-icon {
     width: 38.1em;
     font-size: 0.95em;
-    margin-block: 1em 0.5em;
+    margin-block: 0.7em 3.5em;
     line-height: 1.9;
 }
 
@@ -137,6 +139,8 @@
     margin-top: 2.95em;
     width: 35em;
     border-radius: 8px;
+    position: relative;
+    bottom: 2em;
 }
 
 .our-shops-places i {

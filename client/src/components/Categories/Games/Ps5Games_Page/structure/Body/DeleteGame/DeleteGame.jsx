@@ -19,17 +19,28 @@ export const DeleteGame = ({
 
   function deleteGameHandler(event) {
     event.preventDefault();
-	debugger;
     const gameForDelete = allGames.find((game) => game.name === inputText);
-    // debugger;
     const gameKey = gameForDelete._id;
 
+
+    let paths = location.pathname.split("/");
+    paths.shift();
+
+    //   Example:
+    let specificCategory = paths[1]; // Games
+    let subCategory = paths[2]; // Ps5-Games
+
+    if (specificCategory.toLocaleLowerCase() === "games")
+      specificCategory = "game";
+
+    let concreteUrl = `https://galaxyplay-15910-default-rtdb.europe-west1.firebasedatabase.app/${specificCategory}/${subCategory}/${gameKey}.json`;
+
+    if (subCategory == undefined || subCategory === 'details') {
+      concreteUrl = `https://galaxyplay-15910-default-rtdb.europe-west1.firebasedatabase.app/${specificCategory}/${gameKey}.json`;
+    }
+
     // Изпращане на DELETE заявка към Firebase
-    fetch(
-      `https://galaxyplay-15910-default-rtdb.europe-west1.firebasedatabase.app/game/ps5-games/${gameKey}.json`,
-      {
-        method: "DELETE",
-      }
+    fetch(concreteUrl,{method: "DELETE",}
     ).then((response) => {
         if (response.ok) setInputText("");
 
@@ -42,6 +53,11 @@ export const DeleteGame = ({
         console.error("Error deleting game:", error);
       });
   };
+
+
+
+
+  
 
   return (
     <>
