@@ -8,23 +8,39 @@ import { Categories } from "./components/Categories/Categories";
 import { Game_Categories } from "./components/Categories/Games/Game_Categories";
 import { Ps5Games_Page } from "./components/Categories/Games/Ps5Games_Page/Ps5Games_Page";
 import { GameDetails } from "./components/Categories/Games/Ps5Games_Page/structure/Body/GameDetails/GameDetails";
-
+import { AllChats } from "./components/Chat/AllChats/AllChats"; 
 
 import AudioPlayer from "./AudioPlayer";
 
 function App() {
   const [userData, setUserData] = useState({});
+  let [logStatus, setLogStatus] = useState(false);
+
+  useEffect(() => {
+
+    if (JSON.parse(localStorage.getItem('user'))) {
+      setLogStatus(true);
+    }
+
+  }, [JSON.parse(localStorage.getItem('user'))]);
+
 
   const setUserDataHandler = (newData) => setUserData(newData);
-
-  let logStatus = true;
   if (JSON.parse(localStorage.getItem("user")) == null) {
     logStatus = false;
   }
 
   return (
     <>
+    
       <AudioPlayer />
+      
+        {logStatus && (
+          <>
+            <AllChats />
+          </>
+        )}
+
         <Routes>
           <Route path="/" element={<DiscoverPage />} />
           <Route path="/register" element={<Register />} />
@@ -35,7 +51,6 @@ function App() {
 
           {logStatus && (
             <>
-
               <Route path="/categories" element={<Categories />} />
               <Route path="/categories/games" element={<Game_Categories />} />
 

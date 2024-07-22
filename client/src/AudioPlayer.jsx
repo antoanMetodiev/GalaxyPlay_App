@@ -52,7 +52,7 @@ const AudioPlayer = () => {
 
   return (
     <div>
-      <audio src={songs[currentSongIndex]} onEnded={setAnotherSong} ref={audioRef} autoPlay />
+      <audio src={songs[currentSongIndex]} onEnded={setAnotherSong} ref={audioRef} />
       <input
         className={style["audio-control-input"]}
         id="volumeControl"

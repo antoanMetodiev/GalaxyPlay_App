@@ -30,9 +30,12 @@ export const Login = (props) => {
       // Извличане на idToken от result
       const idToken = result._tokenResponse?.idToken;
       const username = result.user.displayName;
+      let photoUrl = result.user.photoURL;
+
+      console.log(result.user);
 
       if (idToken) {
-        const userData = { token: idToken, username };
+        const userData = { token: idToken, username,  photoUrl};
         localStorage.setItem("user", JSON.stringify(userData)); // Запазване на данни в localStorage
 
         props.setUsDataHandler(userData);

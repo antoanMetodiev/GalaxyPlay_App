@@ -79,6 +79,20 @@ export const useForm = (initialValues) => {
 				}),
 			});
 
+			fetch(`https://galaxyplay-15910-default-rtdb.europe-west1.firebasedatabase.app/chatUsers/${myCustomKey}.json`, {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({
+					username: formValues.username,
+					email: formValues.email,
+					phoneNumber: number,
+					photoURL: choosenAvatarImage.current,
+					gender: event.target.gender.value,
+				}),
+			});
+
 
 			// Set additional user data
 			await updateProfile(user, {
