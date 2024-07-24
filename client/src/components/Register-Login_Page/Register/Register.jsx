@@ -1,12 +1,16 @@
 import React, { useRef, useState } from "react";
 import styles from "./Register.module.css";
 import { useForm } from "../hooks/useForm";
+import { useNavigate } from "react-router-dom";
+
 import backgroundVideo from "../videos/register wallper video.mp4";
 import profileImageModel from "../images/ROiiCZmW_400x400.jpg";
+import coolSpinner from "../images/coll-spiner.gif";
 
 import { AvatarSection } from "../Register/structure/AvatarSection/AvatarSection";
 
 export const Register = () => {
+  let navigate = useNavigate();
   const allInputsReferences = useRef({});
   const [imageState, setImageState] = useState(profileImageModel);
 
@@ -42,10 +46,17 @@ export const Register = () => {
   function callOnSubmitRegisterFunction(event) {
     event.preventDefault();
     onSubmitRegisterHandler(event, choosenAvatarImage);
-  }
+    navigate('/');
+  };
 
   return (
     <div className={styles["register-page-container"]}>
+      <img
+        className={styles["cool-spinner"]}
+        src={coolSpinner}
+        alt="cool-spiner"
+      />
+
       <AvatarSection
         showAvatarContainerRef={showAvatarContainerRef}
         setNewAvatarHandler={setNewAvatarHandler}
@@ -152,6 +163,7 @@ export const Register = () => {
         </fieldset>
 
         <input type="submit" value="Sign Up" />
+
         {error && <p className={styles["error"]}>{error}</p>}
 
         <img

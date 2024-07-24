@@ -11,6 +11,7 @@ import { GameDetails } from "./components/Categories/Games/Ps5Games_Page/structu
 import { AllChats } from "./components/Chat/AllChats/AllChats"; 
 
 import AudioPlayer from "./AudioPlayer";
+import { UserDetails } from "./UserDetails/UserDetails";
 
 function App() {
   const [userData, setUserData] = useState({});
@@ -53,7 +54,7 @@ function App() {
             <>
               <Route path="/categories" element={<Categories />} />
               <Route path="/categories/games" element={<Game_Categories />} />
-
+              <Route path="/profile-details" element={<UserDetails />} />
 
               {/* Example: */}
 

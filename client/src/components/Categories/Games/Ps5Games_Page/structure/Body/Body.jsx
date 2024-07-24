@@ -9,13 +9,14 @@ import { DeleteGame } from "./DeleteGame/DeleteGame";
 import { UpdateGame } from "./UpdateGame/UpdateGame";
 import { PaginationList } from "./PaginationList/PaginationList";
 
-import GamesWallperVideo from "../../../../../DiscoverPage/resources/videos/Grand-Theft-Auto-VI.mp4";
 import PcWallperVideo from "../../../../../DiscoverPage/resources/videos/cyberpunk-2077.mp4";
-import Ps5WallperVideo from "../../../../../DiscoverPage/resources/videos/Ghost-of-Tsushima.mp4";
+import Ps5WallperVideo from "../../../../../DiscoverPage/resources/videos/ps5-wallper-video.mp4";
+import GamesWallperVideo from "../../../../../DiscoverPage/resources/videos/Ghost-of-Tsushima.mp4";
 import Ps4WallperVideo from "../../../../../DiscoverPage/resources/videos/TLOU2.mp4";
 import XboxWallperVideo from "../../../../../DiscoverPage/resources/videos/Xbox-wallper.mp4";
 import LaptopWallperVideo from "../../../../../DiscoverPage/resources/videos/lofi-headphones.mp4";
 
+// They are global because i want when the component is unmounted - this data will be saved!
 let allGames = [];
 let savedFirstCollection = [];
 let previousPathName = "";
@@ -130,7 +131,7 @@ export const Body = ({
           smooth={true}
           duration={1100}
         >
-          <i className="fa-solid fa-arrow-down-long" />
+          <i className="fa-solid fa-angles-down" />
         </Link>
 
         <div className={style["background"]}>
@@ -169,7 +170,7 @@ export const Body = ({
         <i
           onClick={showFavoritesContainer}
           id={style["my-favourites-icon"]}
-          className="fa-solid fa-heart"
+          className="fa-regular fa-heart"
         >
           <span ref={allFavouritesProductsCount}>0</span>
         </i>

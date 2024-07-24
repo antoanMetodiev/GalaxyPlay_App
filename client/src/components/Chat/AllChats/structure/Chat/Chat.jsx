@@ -5,13 +5,22 @@ import { database, ref, onValue } from "../../../../../firebase/firebase";
 import onlineImage from "../../images/online image.png";
 import sendImageButton from "../../images/send-icon.png";
 import backToUsersList from "../../images/back-to-users-list.png";
+import showUserContainer from "../../images/show-user-list-container.png";
 
-export const Chat = ({ myFriendUsername }) => {
+export const Chat = ({
+  myFriendUsername,
+  setShowConcreteChatPermissionHandler,
+  showUsersListImgRef,
+}) => {
   let [currentFriendData, setCurrentFriendData] = useState({});
   const [messageText, setMessageText] = useState("");
+  let mainContainerWrapper = useRef(null);
 
   // Всички съобщения за конкретната дискусия:
-  let [allMessagesForCurrentConversation, setAllMessagesForCurrentConversation] = useState([]);
+  let [
+    allMessagesForCurrentConversation,
+    setAllMessagesForCurrentConversation,
+  ] = useState([]);
   const [receiver, setReceiver] = useState(myFriendUsername); // username на получателя
 
   let currentUserUsername = JSON.parse(localStorage.getItem("user"));
@@ -21,10 +30,15 @@ export const Chat = ({ myFriendUsername }) => {
 
   // This is event listener when user try to send me message:
   useEffect(() => {
+    
+    showUsersListImgRef.current.style.right = '30em';
     if (currentUserUsername) {
       currentUserUsername = currentUserUsername.username;
 
-      const messagesRef = ref(database, `users/${currentUserUsername}/messages/${receiver}`);
+      const messagesRef = ref(
+        database,
+        `users/${currentUserUsername}/messages/${receiver}`
+      );
 
       const unsubscribe = onValue(messagesRef, (snapshot) => {
         const data = snapshot.val();
@@ -44,7 +58,7 @@ export const Chat = ({ myFriendUsername }) => {
     if (messagesContainerRef.current) {
       messagesContainerRef.current.scrollTo({
         top: messagesContainerRef.current.scrollHeight,
-        behavior: 'smooth' // Плавно скролиране
+        behavior: "smooth", // Плавно скролиране
       });
     }
   }, [allMessagesForCurrentConversation]);
@@ -99,60 +113,97 @@ export const Chat = ({ myFriendUsername }) => {
   // GET CURRENT FRIEND DATA:
   useEffect(() => {
     let getChatUserLitleData = async () => {
-      let response = await fetch(`https://galaxyplay-15910-default-rtdb.europe-west1.firebasedatabase.app/chatUsers/${myFriendUsername}.json`);
+      let response = await fetch(
+        `https://galaxyplay-15910-default-rtdb.europe-west1.firebasedatabase.app/chatUsers/${myFriendUsername}.json`
+      );
       response = await response.json();
       setCurrentFriendData(Object.values(response)[0]);
-    }
+    };
 
     getChatUserLitleData();
   }, [myFriendUsername]);
 
   console.log(currentFriendData.username);
 
+  function backToUsersListHandler() {
+    debugger;
+    let a = mainContainerWrapper.current;
+
+    
+    mainContainerWrapper.current.classList.add(style["hide"]);
+    setTimeout(() => {
+      showUsersListImgRef.current.style.right = '24em';
+      setShowConcreteChatPermissionHandler();
+    }, 500); 
+  }
+
   return (
-    <article className={style["chat-container-wrapper"]}>
-      <header className={style["username-and-avatar"]}>
-        <img
-          className={style['current-friend-img']}
-          src={currentFriendData.photoURL}
-          alt="avatar-photo"
-        />
-        <h2 className={style['username-title']}>{currentFriendData.username}</h2>
-        <p className={style['online-label']}>online</p>
-        <img className={style['online-image']} src={onlineImage} alt="online-image" />
+    <>
 
-        <img className={style['back-to-users-list']} src={backToUsersList} alt="backToUsersList" />
-      </header>
+    
 
-      <section
-        ref={messagesContainerRef} // Добавете референцията тук
-        className={style["messages-section"]}
+      <article
+        ref={mainContainerWrapper}
+        className={style["chat-container-wrapper"]}
       >
-        {allMessagesForCurrentConversation.map((msg) => (
-          <li
-            className={
-              msg.userName === currentUserUsername.username
-                ? style["myMessage-item"]
-                : style["other-user-message-item"]
-            }
-            key={msg.id}
-          >
-            {msg.text}
-          </li>
-        ))}
-      </section>
+        <header className={style["username-and-avatar"]}>
+          <img
+            className={style["current-friend-img"]}
+            src={currentFriendData.photoURL}
+            alt="avatar-photo"
+          />
+          <h2 className={style["username-title"]}>
+            {currentFriendData.username}
+          </h2>
+          <p className={style["online-label"]}>online</p>
+          <img
+            className={style["online-image"]}
+            src={onlineImage}
+            alt="online-image"
+          />
 
-      <div className={style["chat-form"]}>
-        <input
-          onChange={(e) => setMessageText(e.target.value)}
-          className={style["message-text-container"]}
-          type="text"
-          value={messageText}
-          placeholder="Type Something..."
-        />
-        <img onClick={sendMessage} className={style['send-message-button']} src={sendImageButton} alt="Submit" />
-        
-      </div>
-    </article>
+          <img
+            onClick={backToUsersListHandler}
+            className={style["back-to-users-list"]}
+            src={backToUsersList}
+            alt="backToUsersList"
+          />
+        </header>
+
+        <section
+          ref={messagesContainerRef} // Добавете референцията тук
+          className={style["messages-section"]}
+        >
+          {allMessagesForCurrentConversation.map((msg) => (
+            <li
+              className={
+                msg.userName === currentUserUsername.username
+                  ? style["myMessage-item"]
+                  : style["other-user-message-item"]
+              }
+              key={msg.id}
+            >
+              {msg.text}
+            </li>
+          ))}
+        </section>
+
+        <div className={style["chat-form"]}>
+          <input
+            onChange={(e) => setMessageText(e.target.value)}
+            className={style["message-text-container"]}
+            type="text"
+            value={messageText}
+            placeholder="Type Something..."
+          />
+          <img
+            onClick={sendMessage}
+            className={style["send-message-button"]}
+            src={sendImageButton}
+            alt="Submit"
+          />
+        </div>
+      </article>
+    </>
   );
 };

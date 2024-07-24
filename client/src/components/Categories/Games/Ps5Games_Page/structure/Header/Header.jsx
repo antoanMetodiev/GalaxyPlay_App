@@ -63,7 +63,7 @@ export const Header = () => {
 
           {localStorage.getItem("user") && (
             <>
-              <Link to="/categories">Profile Details</Link>
+              <Link to="/profile-details">Profile Details</Link>
             </>
           )}
 

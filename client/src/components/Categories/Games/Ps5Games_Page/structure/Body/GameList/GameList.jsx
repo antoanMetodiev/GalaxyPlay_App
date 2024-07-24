@@ -185,7 +185,7 @@ export const GameList = ({
       />
 
 
-     {/* FAVOURITES */}
+     {/* FAVOURITE Products*/}
      <article ref={myFavContainerRef} className={style["my-favourites-container"]}>
         {Object.keys(favouriteProducts).length > 0 && (
           <>

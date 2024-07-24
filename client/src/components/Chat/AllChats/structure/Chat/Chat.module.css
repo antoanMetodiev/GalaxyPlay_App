@@ -1,19 +1,45 @@
-
-
 .chat-container-wrapper {
     position: fixed;
-    bottom: 1.5em;
-    right: 2em;
-    width: 30em;
+    bottom: 1em;
+    right: 1.4em;
+    width: 27em;
     height: 43em;
     border-radius: 1em;
     z-index: 17;
-    
+    animation: fadeInUp 0.5s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOutDown {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+
+.chat-container-wrapper.hide {
+    animation: fadeOutDown 0.6s ease-in-out;
 }
 
 .messages-section {
     height: 35em;
-    background-color: rgba(0, 0, 139, 0.4); /* Тъмен син с 60% прозрачност */
+    background-color: rgba(0, 0, 139, 0.4);
     list-style-type: none;
     flex-direction: column;
     display: flex;
@@ -21,11 +47,10 @@
     overflow-y: scroll;
     overflow-x: unset;
     padding-block: 0.8em;
-    
 }
 
 input.message-text-container {
-    background-color:unset;
+    background-color: unset;
     width: 21em;
     height: 2.8em;
     margin: 0.4em 0.5em 0em 1em;
@@ -39,7 +64,7 @@ input.message-text-container:focus {
 }
 
 .myMessage-item {
-    width: 10em;
+    width: 9em;
     background-color: rgba(0, 132, 255, 0.6);
     padding: 0.4em 0.8em;
     border-radius: 1em;
@@ -47,11 +72,12 @@ input.message-text-container:focus {
     align-self: flex-end;
     margin: 0.5em 0.7em 0em 0em;
     font-size: 1.1em;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Лек черен text-shadow */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    /* Лек черен text-shadow */
 }
 
 .other-user-message-item {
-    width: 10em;
+    width: 9em;
     border-radius: 1em;
     color: #fefefe;
     background-color: rgba(212, 230, 209, 0.7);
@@ -59,8 +85,8 @@ input.message-text-container:focus {
     align-self: flex-start;
     margin-left: 0.7em;
     font-size: 1.1em;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Лек черен text-shadow */
-    
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    /* Лек черен text-shadow */
 }
 
 
@@ -69,7 +95,7 @@ input.message-text-container:focus {
     align-self: center;
     border-radius: 0.5em;
     border: none;
-    color: #fff;   
+    color: #fff;
     width: 6em;
     height: 3em;
     display: block;
@@ -80,14 +106,16 @@ input.message-text-container:focus {
 .chat-form {
     display: flex;
     width: 100%;
-    background-color: rgba(192, 192, 192, 0.9); /* Светло сив с 50% прозрачност */
+    background-color: rgba(192, 192, 192, 0.9);
+    /* Светло сив с 50% прозрачност */
     height: 4em;
     border-bottom-left-radius: 1.2em;
     border-bottom-right-radius: 1.2em;
 }
 
 .username-and-avatar {
-    background-color: rgba(192, 192, 192, 0.9); /* Светло сив с 50% прозрачност */
+    background-color: rgba(192, 192, 192, 0.9);
+    /* Светло сив с 50% прозрачност */
     height: 3.4em;
     border-top-left-radius: 1em;
     border-top-right-radius: 1em;
@@ -138,10 +166,21 @@ input.message-text-container:focus {
     z-index: 20;
     right: 1em;
     top: 0.7em;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Черна сянка */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    /* Черна сянка */
     border-radius: 2.1em;
 }
 
 .messages-section .user-avatar-image {
     width: 2em;
+}
+
+.show-users-list-img {
+    position: absolute;
+    right: 30em;
+    z-index: 2;
+    top: 30em;
+    width: 20em;
+    height: 20em;
+    z-index: 100;
 }

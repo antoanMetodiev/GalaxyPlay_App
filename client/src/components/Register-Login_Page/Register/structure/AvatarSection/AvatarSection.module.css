@@ -1,17 +1,20 @@
 .wrapper-avatar-container {
     display: none;
     width: 39em;
-    height: auto;
+    height: 22em;
     position: absolute;
 }
 
 .avatar-container {
     position: absolute;
     display: flex;
-    gap: 1em;
+    gap: 0.8em;
     width: 25em;
+    height: 16em;
     flex-wrap: wrap;
     margin: 2em 0em 0em 1.5em;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 .avatar-container img {
