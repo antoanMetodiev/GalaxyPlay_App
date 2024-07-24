@@ -10,6 +10,10 @@ input.search-engine {
     border-radius: 1.5em;
 }
 
+#search-engine-container-id:hover {
+    cursor: pointer;
+}
+
 .search-engine::placeholder {
     color: silver;
 }
@@ -17,3 +21,4 @@ input.search-engine {
 input.search-engine:focus {
     border: 0.3px solid silver;
 }
+

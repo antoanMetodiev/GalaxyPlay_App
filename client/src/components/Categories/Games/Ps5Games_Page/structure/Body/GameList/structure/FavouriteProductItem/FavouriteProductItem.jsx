@@ -1,4 +1,3 @@
-
 import { useLocation, useNavigate } from "react-router-dom";
 import style from "../FavouriteProductItem/FavouriteProductItem.module.css";
 
@@ -9,7 +8,6 @@ export const FavouriteProductItem = ({
     let location = useLocation();
     let navigate = useNavigate();
     function NavigateToProduct() {
-        debugger;
 
         console.log(product);
         let arrPath = product.path.split('/');
@@ -25,8 +23,6 @@ export const FavouriteProductItem = ({
         }
     };
 
-    debugger;
-    console.log('Az bqh vutre vuv FavouriteProductItem ');
 
     return (
         <div className={style['favourite-product-item-container']}>

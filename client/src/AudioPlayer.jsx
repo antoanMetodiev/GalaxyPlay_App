@@ -5,7 +5,7 @@ import song1 from "../page-music/Saints Row - Theme Song.mp3";
 import song2 from "../page-music/Welcome To Los Santos.mp3";
 import song3 from "../page-music/FIFA 21 song.mp3";
 import song4 from "../page-music/pop like this.mp3";
-import song5 from "../page-music/Skrillex - Bangarang Best part.mp3";
+import song5 from "../page-music/Habits.mp3";
 import song6 from "../page-music/TU JOGA PA TRÁS (Super Slowed).mp3";
 import song7 from "../page-music/Gta 5 nesesera.mp3";
 

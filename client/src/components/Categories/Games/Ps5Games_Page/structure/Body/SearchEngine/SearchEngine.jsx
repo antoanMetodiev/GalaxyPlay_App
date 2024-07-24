@@ -63,7 +63,6 @@ export const SearchEngine = ({
     }
   };
 
-
   return (
     <input
       onChange={searchGameWithName}

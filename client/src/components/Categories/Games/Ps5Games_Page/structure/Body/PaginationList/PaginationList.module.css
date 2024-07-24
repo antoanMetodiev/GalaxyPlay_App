@@ -12,25 +12,27 @@
     z-index: 10;
     position: relative;
     font-size: 1.1em;
+    position: relative;
+    z-index: 16;
 }
 
 .pagination-container li {
     position: relative;
+    z-index: 20;
     top: -1.5em;
     left: 25%;
     padding: 0.5em 1em;
     background-color: gray;
     color: #fff;
     margin-top: -2em;
-    cursor: pointer;
     box-shadow: 0 0 10px 5px rgba(0, 0, 100, 0.5);
-    border-radius: 0.5em;
+    border-radius: 0.6em;
 }
 
-
-
 .pagination-container li:hover {
-    background-color: orange;
+    color: #000;
+    cursor: pointer;
+    text-shadow: 2px 2px 4px black;
 }
 
 .goTo-search-engine {
@@ -51,12 +53,6 @@
     bottom: 4em;
     left: 14em;
 }
-
-
-
-
-/* background-color: rgba(255, 165, 0, 0.7); */
-
 
 
 .goTo-search-engine i:hover {

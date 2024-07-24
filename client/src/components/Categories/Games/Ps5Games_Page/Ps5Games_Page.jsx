@@ -17,6 +17,7 @@ let shouldPrerenderGameList = false;
 export const Ps5Games_Page = () => {
   let location = useLocation();
   let goingToGameDetails = useRef(false);
+
   // CURRENT PAGE:
   const [currentPage, setCurrentPage] = useState(previousPage);
   let setCurrentPageHandler = (newPage) => {
@@ -26,13 +27,11 @@ export const Ps5Games_Page = () => {
   // debugger;
   if (firstMount) {
     firstMount = false;
-    console.log("My First Mount!");
     startAndEndIndexes.startIndex = 0;
     startAndEndIndexes.endIndex = 18;
   }
 
   function setShouldPrerenderGameList(value) {
-    debugger;
     shouldPrerenderGameList = value;
   }
 
@@ -43,12 +42,7 @@ export const Ps5Games_Page = () => {
       const pathName = location.pathname;
       const lastElement = pathName.split("/").pop();
 
-      if (
-        (location.pathname.split("/").length <= 2 ||
-          lastElement.includes("games")) &&
-        goingToGameDetails.current === false
-      ) {
-        debugger;
+      if ((location.pathname.split("/").length <= 2 ||lastElement.includes("games")) && goingToGameDetails.current === false) {
         previousPage = 1;
         startAndEndIndexes.startIndex = 0;
         startAndEndIndexes.endIndex = 18;

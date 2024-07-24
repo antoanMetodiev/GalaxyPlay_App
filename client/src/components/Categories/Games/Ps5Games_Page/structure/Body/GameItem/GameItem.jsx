@@ -177,7 +177,31 @@ export const GameItem = ({
         src={data.imageUrl}
         alt="game-image"
       />
-      <img className={style["game-stars-image"]} src={starsImage} alt="stars" />
+
+      <div className={style["game-item-stars-wrapper"]}>
+          <div>
+            <i
+              className="fa-solid fa-star fa-flip"
+              style={{ color: "#f7a309", fontSize: "1.22em" }}
+            />
+            <i
+              className="fa-solid fa-star fa-flip"
+              style={{ color: "#f7a309", fontSize: "1.22em" }}
+            />
+            <i
+              className="fa-solid fa-star fa-flip"
+              style={{ color: "#f7a309", fontSize: "1.22em" }}
+            />
+            <i
+              className="fa-solid fa-star fa-flip"
+              style={{ color: "#f7a309", fontSize: "1.22em" }}
+            />
+            <i
+              className="fa-solid fa-star fa-flip"
+              style={{ color: "#f7a309", fontSize: "1.22em" }}
+            />
+          </div>
+        </div>
 
       <article className={style["game-content"]}>
         <h2 className={style["game-name"]}>{data.name}</h2>

@@ -42,8 +42,10 @@ export const Body = ({
 
   let allFavouritesProductsCount = useRef(null);
   function setallFavouritesProductsCountHandler(newCount) {
-    allFavouritesProductsCount.current.textContent = newCount;
-  }
+    if (allFavouritesProductsCount.current.textContent) {
+      allFavouritesProductsCount.current.textContent = newCount;
+    }
+  };
 
   // PRE-RENDER Game List, because we quit about that page and going in Game-Cateregories or Cateregories:
   if (shouldPrerenderGameList) {
@@ -83,8 +85,7 @@ export const Body = ({
 
 
   function showFavoritesContainer() {
-	debugger;
-	let a = myFavContainerRef.current.style.display;
+    let a = myFavContainerRef.current.style.display;
     if (myFavContainerRef.current.style.display == "none" || myFavContainerRef.current.style.display == "") {
       myFavContainerRef.current.style.display = "flex";
     } else {
@@ -92,36 +93,37 @@ export const Body = ({
     }
   }
 
+
   return (
     <>
       {JSON.parse(localStorage.getItem("user")).username ===
         "antoanMetodiev" && (
-        <>
-          <DeleteGame
-            renderGameList={renderGameList}
-            gameList={gameList}
-            setGameListHandler={setGameListHandler}
-            allGames={allGames}
-            setAllGamesListHandler={setAllGamesListHandler}
-          />
+          <>
+            <DeleteGame
+              renderGameList={renderGameList}
+              gameList={gameList}
+              setGameListHandler={setGameListHandler}
+              allGames={allGames}
+              setAllGamesListHandler={setAllGamesListHandler}
+            />
 
-          <CreateGame
-            renderGameList={renderGameList}
-            gameList={gameList}
-            setGameListHandler={setGameListHandler}
-            allGames={allGames}
-            setAllGamesListHandler={setAllGamesListHandler}
-          />
+            <CreateGame
+              renderGameList={renderGameList}
+              gameList={gameList}
+              setGameListHandler={setGameListHandler}
+              allGames={allGames}
+              setAllGamesListHandler={setAllGamesListHandler}
+            />
 
-          <UpdateGame
-            setGameListHandler={setGameListHandler}
-            renderGameList={renderGameList}
-            gameList={gameList}
-            allGames={allGames}
-            setAllGamesListHandler={setAllGamesListHandler}
-          />
-        </>
-      )}
+            <UpdateGame
+              setGameListHandler={setGameListHandler}
+              renderGameList={renderGameList}
+              gameList={gameList}
+              allGames={allGames}
+              setAllGamesListHandler={setAllGamesListHandler}
+            />
+          </>
+        )}
 
       <article>
         <Link
@@ -160,9 +162,7 @@ export const Body = ({
             setPreviousPathNameHandler={setPreviousPathNameHandler}
             savePreviousPageIndex={savePreviousPageIndex}
             cleanUpForGameDetails={cleanUpForGameDetails}
-            setallFavouritesProductsCountHandler={
-              setallFavouritesProductsCountHandler
-            }
+            setallFavouritesProductsCountHandler={setallFavouritesProductsCountHandler}
             myFavContainerRef={myFavContainerRef}
           />
         </div>

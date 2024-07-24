@@ -7,11 +7,11 @@ import { Footer } from "./structure/Footer/Footer";
 export const DiscoverPage = () => {
 
   return (
-    <>
-      <Header />
-      <LiveWallperSection />
-      {/* <Overview />
-      <Footer /> */}
-    </>
+	<>
+	  <Header />
+	  <LiveWallperSection />
+	  {/* <Overview />
+	  <Footer /> */}
+	</>
   );
 };

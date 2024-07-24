@@ -1,12 +1,12 @@
 .game-item {
     width: 270px;
     min-height: 500px;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.5); 
     border-radius: 8px;
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.8);
-    opacity: 0.0; /* Започва с нулева прозрачност */
+    opacity: 0.0; 
     transform: translateY(20px); 
-    transition: transform 0.5s ease, opacity 0.5s ease; /* Преходи за плавно движение */
+    transition: transform 0.5s ease, opacity 0.5s ease; 
 }
 
 @keyframes fadeInUp {
@@ -36,23 +36,23 @@
 }
 
 .game-content {
-    padding: 0.2em 0em 0em 0.4em;
+    padding: 0.2em 0em 0em 0.2em;
     height: 9em;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     gap: 1em;
     position: relative;
-    
 }
 
 .game-name {
     font-size: 1.55em;
     margin: -14px 0px 0px 4px;
+    font-weight: 400;
     color: #fefefe;
-    color: #000;
     border-bottom: 3px solid goldenrod;
     width: fit-content;
+    text-shadow: 2px 2px 4px black;
 }
 
 .game-button {
@@ -60,31 +60,35 @@
     border-radius: 6px;
     border: none;
     margin-top: -0.55em;
-    background-color: rgb(87, 87, 255);
+    /* background-color: rgb(87, 87, 255); */
+    background-color: rgba(0, 0, 139, 0.8); 
     align-self: center;
     color: #fefefe;
-    transition: background-color 0.5s ease-in-out;
+    transition: background-color 0.4s ease-in-out;
     text-decoration: none;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Лека сянка */
 }
 
 .game-button:hover {
     background-color: unset;
     cursor: pointer;
-    background-color: #000;
+    color: #000;
+    background-color: silver;
 }
 
 .game-price {
     position: absolute;
-    right: 7px;
-    top: -1.80em;
+    right: 6.5px;
+    top: -1.5em;
     font-size: 1.4em;
-    color: rgb(135, 188, 135);
-    font-weight: 600;
+    color: rgba(144, 238, 144, 0.8); 
+    font-weight: 500;
     /* box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.8); */
+    text-shadow: 2px 2px 4px black;
 }
 
 #add-to-favourites {
-    color: silver;
+    color: #e4e4e4;
     position: absolute;
     right: 0.7em;
     bottom: 0.2em;
@@ -93,4 +97,16 @@
 
 #add-to-favourites:hover {
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* черна текстова сянка */
+}
+
+.game-item-stars-wrapper {
+    padding-left: 0.7em;
+    width: 10em;
+    margin-top: 3px;
+}
+
+.game-item-stars-wrapper > div {
+    display: flex;
+    gap: 0.4em;
+    margin-bottom: 8px;
 }
