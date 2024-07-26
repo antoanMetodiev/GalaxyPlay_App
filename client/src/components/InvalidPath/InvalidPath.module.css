@@ -1,0 +1,19 @@
+img.back-image {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: -1;
+    object-fit: cover;
+}
+
+.invalid-text {
+    position: absolute;
+    top: 0.5em;
+    left: 0.8em;
+    font-size: 3em;
+    color: #fefefe;
+    width: 15em;
+    font-weight: 400;
+    text-shadow: 4px 4px 8px rgb(0, 0, 0);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
