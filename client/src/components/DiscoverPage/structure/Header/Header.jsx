@@ -4,13 +4,14 @@ import { Link } from "react-router-dom";
 import styles from "./Header.module.css"; // Импорт на CSS модул стиловете
 import { useState } from "react";
 
-import {HeaderContacts} from "../HeaderContacts";
+import { HeaderContacts } from "../HeaderContacts";
 
 export const Header = () => {
   const [imLogOut, setImLogOut] = useState(false);
 
   function logOutUserHandler() {
     localStorage.removeItem("user");
+    window.location.reload();
     setImLogOut(true);
   }
 
@@ -37,12 +38,10 @@ export const Header = () => {
           {localStorage.getItem("user") && (
             <>
               <Link to="/categories">Categories</Link>
+
+              <Link to="/profile-details">Profile Details</Link>
             </>
           )}
-
-          <li>
-            <Link to="/register">About Us</Link>
-          </li>
 
           {localStorage.getItem("user") && (
             <li onClick={logOutUserHandler}>
@@ -50,7 +49,7 @@ export const Header = () => {
             </li>
           )}
         </ul>
-        
+
         <HeaderContacts />
       </nav>
     </header>

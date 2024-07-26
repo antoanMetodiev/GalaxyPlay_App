@@ -4,7 +4,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     /* background-color: rgba(255, 255, 255, 0.1); */
-    background-image: url("../../../images/last-logo.jfif");
+    background-image: url("../../../../../../DiscoverPage/resources/images/woman2.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -16,6 +16,35 @@
     border-radius: 1em;
     display: none;
     box-shadow: 0 0 20px 0 rgba(0, 0, 255, 0.6);
+    animation: fadeIn 0.4s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.9);
+    }
+}
+
+.fade-out {
+    animation: fadeOut 0.4s ease-in-out forwards;
 }
 
 .create-game-container form {

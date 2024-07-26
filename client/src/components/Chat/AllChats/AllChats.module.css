@@ -5,7 +5,7 @@
     position: fixed;
     bottom: 1.5em;
     right: 1.5em;
-    z-index: 14;
+    z-index: 22;
     display: flex;
     flex-direction: column;
     gap: 1em;
@@ -14,6 +14,20 @@
     overflow-y: scroll;
     overflow-x: unset;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    animation: fadeIn 0.4s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .chat-user-item {
@@ -49,7 +63,7 @@
     width: 3.5em;
     height: 3.5em;
     position: fixed;
-    z-index: 3;
+    z-index: 12;
     right: 2em;
     bottom: 2em;
     /* box-shadow: 0 4px 8px rgba(0, 132, 255, 0.5);  */
@@ -57,7 +71,5 @@
 }
 
 .show-users-list-img:hover {
-    box-shadow: 0 4px 8px rgba(0, 132, 255, 0.9); 
+    box-shadow: 0 4px 8px rgba(0, 132, 255, 0.9);
 }
-
-

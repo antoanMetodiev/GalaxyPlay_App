@@ -77,7 +77,7 @@
     font-weight: 200;
     letter-spacing: 2px;
     text-shadow: 4px 4px 8px black; 
-    color: #fefefe;
+    color: hsl(0, 0%, 75%);
     font-style: oblique;
 }
 
@@ -96,7 +96,7 @@ img.wallper-image {
 
 h1.site-title {
     color: #fefefe;
-    font-size: 2em;
+    font-size: 1.7em;
     position: absolute;
     top: 2%;
     left: 0.5%;

@@ -48,12 +48,9 @@ export const GameList = ({
 	const [allGamesWithPattern, setAllGamesWithPattern] = useState([]);
 	let location = useLocation();
 
-
-
 	// Favourite Products State:
 	let [favouriteProducts, setFavouriteProducts] = useState({});
 	const setFavouriteProductsHandler = (value) => {
-		console.log(value);
 		setFavouriteProducts(value);
 	}
 
@@ -70,10 +67,7 @@ export const GameList = ({
 		// debugger;
 
 		const solve = () => {
-			if (
-				!initialMountForFirst_18_Games.value ||
-				previousPathName !== concretePath
-			) {
+			if (!initialMountForFirst_18_Games.value || previousPathName !== concretePath) {
 				initialMountForFirst_18_Games.value = true;
 				startAndEndIndexes.startIndex = 0;
 				startAndEndIndexes.endIndex = 18;
@@ -134,7 +128,8 @@ export const GameList = ({
 				concreteUrl = `https://galaxyplay-15910-default-rtdb.europe-west1.firebasedatabase.app/${specificCategory}.json`;
 			}
 
-			if (!initialMountForAllGames.value || previousPathName !== concretePath) {
+			if (allGames.length === 0 || previousPathName !== concretePath) {
+				debugger;
 				initialMountForAllGames.value = true;
 				setPreviousPathNameHandler(concretePath);
 
@@ -165,7 +160,7 @@ export const GameList = ({
 
 		solve();
 		// TOVA SI BQHA ZAVISIMOSTITE V TOZI DEPENDANCY ARRAY: concreteUrl, allGames]
-	}, []);
+	}, [allGames]);
 
 	// Search Engine Logic:
 	//----------------------------------------------------------

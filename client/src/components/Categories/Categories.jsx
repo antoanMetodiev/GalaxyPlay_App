@@ -1,7 +1,7 @@
 import styles from "../Categories/Categories.module.css";
 import { useNavigate } from "react-router-dom";
 
-import backgroundVideo from "./resources/videos/categories menu.mp4";
+import backgroundVideo from "../Categories/Games/Ps5Games_Page/images/beautiful-miami.jpg";
 
 import gamesImage from "./resources/images/games.jpg";
 import pc from "./resources/images/pc.webp";
@@ -20,13 +20,13 @@ export const Categories = () => {
 
   return (
     <article className={styles["container"]}>
-      <video
+      <img
         className={styles["background-clip"]}
         autoPlay
         muted
         loop
         src={backgroundVideo}
-      ></video>
+      ></img>
 
       <section className={styles["demo-website-preview"]}>
         {/* Categories */}

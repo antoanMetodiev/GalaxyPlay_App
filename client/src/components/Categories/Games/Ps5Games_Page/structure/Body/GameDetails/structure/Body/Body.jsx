@@ -4,28 +4,39 @@ import { GameInfoHeader } from "./structure/GameInfo/GameInfo";
 import { GameDescription } from "./structure/GameDescription/GameDescription";
 import { useEffect, useState } from "react";
 import { CommentSection } from "./structure/CommentSection/CommentSection";
+import video from "../../../../../../../../DiscoverPage/resources/videos/Neon-Apartment.mp4";
 
 export const Body = () => {
-  const [gameDetails, setGameDetails] = useState({});
-  let [firstComponentRender, setFirstComponentRender] = useState(false);
+	const [gameDetails, setGameDetails] = useState({});
+	let [firstComponentRender, setFirstComponentRender] = useState(false);
 
-  const setGameDetailsHandler = (newData) => {
-    setGameDetails(newData);
-    setFirstComponentRender(true);
-  };
+	const setGameDetailsHandler = (newData) => {
+		setGameDetails(newData);
+		setFirstComponentRender(true);
+	};
 
-  return (
-    <article className={style["game-details-wrapper"]}>
-      <div className={style["content-main-container"]}>
-        <GameInfoHeader
-          gameDetails={gameDetails}
-          setGameDetailsHandler={setGameDetailsHandler}
-        />
+	return (
+		<>
+			<video
+				autoPlay
+				loop
+				className={style['game-details-video']}
+				src={video}>
+			</video>
 
-        {firstComponentRender && <GameDescription gameDetails={gameDetails} />}
 
-        <CommentSection gameDetails={gameDetails} />
-      </div>
-    </article>
-  );
+			<article className={style["game-details-wrapper"]}>
+				<div className={style["content-main-container"]}>
+					<GameInfoHeader
+						gameDetails={gameDetails}
+						setGameDetailsHandler={setGameDetailsHandler}
+					/>
+
+					{firstComponentRender && <GameDescription gameDetails={gameDetails} />}
+
+					<CommentSection gameDetails={gameDetails} />
+				</div>
+			</article>
+		</>
+	);
 };

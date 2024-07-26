@@ -27,18 +27,18 @@ export const UserDetails = () => {
     <>
       {userData && Object.keys(userData).length > 0 && (
         <>
-          {/* <img
+          <img
             className={style["cool-spinner"]}
             src={coolSpinner}
             alt="cool-spiner"
-          /> */}
+          />
 
           <h1 className={style["site-title"]}>GalaxyPlay</h1>
-          {/* <img
+          <img
             className={style["wallper-image"]}
             src={wallper}
             alt="smooth backgr"
-          /> */}
+          />
 
           <article className={style["user-details-wrapper"]}>
             <div>

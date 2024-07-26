@@ -19,10 +19,7 @@ export const Header = () => {
 		const titleElement = titleRef.current;
 		const text = titleElement.textContent;
 		titleElement.textContent = "";
-
-
 		titleElement.classList.add(styles["title-animation"]);
-
 
 		for (let i = 0; i < text.length; i++) {
 			const letterSpan = document.createElement("span");
@@ -57,6 +54,14 @@ export const Header = () => {
 					)}
 
 					{localStorage.getItem("user") && (
+						<li>
+							<Link to="/">
+								Home
+							</Link>
+						</li>
+					)}
+
+					{localStorage.getItem("user") && (
 						<>
 							<Link to="/profile-details">Profile Details</Link>
 						</>
@@ -77,7 +82,15 @@ export const Header = () => {
 						</li>
 					)}
 				</ul>
+
+
+				{localStorage.getItem("user") && (
+					<img className={styles['user-image']} src={JSON.parse(localStorage.getItem('user')).photoUrl} alt="user-image" />
+				)}
 			</nav>
+
+
+
 		</>
 	);
 };

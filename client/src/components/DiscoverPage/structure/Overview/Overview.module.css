@@ -8,16 +8,22 @@
     align-items: center;
     gap: 3em;
     padding-top: 2.4em;
-    background-color:  gray;
+    /* background-color: rgba(128, 128, 128, 0.4); */
+    background-image: url("../../resources/images/3d sales.jpg");
+    background-size: cover;
+    position: relative;
+    z-index: 10;
 }
 
 .demo-website-preview > h2 {
     height: fit-content;
     margin-block: 1.2em -0.8em;
     font-size: 2em;
-    color: #000;
+    color: #fefefe;
     font-style: oblique;
-    font-weight: 600;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
 }
 
 .demo-website-preview > h2:first-of-type {
@@ -53,22 +59,28 @@ article.playstation {
 
 .content h2 {
     font-size: 2em;
-    margin-bottom: 5px;
+    margin-bottom: 1em;
     min-width: 280px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+    font-weight: 400;
 }
 
-.content button {
-    background-color: rgb(87, 87, 255);
-    border: 1px solid #fefefe;
+.content a {
+    background-color: rgba(11, 11, 206, 0.7);
+    border: none;
     color: #fefefe;
-    width: 10em;
     margin-top: 3px;
     padding-block: 0.7em;
-    border-radius: 4px;
-    transition: background-color 0.7s ease, box-shadow 0.7s ease;
+    border-radius: 1em;
+    transition: background-color 0.5s ease, box-shadow 0.5s ease;
+    border: 0.3px solid gray;
+    text-decoration: none;
+    padding: 0.9em 2.5em;
+    font-size: 1.1em;
+    margin-top: 1em;
 }
 
-.content button:hover {
+.content a:hover {
     background-color: unset;
     box-shadow: 0 12px 24px rgba(0, 0, 0, 1);
 }

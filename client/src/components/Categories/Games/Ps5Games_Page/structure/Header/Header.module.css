@@ -66,20 +66,22 @@ header.site-header>* {
     z-index: 4;
     right: 0;
     display: flex;
-    gap: 4.4em;
+    gap: 2em;
     align-items: flex-start;
-    margin: 2em 2em 0em 1em;
+    margin: 1.7em 2em 0em 1em;
     font-size: 0.9em;
-    width: 27em;
+    width: 35em;
     justify-content: center;
     cursor: default;
 }
 
 .header-nav ul {
+    margin-top: -0.3em;
     width: 100%;
     height: 100%;
     display: flex;
-    gap: 2em;
+    gap: 1.8em;
+    width: 30em;
     backdrop-filter: blur(30px);
     box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37);
     border: 2px solid rgba(255, 255, 255, 0.18);
@@ -87,6 +89,7 @@ header.site-header>* {
     border-radius: 1em;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
     cursor: default;
+    padding-block: 1px;
 }
 
 .header-nav ul a {
@@ -144,7 +147,6 @@ header.site-header>* {
 
 .logo-data-wrapper .title-border:hover {
     background-color: #646cff;
-
 }
 
 .header-nav a {
@@ -167,5 +169,11 @@ header.site-header>* {
 
 .header-nav ul:nth-of-type(2) {
     margin-right: 3em;
+}
+
+.header-nav .user-image {
+    width: 4em;
+    border-radius: 50%;
+    margin-top: -1.2em;
 }
 

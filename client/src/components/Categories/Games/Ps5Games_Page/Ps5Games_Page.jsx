@@ -15,70 +15,70 @@ let previousPage = 1; // ako komponenta e unmountnat i ne sme vlezli v Game-Deta
 let shouldPrerenderGameList = false;
 
 export const Ps5Games_Page = () => {
-  let location = useLocation();
-  let goingToGameDetails = useRef(false);
+	let location = useLocation();
+	let goingToGameDetails = useRef(false);
 
-  // CURRENT PAGE:
-  const [currentPage, setCurrentPage] = useState(previousPage);
-  let setCurrentPageHandler = (newPage) => {
-    setCurrentPage(newPage);
-  };
+	// CURRENT PAGE:
+	const [currentPage, setCurrentPage] = useState(previousPage);
+	let setCurrentPageHandler = (newPage) => {
+		setCurrentPage(newPage);
+	};
 
-  // debugger;
-  if (firstMount) {
-    firstMount = false;
-    startAndEndIndexes.startIndex = 0;
-    startAndEndIndexes.endIndex = 18;
-  }
+	// debugger;
+	if (firstMount) {
+		firstMount = false;
+		startAndEndIndexes.startIndex = 0;
+		startAndEndIndexes.endIndex = 18;
+	}
 
-  function setShouldPrerenderGameList(value) {
-    shouldPrerenderGameList = value;
-  }
+	function setShouldPrerenderGameList(value) {
+		shouldPrerenderGameList = value;
+	}
 
-  useEffect(() => {
-    // Clean Up Function:
-    return () => {
-      debugger;
-      const pathName = location.pathname;
-      const lastElement = pathName.split("/").pop();
+	useEffect(() => {
+		// Clean Up Function:
+		return () => {
+			debugger;
+			const pathName = location.pathname;
+			const lastElement = pathName.split("/").pop();
 
-      if ((location.pathname.split("/").length <= 2 ||lastElement.includes("games")) && goingToGameDetails.current === false) {
-        previousPage = 1;
-        startAndEndIndexes.startIndex = 0;
-        startAndEndIndexes.endIndex = 18;
-        setShouldPrerenderGameList(true);
-      }
-    };
-  }, [location.pathname]); // Добавяне на зависимости location.pathname и currentPage
+			if ((location.pathname.split("/").length <= 2 || lastElement.includes("games")) && goingToGameDetails.current === false) {
+				previousPage = 1;
+				startAndEndIndexes.startIndex = 0;
+				startAndEndIndexes.endIndex = 18;
+				setShouldPrerenderGameList(true);
+			}
+		};
+	}, [location.pathname]); // Добавяне на зависимости location.pathname и currentPage
 
-  function savePreviousPageIndex() {
-    // debugger;
-    goingToGameDetails.current = true;
-    previousPage = currentPage;
-  }
+	function savePreviousPageIndex() {
+		// debugger;
+		goingToGameDetails.current = true;
+		previousPage = currentPage;
+	}
 
-  // That function is about GameDetails, because i should know if the user decided to quit,redirect to categories or something else:
-  function cleanUpForGameDetails() {
-    previousPage = 1;
-    startAndEndIndexes.startIndex = 0;
-    startAndEndIndexes.endIndex = 18;
-    setShouldPrerenderGameList(true);
-  }
+	// That function is about GameDetails, because i should know if the user decided to quit,redirect to categories or something else:
+	function cleanUpForGameDetails() {
+		previousPage = 1;
+		startAndEndIndexes.startIndex = 0;
+		startAndEndIndexes.endIndex = 18;
+		setShouldPrerenderGameList(true);
+	}
 
-  return (
-    <>
-      <Header />
-      <Body
-        startAndEndIndexes={startAndEndIndexes}
-        initialMountForAllGames={initialMountForAllGames}
-        initialMountForFirst_18_Games={initialMountForFirst_18_Games}
-        currentPage={currentPage}
-        setCurrentPageHandler={setCurrentPageHandler}
-        savePreviousPageIndex={savePreviousPageIndex}
-        shouldPrerenderGameList={shouldPrerenderGameList}
-        setShouldPrerenderGameList={setShouldPrerenderGameList}
-		cleanUpForGameDetails={cleanUpForGameDetails}
-      />
-    </>
-  );
+	return (
+		<>
+			<Header />
+			<Body
+				startAndEndIndexes={startAndEndIndexes}
+				initialMountForAllGames={initialMountForAllGames}
+				initialMountForFirst_18_Games={initialMountForFirst_18_Games}
+				currentPage={currentPage}
+				setCurrentPageHandler={setCurrentPageHandler}
+				savePreviousPageIndex={savePreviousPageIndex}
+				shouldPrerenderGameList={shouldPrerenderGameList}
+				setShouldPrerenderGameList={setShouldPrerenderGameList}
+				cleanUpForGameDetails={cleanUpForGameDetails}
+			/>
+		</>
+	);
 };
