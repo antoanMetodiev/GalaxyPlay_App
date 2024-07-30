@@ -1,0 +1,85 @@
+
+
+.comment-item {
+    width: 41em;
+    background-color: #87CEEB;
+    border-radius: 1em;
+    height: 18em;
+    margin-top: 5em;
+    margin-left: 1em;
+    padding: 0.7em 0em 0em 0.5em;
+    position: relative;
+}
+
+section.comment-item img.user-image {
+    width: 4em;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-image_name-container {
+    display: flex;
+    gap: 0.7em;
+    margin-left: 0.9em;
+}
+
+.profile-image_name-container h2 {
+    font-weight: 350;
+    margin-top: 0.16em;
+    font-size: 1.4em;
+    letter-spacing: 1px;
+}
+
+textarea.comment-text {
+    width: 39em;
+    height: 10em;
+    resize: none;
+    border-radius: 0.6em;
+    margin: 2em 0em 0em 0.4em;
+    border: none;
+}
+
+.update-button {
+	padding: 0.5em 1.5em;
+	background-color: cadetblue;
+	border: none;
+	position: absolute;
+	top: 1em;
+	right: 4.6em;
+	transition: background-color 0.5s ease;
+	border-radius: 6px;
+	color: #fefefe;
+	cursor: pointer;
+	transition: box-shadow 0.4s ease;
+	display: none;
+}
+
+.update-button:hover {
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.delete-comment-image {
+    position: absolute;
+    top: 1em;
+    right: 0.56em;
+}
+
+.delete-comment-image:hover {
+    background-color: rgba(255, 0, 0, 6);
+    border-radius: 1em;
+}
+
+.update-comment-image {
+    position: absolute;
+    width: 2.5em;
+    background-repeat: no-repeat;
+    top: 0.73em;
+    right: 3.1em;
+    border-radius: 50%;
+    padding: 3px;
+    display: none;
+}
+
+.update-comment-image:hover {
+    background-color: #fff;
+}
