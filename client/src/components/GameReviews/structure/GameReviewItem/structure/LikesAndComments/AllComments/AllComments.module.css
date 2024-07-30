@@ -1,0 +1,58 @@
+article.main-comment-wrapper {
+    min-height: 50em;
+    background-color: rgba(192, 192, 192, 0.5);
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+    padding-top: 0.1em;
+}
+
+form.make-comment-container {
+    display: flex;
+    margin-top: 1em;
+    padding-left: 0.4em;
+    align-items: center;
+    gap: 0.4em;
+    justify-content: center;
+}
+
+form.make-comment-container img.user-image {
+    width: 3em;
+    border-radius: 50%;
+    object-fit: cover;
+    
+}
+
+form.make-comment-container > input {
+    width: 25em;
+    height: 2.7em;
+    border-radius: 3em;
+    border: 0.3px solid gray;
+    margin-top: 3px;
+}
+
+form.make-comment-container > input:focus {
+    border: 0.3px solid gray;
+}
+
+.no-comments-header {
+    font-weight: 400;
+    margin-top: 2em;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.make-comment-container button {
+    padding: 0.4em 1.6em;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 1em;
+    background-color: rgba(250, 235, 215, 0.562);
+    margin-left: 3px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #000000
+}
+
+.make-comment-container button:hover {
+    cursor: pointer;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
