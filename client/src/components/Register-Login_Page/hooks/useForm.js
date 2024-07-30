@@ -3,11 +3,12 @@ import { auth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from
 
 import { email, password, phoneNumber, username } from "../utils/formValidations.js";
 import { updateProfile } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 export const useForm = (initialValues) => {
 	const [formValues, setFormValues, choosenAvatarImage] = useState(initialValues);
 	const [error, setError] = useState("");
-
+	let navigate = useNavigate();
 
 	let formValidationFunctions = { email, password, phoneNumber, username };
 
@@ -48,70 +49,100 @@ export const useForm = (initialValues) => {
 	}
 
 
-	async function onSubmitRegisterHandler(event, choosenAvatarImage) {
+	async function onSubmitRegisterHandler(event, choosenAvatarImage, setRegisterOrNotHandler) {
 
-		console.log(choosenAvatarImage);
+		// Check if user are inlcudes:
+		let isIncludedUsername = await fetch(`https://galaxyplay-15910-default-rtdb.europe-west1.firebasedatabase.app/usernames/${formValues.username}.json`);
 
-		try {
-			const userCredential = await createUserWithEmailAndPassword(auth, formValues.email, formValues.password,
-			);
+		// Ako se sudurja vutre ne pravq zaqvka:
+		isIncludedUsername = await isIncludedUsername.json();
 
-			const user = userCredential.user;
-			let number = event.target.phoneNumber.value;
+		debugger;
+		if (isIncludedUsername) {
 
-			debugger;
-			// Send Datas in Firebase Database:
+			let text = 'Username already taken!'.slice(0);
+			setRegisterOrNotHandler(text);
 
-			let myCustomKey = formValues.username;
-
-			fetch(`https://galaxyplay-15910-default-rtdb.europe-west1.firebasedatabase.app/users/${myCustomKey}.json`, {
+		} else {
+			// Ako nqma takuv username - pravim takuv i si go suhranqvame na survura:
+			await fetch(`https://galaxyplay-15910-default-rtdb.europe-west1.firebasedatabase.app/usernames/${formValues.username}.json`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
 				},
 				body: JSON.stringify({
 					username: formValues.username,
-					email: formValues.email,
-					phoneNumber: number,
-					password: formValues.password,
-					photoURL: choosenAvatarImage.current,
-					gender: event.target.gender.value,
 				}),
 			});
 
-			fetch(`https://galaxyplay-15910-default-rtdb.europe-west1.firebasedatabase.app/chatUsers/${myCustomKey}.json`, {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify({
+
+			try {
+				setRegisterOrNotHandler('Registered!');
+				const userCredential = await createUserWithEmailAndPassword(auth, formValues.email, formValues.password,);
+				const user = userCredential.user;
+				let number = event.target.phoneNumber.value;
+				const myToken = await user.getIdToken(); 
+
+				// Send Datas in Firebase Database for Users:
+
+				let myCustomKey = formValues.username;
+				fetch(`https://galaxyplay-15910-default-rtdb.europe-west1.firebasedatabase.app/users/${myCustomKey}.json`, {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+					body: JSON.stringify({
+						username: formValues.username,
+						email: formValues.email,
+						phoneNumber: number,
+						password: formValues.password,
+						photoURL: choosenAvatarImage.current,
+						gender: event.target.gender.value,
+					}),
+				});
+
+				// For ChatUsers:
+				fetch(`https://galaxyplay-15910-default-rtdb.europe-west1.firebasedatabase.app/chatUsers/${myCustomKey}.json`, {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+					body: JSON.stringify({
+						username: formValues.username,
+						email: formValues.email,
+						phoneNumber: number,
+						photoURL: choosenAvatarImage.current,
+						gender: event.target.gender.value,
+					}),
+				});
+
+				// Set additional user data
+				await updateProfile(user, {
+					displayName: formValues.username,
+					phoneNumber: number,
+					photoURL: choosenAvatarImage.current,
+					gender: event.target.gender.value,
+				});
+				
+				debugger;
+				localStorage.setItem('user', JSON.stringify({
 					username: formValues.username,
-					email: formValues.email,
-					phoneNumber: number,
-					photoURL: choosenAvatarImage.current,
-					gender: event.target.gender.value,
-				}),
-			});
+					token: myToken,
+					photoUrl: choosenAvatarImage.current,
+				}));
 
+				setFormValues(initialValues);
+				cleariRegisterValues();
+				
 
-			// Set additional user data
-			await updateProfile(user, {
-				displayName: formValues.username,
-				phoneNumber: number,
-				photoURL: choosenAvatarImage.current,
-				gender: event.target.gender.value,
-			});
+				// and finnaly we can navigate to '/':
+				navigate('/');
 
-
-			setFormValues(initialValues);
-			cleariRegisterValues();
-			console.log('User Registered!');
-
-		} catch (error) {
-			cleariRegisterValues();
-			setError(error.message);
+			} catch (error) {
+				cleariRegisterValues();
+				setError(error.message);
+			}
 		}
-
 	};
 
 

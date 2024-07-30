@@ -7,50 +7,49 @@ import { useNavigate } from "react-router-dom";
 import { useRef } from "react";
 
 export const Game_Categories = () => {
-  const navigate = useNavigate();
-  
-
-  function navigateToPathHandler(event) {
-	  navigate(`${event.target.previousSibling.textContent.toLowerCase().split(" ").join('-')}`);
-  };
+	const navigate = useNavigate();
 
 
-  return (
-    <article className={styles["container"]}>
-      <section className={styles["demo-website-preview"]}>
-        <h2>Game Categories</h2>
+	function navigateToPathHandler(event) {
+		navigate(`${event.target.previousSibling.textContent.toLowerCase().split(" ").join('-')}`);
+	};
 
-        <article className={styles.playstation}>
+	return (
+		<article className={styles["container"]}>
+			<section className={styles["demo-website-preview"]}>
+				<h2>Game Categories</h2>
 
-          <div className={`${styles.playstation} ${styles._5}`}>
-            <img src={ps5GamesImage} alt="ps5 games" />
-            <div className={styles.content}>
-              <h2>PS5 Games</h2>
-              <button onClick={navigateToPathHandler} className={styles['ps5-button']}>View Now</button>
-            </div>
-            <span className={styles["bkg-color"]}></span>
-          </div>
+				<article className={styles.playstation}>
 
-          <div className={`${styles.playstation} ${styles._5}`}>
-            <img src={ps4GamesImage} alt="ps4 games" />
-            <div className={styles.content}>
-              <h2>PS4 Games</h2>
-              <button onClick={navigateToPathHandler}> View Now</button>
-            </div>
-            <span className={styles["bkg-color"]}></span>
-          </div>
+					<div className={`${styles.playstation} ${styles._5}`}>
+						<img src={ps5GamesImage} alt="ps5 games" />
+						<div className={styles.content}>
+							<h2>PS5 Games</h2>
+							<button onClick={navigateToPathHandler} className={styles['ps5-button']}>View Now</button>
+						</div>
+						<span className={styles["bkg-color"]}></span>
+					</div>
 
-          <div className={`${styles.playstation} ${styles._5}`}>
-            <img src={xboxGamesImage} alt="ps4 games" />
-            <div className={styles.content}>
-              <h2>XBOX Games</h2>
-              <button onClick={navigateToPathHandler} className={styles['xbox-button']}>View Now</button>
-            </div>
-            <span className={styles["bkg-color"]}></span>
-          </div>
-          
-        </article>
-      </section>
-    </article>
-  );
+					<div className={`${styles.playstation} ${styles._5}`}>
+						<img src={ps4GamesImage} alt="ps4 games" />
+						<div className={styles.content}>
+							<h2>PS4 Games</h2>
+							<button onClick={navigateToPathHandler}> View Now</button>
+						</div>
+						<span className={styles["bkg-color"]}></span>
+					</div>
+
+					<div className={`${styles.playstation} ${styles._5}`}>
+						<img src={xboxGamesImage} alt="ps4 games" />
+						<div className={styles.content}>
+							<h2>XBOX Games</h2>
+							<button onClick={navigateToPathHandler} className={styles['xbox-button']}>View Now</button>
+						</div>
+						<span className={styles["bkg-color"]}></span>
+					</div>
+
+				</article>
+			</section>
+		</article>
+	);
 };

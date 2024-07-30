@@ -41,6 +41,8 @@ export const Header = () => {
 			</div>
 
 			<nav className={styles["header-nav"]}>
+				
+				<img className={styles['user-image']} src="" alt="" />
 				<ul style={{ listStyle: "none" }}>
 					{!localStorage.getItem("user") && (
 						<>
@@ -54,32 +56,31 @@ export const Header = () => {
 					)}
 
 					{localStorage.getItem("user") && (
-						<li>
-							<Link to="/">
-								Home
-							</Link>
-						</li>
-					)}
-
-					{localStorage.getItem("user") && (
 						<>
-							<Link to="/profile-details">Profile Details</Link>
+							<li>
+								<Link to="/">
+									Home
+								</Link>
+							</li>
+
+							<li>
+								<Link to="/game-reviews">Blog</Link>
+							</li>
+
+							<li>
+								<Link to="/categories">Categories</Link>
+							</li>
+
+							<li>
+								<Link to="/profile-details">Profile Details</Link>
+							</li>
+
+							<li>
+								<Link onClick={logOutUser}>
+									Log Out
+								</Link>
+							</li>
 						</>
-					)}
-
-					{localStorage.getItem("user") && (
-						<>
-							<Link to="/categories">Categories</Link>
-						</>
-					)}
-
-
-					{localStorage.getItem("user") && (
-						<li>
-							<Link onClick={logOutUser}>
-								Log Out
-							</Link>
-						</li>
 					)}
 				</ul>
 
@@ -88,8 +89,6 @@ export const Header = () => {
 					<img className={styles['user-image']} src={JSON.parse(localStorage.getItem('user')).photoUrl} alt="user-image" />
 				)}
 			</nav>
-
-
 
 		</>
 	);

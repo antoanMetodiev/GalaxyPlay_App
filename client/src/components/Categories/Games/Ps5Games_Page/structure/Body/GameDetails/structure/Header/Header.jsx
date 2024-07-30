@@ -6,6 +6,7 @@ export const Header = () => {
   const location = useLocation();
   const cleanUpForGameDetails = location.state?.cleanUpForGameDetails;
 
+
   const logOutUserHandler = (event) => {
     event.preventDefault();
     localStorage.clear();
@@ -29,6 +30,8 @@ export const Header = () => {
           <h1 className={style["site-title"]}>GalaxyPlay</h1>
           <span className={style["title-border"]}></span>
         </div>
+
+
         <nav className={style["header-nav"]}>
           <ul style={{ listStyle: "none" }}>
             {!localStorage.getItem("user") && (

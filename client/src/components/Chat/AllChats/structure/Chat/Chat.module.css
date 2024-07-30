@@ -1,9 +1,9 @@
 .chat-container-wrapper {
     position: fixed;
-    bottom: 1em;
+    bottom: 0.2em;
     right: 1.4em;
-    width: 27em;
-    height: 43em;
+    width: 23.7em;
+    height: 38em;
     border-radius: 1em;
     z-index: 17;
     animation: fadeInUp 0.5s ease-in-out;
@@ -38,7 +38,7 @@
 }
 
 .messages-section {
-    height: 35em;
+    height: 30em;
     background-color: rgba(0, 0, 139, 0.4);
     list-style-type: none;
     flex-direction: column;
@@ -52,11 +52,12 @@
 input.message-text-container {
     background-color: unset;
     width: 21em;
-    height: 2.8em;
-    margin: 0.4em 0.5em 0em 1em;
+    height: 2.7em;
+    margin: 0.4em 0.5em 0.4em 0.5em;
     border-radius: 1.5em;
     border: 1px solid grey;
     margin-top: 9px;
+    margin-right: -1.3em;
 }
 
 input.message-text-container:focus {
@@ -89,9 +90,9 @@ input.message-text-container:focus {
     /* Лек черен text-shadow */
 }
 
-
 .send-message-button {
-    padding: 0.2em 2em;
+    padding: 0.14em 2em;
+    font-size: 1em;
     align-self: center;
     border-radius: 0.5em;
     border: none;
@@ -101,6 +102,13 @@ input.message-text-container:focus {
     display: block;
     border-radius: 2em;
     object-fit: cover;
+    margin-right: -1.1em;
+    
+}
+
+.send-message-button:hover {
+    text-shadow: 2px 2px 5px rgba(0, 0, 139, 0.3); /* по-силна тъмен синя сянка с малко по-голямо размиване */;
+    cursor: pointer;
 }
 
 .chat-form {

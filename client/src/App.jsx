@@ -14,6 +14,7 @@ import { WithoutPermission } from "./components/WithoutPermission/WithoutPermiss
 import AudioPlayer from "./AudioPlayer";
 import { UserDetails } from "./UserDetails/UserDetails";
 import { InvalidPath } from "./components/InvalidPath/InvalidPath";
+import { GameReviews } from "./components/GameReviews/GameReviews";
 
 function App() {
 	let firstRender = useRef(false);  // it is just a flag for bug between InvalidPath && WithoutPermission!
@@ -34,12 +35,6 @@ function App() {
 		setUserData(newData);
 	};
 
-	// if (!JSON.parse(localStorage.getItem("user"))) {
-	// 	setLogStatus(false);
-	// }
-
-
-	console.log(firstRender);
 
 	return (
 		<>
@@ -83,6 +78,11 @@ function App() {
 							path="/categories/:specificCategory/details?/:gameId"
 							element={<GameDetails />}
 						/>
+
+
+						{/* Game Rewiews */}
+						<Route path="/game-reviews" element={<GameReviews />} />
+
 					</>
 				)}
 

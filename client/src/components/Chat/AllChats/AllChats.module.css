@@ -1,9 +1,9 @@
 .all-GalaxyPlay-users {
     background-color: rgba(128, 128, 128, 0.7);
-    height: 24em;
-    width: 20em;
+    height: 23em;
+    width: 19em;
     position: fixed;
-    bottom: 1.5em;
+    bottom: 1em;
     right: 1.5em;
     z-index: 22;
     display: flex;
@@ -16,6 +16,7 @@
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     display: flex;
     animation: fadeIn 0.4s ease-in-out forwards;
+    margin-left: -1em;
 }
 
 @keyframes fadeIn {
@@ -35,13 +36,16 @@
     gap: 1em;
     position: relative;
     z-index: 16;
+    border-radius: 1.2em;
+    
 }
 
 .chat-user-item:hover {
-    border: 0.5px solid silver;
-    border-radius: 1.2em;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    /* border: 0.5px solid silver; */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
     cursor: default;
+    text-shadow: 6px 6px 12px rgba(0, 0, 0, 1);
+    
 }
 
 .chat-user-item img {
@@ -59,17 +63,39 @@
     letter-spacing: 1px;
 }
 
+
 .show-users-list-img {
-    width: 3.5em;
-    height: 3.5em;
+    width: 3.4em;
+    height: 3.4em;
     position: fixed;
     z-index: 12;
-    right: 2em;
-    bottom: 2em;
+    right: 1.8em;
+    bottom: 1.3em;
     /* box-shadow: 0 4px 8px rgba(0, 132, 255, 0.5);  */
     border-radius: 6em;
 }
 
 .show-users-list-img:hover {
     box-shadow: 0 4px 8px rgba(0, 132, 255, 0.9);
+}
+
+
+/* Search Engine */
+input.search-engine {
+    border-radius: 0em;
+    margin-top: 4px;
+    border-radius: 3em;
+    border: 0.7px solid gray;
+    width: 18em;
+    margin: -1px auto 0px auto;
+    color: rgb(192, 192, 192);
+    text-shadow: 3px 3px 7px rgba(0, 0, 0, 1);
+}
+
+input.search-engine:focus {
+    border: 1.1px solid gray;
+}
+
+input.search-engine::placeholder {
+    color: silver;
 }

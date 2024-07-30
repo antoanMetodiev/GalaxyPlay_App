@@ -364,3 +364,44 @@ h2.error-message-title {
     right: 1em;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9); 
 }
+
+
+/* REGISTER OR NOT: */
+
+.register-or-not-text {
+    width:  7em;
+    height: fit-content;
+    font-size: 2.5em;
+    position: absolute;
+    top: 10em;
+    right: -12em;
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 2px;
+    color: silver;
+    font-weight: 300;
+    text-shadow: 2px 2px 5px black, 4px 4px 10px black, 6px 6px 15px black;
+    text-align: center;
+    /* animation: appear 1s ease-in-out, disappear 1s ease-in-out 5s forwards; */
+}
+
+/* @keyframes appear {
+    from {
+        opacity: 0;
+        right: -12em;
+    }
+    to {
+        opacity: 1;
+        right: 0;
+    }
+}
+
+@keyframes disappear {
+    from {
+        opacity: 1;
+        right: 0;
+    }
+    to {
+        opacity: 0;
+        right: -12em;
+    }
+} */
