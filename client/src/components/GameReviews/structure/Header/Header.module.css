@@ -1,0 +1,83 @@
+header.site-header {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 7px 12px;
+    margin-top: 2px;
+}
+
+header.site-header div.logo-data-wrapper img {
+    width: 7em;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+header.site-header div.logo-data-wrapper {
+    display: flex;
+}
+
+nav.header-nav {
+    display: flex;
+    gap: 1.5em;
+    margin: 0.6em 6em 0em 0em;
+    height: 2em;
+    border-radius: 1em;
+    padding: 1px 9px;
+    backdrop-filter: blur(40px);
+    box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+nav.header-nav ul {
+    display: flex;
+    gap: 1.5em;
+    margin-top: 5px;
+}
+
+nav.header-nav ul button {
+    background-color: unset;
+    border: unset;
+    color: #fefefe;
+}
+
+nav.header-nav ul button:hover {
+    color: gray;
+}
+
+h1.site-title {
+    font-size: 1.9em;
+    margin: 0.5em 0em 0em 0.5em;
+    font-weight: 400;
+    color: #fefefe;
+    letter-spacing: 1px;
+    font-style: oblique;
+}
+
+h1.site-title:hover {
+    color: gray;
+    cursor: default;
+}
+
+span.title-border {
+    width: 11em;
+    height: 2px;
+    position: absolute;
+    top: 4.32em;
+    left: 8.8em;
+    background-color: #fefefe;
+}
+
+span.title-border:hover {
+    background-color: gray;
+    cursor: default;
+}
+
+header.site-header .user-image {
+    width: 3.5em;
+    height: 3.5em;
+    border-radius: 50%;
+    position: absolute;
+    right: 0.8em;
+    top: 0.8em;
+}
