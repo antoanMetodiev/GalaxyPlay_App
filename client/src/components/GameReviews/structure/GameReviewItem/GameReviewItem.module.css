@@ -1,0 +1,108 @@
+article.rewiew-container {
+    width: 70em;
+    height: 29em;
+    padding: 1em;
+    display: flex;
+    gap: 3em;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+    background-color: rgba(173, 216, 230, 0.4);
+    position: relative;
+}
+
+article.rewiew-container img.game-review-img {
+    width: 22em;
+    border-radius: 1em;
+    object-fit: cover;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+article.rewiew-container div.content {
+    padding-block: 1em;
+}
+
+
+div.content .table-item {
+    display: flex;
+    gap: 6em;
+    margin-top: 0.2em;
+}
+
+div.content .table-item {
+    padding: 0.5em 1em;
+}
+
+div.content .table-item .row>div {
+    margin-top: 1em;
+}
+
+div.content h2.game-title-name {
+    border-bottom: 1.9px solid #fff;
+    width: fit-content;
+    text-shadow: 2px 2px 5px rgba(252, 250, 250, 0.4);
+    color: #000000;
+    font-weight: 380;
+}
+
+div.content .table-item .row>div>h3 {
+    font-size: 1.4em;
+    font-weight: 450;
+    color: #000000;
+    letter-spacing: 1px;
+}
+
+div.content .table-item .row>div>p {
+    font-size: 1.4em;
+    width: 13em;
+    margin-top: 0.3em;
+    /* color: rgb(192, 192, 192); */
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    letter-spacing: 2px;
+}
+
+article.rewiew-container .game-title-name {
+    font-size: 2em;
+    color: #fff;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.open-details-container {
+    position: absolute;
+    right: 1em;
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    bottom: 1.4em;
+    background-color: rgba(250, 235, 215, 0.78);
+    
+    padding: 0.25em 0.6em;
+    border-radius: 1em;
+    box-shadow: 
+  2px 2px 5px rgba(0, 0, 0, 0.3), /* основна сянка с малко размиване */
+  4px 4px 10px rgba(0, 0, 0, 0.2); /* по-силна сянка с малко размиване */
+}
+
+
+
+.open-details-container h3 {
+    font-weight: 500;
+    color: #000;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: oblique;
+}
+
+.open-details-container:hover {
+    background-color: unset;
+    cursor: pointer;
+    color: #fefefe;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.open-details-container>i {
+    font-size: 1.4em;
+    color: #000;
+    font-weight: 502;
+}
