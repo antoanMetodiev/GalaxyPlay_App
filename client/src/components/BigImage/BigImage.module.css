@@ -1,0 +1,26 @@
+div.big-image-wrapper {
+    position: fixed;
+    background-color: #000000d9;
+    width: 100vw;
+    height: 100vh; /* for sure!*/
+    opacity: 1;
+    z-index: 30;
+    display: none;
+}
+
+.big-image {
+    
+    /* 70x40 - this is previous size */
+
+    width: 70em;
+    height: 40em;
+    position: absolute;
+    z-index: 31;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 1em;
+    object-fit: cover;
+    /* box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3); */
+    background-color: unset;
+}
