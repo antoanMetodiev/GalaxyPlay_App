@@ -15,7 +15,7 @@
 
 p.desc-text {
     font-size: 1.5em;
-    line-height: 2.3;
+    line-height: 2.45;
     width: 97%;
     margin: 0 auto;
     padding-left: 0.7em;
@@ -40,7 +40,11 @@ p.desc-text {
     width: 97%;
     height: 45em;
     margin: 0 auto;
-    border-radius: 2em;
+    border-radius: 1em;
+}
+
+.video-wrapper-container iframe {
+    border-radius: 1em;
 }
 
 .trailer-title {

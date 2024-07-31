@@ -37,6 +37,7 @@ export const Body = ({
 	// debugger;
 	const [allGames, setAllGames] = useState(savedAllGames);
 	const [gameList, setGameList] = useState([]);
+	let [concreteVideo, setConcreteVideo] = useState('');
 	let myFavContainerRef = useRef(null);
 
 	const renderGameList = useRef(true);
@@ -58,20 +59,26 @@ export const Body = ({
 		setGameList(allGames.slice(0, 18));
 	}
 
-	let wallperVideos = {
-		game: GamesWallperVideo,
-		pc: PcWallperVideo,
-		ps5: Ps5WallperVideo,
-		ps4: Ps4WallperVideo,
-		xbox: XboxWallperVideo,
-		laptop: LaptopWallperVideo,
-	};
+	useEffect(() => {
+		let wallperVideos = {
+			game: GamesWallperVideo,
+			pc: PcWallperVideo,
+			ps5: Ps5WallperVideo,
+			ps4: Ps4WallperVideo,
+			xbox: XboxWallperVideo,
+			laptop: LaptopWallperVideo,
+		};
 
-	let concreteVideo = wallperVideos[paths[paths.length - 1]];
+		let concreteVideo1 = wallperVideos[paths[paths.length - 1].toLowerCase()];
 
-	if (paths[paths.length - 2] === "games") {
-		concreteVideo = wallperVideos.game;
-	}
+		if (paths[paths.length - 2] === "games") {
+			concreteVideo1 = wallperVideos.game;
+		}
+
+		setConcreteVideo(concreteVideo1);
+	}, [location.pathname])
+
+	
 
 	function setGameListHandler(finalValue) {
 		setGameList(finalValue);

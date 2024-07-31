@@ -23,13 +23,25 @@ export const GameInfoHeader = ({
 	let shopsContainerWrapper = useRef();
 
 	useEffect(() => {
+		let paths = location.pathname.split('/');
+		paths.shift();
+
 		if (doCheck.current === true && gameDetails.name.includes("(")) {
 			// debugger;
 			if (infoUnderTheTruckRef.current && shopsContainerWrapper.current) {
 				debugger;
-				infoUnderTheTruckRef.current.textContent =
-				"Delivery date is estimated and depends on the location and the chosen courier company. The exact date when the product will reach you, as well as the final shipping cost.";
-				shopsContainerWrapper.current.style.bottom = "0em";
+
+				console.log(paths[paths.length - 1]);
+
+				if (paths[paths.length - 2].includes('games')) {
+					infoUnderTheTruckRef.current.textContent =
+						"Delivery date is estimated and depends on the location and the chosen courier company. The exact date when the product will reach you, as well as the final shipping cost.";
+					shopsContainerWrapper.current.style.bottom = "0em";
+				} else {
+					infoUnderTheTruckRef.current.textContent =
+						"Delivery date is estimated and depends on the location and the chosen courier company.";
+					shopsContainerWrapper.current.style.bottom = "0em";
+				}
 			}
 		}
 	}, [infoUnderTheTruckRef.current, shopsContainerWrapper.current, gameDetails.name]);

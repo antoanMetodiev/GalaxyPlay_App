@@ -14,11 +14,9 @@ export const Filter = ({
 
     let filteredObject = [];  // final result
 
-
     function makeFilterHandler(event) {
 
-
-        if (event.target.value === 'The Latest (release date)') {
+        if (event.target.value === 'The Latest (Release Date)') {
 
             let allReleaseDates = []; // all release dates:
 
@@ -160,7 +158,6 @@ export const Filter = ({
         setFilteredReviewsBySelectListHandler(filteredObject);
     }
 
-
     return (
         <>
             <select
@@ -170,7 +167,7 @@ export const Filter = ({
                 name=""
                 id="">
                 <option>Without Filter</option>
-                <option>The Latest (Release Date)</option>
+                <option>Latest Release</option>
                 <option>Platforms</option>
                 <option>Genres</option>
                 <option>Developers</option>
@@ -189,6 +186,7 @@ export const Filter = ({
                     className={style['choose-concrete-filter']}
                     type="text"
                     name="inputText"
+                    placeholder={`Search...`}
                 />
 
 

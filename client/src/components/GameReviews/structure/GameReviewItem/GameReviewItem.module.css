@@ -6,8 +6,20 @@ article.rewiew-container {
     gap: 3em;
     border-top-left-radius: 1em;
     border-top-right-radius: 1em;
-    background-color: rgba(173, 216, 230, 0.4);
+    background-color: #00000085;
     position: relative;
+    animation: fadeIn 0.8s ease-in-out; /* Прилага анимацията при поява */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Премества елемента малко надолу */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Връща елемента в първоначалната му позиция */
+    }
 }
 
 article.rewiew-container img.game-review-img {
@@ -40,26 +52,27 @@ div.content h2.game-title-name {
     border-bottom: 1.9px solid #fff;
     width: fit-content;
     text-shadow: 2px 2px 5px rgba(252, 250, 250, 0.4);
-    color: #000000;
+    color: gainsboro;
     font-weight: 380;
 }
 
 div.content .table-item .row>div>h3 {
     font-size: 1.4em;
     font-weight: 450;
-    color: #000000;
+    color: silver;
     letter-spacing: 1px;
+    margin-bottom: 4px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
 }
 
 div.content .table-item .row>div>p {
-    font-size: 1.4em;
+    font-size: 1.2em;
     width: 13em;
     margin-top: 0.3em;
     /* color: rgb(192, 192, 192); */
     color: #fff;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    letter-spacing: 2px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    letter-spacing: 1px;
 }
 
 article.rewiew-container .game-title-name {
@@ -76,22 +89,25 @@ article.rewiew-container .game-title-name {
     gap: 1em;
     align-items: center;
     bottom: 1.4em;
-    background-color: rgba(250, 235, 215, 0.78);
-    
+    background-color: #000000cb;
+
     padding: 0.25em 0.6em;
     border-radius: 1em;
-    box-shadow: 
-  2px 2px 5px rgba(0, 0, 0, 0.3), /* основна сянка с малко размиване */
-  4px 4px 10px rgba(0, 0, 0, 0.2); /* по-силна сянка с малко размиване */
+    box-shadow:
+        2px 2px 5px rgba(0, 0, 0, 0.3),
+        /* основна сянка с малко размиване */
+        4px 4px 10px rgba(0, 0, 0, 0.2);
+    /* по-силна сянка с малко размиване */
 }
 
 
 
 .open-details-container h3 {
     font-weight: 500;
-    color: #000;
+    color: #000000bf;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-style: oblique;
+    color: #fefefebf;
 }
 
 .open-details-container:hover {
@@ -103,6 +119,6 @@ article.rewiew-container .game-title-name {
 
 .open-details-container>i {
     font-size: 1.4em;
-    color: #000;
+    color: #fefefe;
     font-weight: 502;
 }

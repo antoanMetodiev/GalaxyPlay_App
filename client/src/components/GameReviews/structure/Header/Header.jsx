@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import style from "../Header/Header.module.css";
-import LastLogo from "../../../DiscoverPage/resources/images/last-logo.jfif";
+import LastLogo from "../../../../components/DiscoverPage/resources/images/old-log.jfif";
 
 import { Link } from "react-router-dom";
 

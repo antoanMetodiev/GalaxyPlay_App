@@ -10,6 +10,7 @@ import { Ps5Games_Page } from "./components/Categories/Games/Ps5Games_Page/Ps5Ga
 import { GameDetails } from "./components/Categories/Games/Ps5Games_Page/structure/Body/GameDetails/GameDetails";
 import { AllChats } from "./components/Chat/AllChats/AllChats";
 import { WithoutPermission } from "./components/WithoutPermission/WithoutPermission";
+import { BigImage } from "./components/BigImage/BigImage";
 
 import AudioPlayer from "./AudioPlayer";
 import { UserDetails } from "./UserDetails/UserDetails";
@@ -22,6 +23,10 @@ function App() {
 	const [userData, setUserData] = useState({});
 	let [logStatus, setLogStatus] = useState(false);
 	let location = useLocation();
+
+	// References:
+	let bigImageRef = useRef(null);  // this is wrapper on bigImageRef, you should remove name!!!
+	let currentBigImageRef = useRef(null);
 
 	useEffect(() => {
 		if (JSON.parse(localStorage.getItem('user'))) {
@@ -36,12 +41,27 @@ function App() {
 	};
 
 
+	function showBigImage(imagePath) {
+		console.log(imagePath);
+		bigImageRef.current.style.display = 'block';
+		currentBigImageRef.current.src = imagePath;
+	}
+
+
 	return (
 		<>
 			<AudioPlayer />
 			{logStatus && (
 				<>
-					<AllChats />
+					<AllChats
+						currentBigImageRef={currentBigImageRef}
+						showBigImage={showBigImage}
+						bigImageRef={bigImageRef}
+					/>
+
+					<BigImage
+						currentBigImageRef={currentBigImageRef}
+						bigImageRef={bigImageRef} />
 				</>
 			)}
 
@@ -95,7 +115,7 @@ function App() {
 					</>
 				)}
 
-				{(!logStatus && firstRender.current) &&(
+				{(!logStatus && firstRender.current) && (
 					<>
 						<Route
 							path="*"

@@ -4,7 +4,7 @@ import { GameInfoHeader } from "./structure/GameInfo/GameInfo";
 import { GameDescription } from "./structure/GameDescription/GameDescription";
 import { useEffect, useState } from "react";
 import { CommentSection } from "./structure/CommentSection/CommentSection";
-import video from "../../../../../../../../DiscoverPage/resources/videos/Neon-Apartment.mp4";
+import backImage from "../../../../../../../../DiscoverPage/resources/images/coll-maiami.jpg";
 
 export const Body = () => {
 	const [gameDetails, setGameDetails] = useState({});
@@ -17,12 +17,12 @@ export const Body = () => {
 
 	return (
 		<>
-			<video
+			<img
 				autoPlay
 				loop
 				className={style['game-details-video']}
-				src={video}>
-			</video>
+				src={backImage}>
+			</img>
 
 
 			<article className={style["game-details-wrapper"]}>

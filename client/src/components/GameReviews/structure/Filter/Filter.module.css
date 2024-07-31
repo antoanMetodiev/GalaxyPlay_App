@@ -1,20 +1,23 @@
 
-
 select.filter {
-    position: absolute;
-    top: 15em;
+    position: fixed;
+    top: 11.3em;
     left: 1em;
     padding: 3px;
-    font-size: 1.1em;
+    font-size: 1.18em;
     border-radius: 0.5em;
-    background-color: rgba(222, 184, 135, 0.6);
-    color: #fefefe;
-    width: 14em;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: gray;
+    color: #fefefeb5;
+    width: 10em;
     border: none;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4), 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-style: italic;
+}
+
+select.filter:hover {
+    cursor: pointer;
 }
 
 select.filter:focus {
@@ -25,27 +28,42 @@ select.filter:focus-visible {
     border: none;
 }
 
-
 select.filter option {
-    padding: 3px;
-    background-color: rgba(222, 184, 135, 0.7);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: #000000a4;
+    background-color: gray;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #fefefe8f;
+    width: 8em;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4), 2px 2px 4px rgba(0, 0, 0, 0.3);
+    display: flex;
+    font-size: 1.25em;
+    font-style: italic;
+    letter-spacing: 1px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+select.filter option:hover {
+    cursor: pointer;
 }
 
 input.choose-concrete-filter {
-    position: absolute;
+    position: fixed;
     width: 10em;
     height: 2.4em;
-    left: 1.2em;
-    top: 19em;
-    border-radius: 2em;
-    border: 0.5px solid #000000c5;
+    left: 1.1em;
+    top: 20em;
+    border-radius: 2.3em;
+    border: 1px solid #fefefe;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4), 2px 2px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 input.choose-concrete-filter:focus {
-    border: 0.5px solid #000;
+    border: 1px solid #fefefe;
+}
+
+input.choose-concrete-filter::placeholder {
+    color: #fefefebf;
 }
 
 form.invisible-form {

@@ -67,11 +67,9 @@ button.create-review-button:hover {
 img.wallper-image {
     width: 100vw;
     height: 100vh;
-    object-fit: cover;
     position: fixed;
-    /* background-attachment: fixed; */
     z-index: -1;
-    aspect-ratio: 16/9;
+    object-fit: cover;
 }
 
 .all-reviews-wrapper {
