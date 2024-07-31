@@ -6,7 +6,12 @@ import { SearchEngine } from "./structure/SearchEngine/SearchEngine";
 
 import showUserContainer from "../AllChats/images/show-user-list-container.png";
 
-export const AllChats = () => {
+
+export const AllChats = ({
+	bigImageRef,
+	showBigImage,
+	currentBigImageRef,
+}) => {
 	let [allChatUsers, setAllChatUsers] = useState({});
 	let [filteredUsers, setFilteredUsers] = useState({});
 	let [showConcreteChatPermission, setShowConcreteChatPermission] = useState(false);
@@ -52,7 +57,7 @@ export const AllChats = () => {
 		Object.values(user)
 	);
 
-	let filteredChatUsersArray =  Object.values(filteredUsers).flatMap((user) =>
+	let filteredChatUsersArray = Object.values(filteredUsers).flatMap((user) =>
 		Object.values(user)
 	);
 
@@ -123,6 +128,9 @@ export const AllChats = () => {
 					{showConcreteChatPermission && (
 						<>
 							<Chat
+								currentBigImageRef={currentBigImageRef}
+								showBigImage={showBigImage}
+								bigImageRef={bigImageRef}
 								myFriendUsername={myFriendUsername}
 								setShowConcreteChatPermissionHandler={setShowConcreteChatPermissionHandler}
 								showUsersListImgRef={showUsersListImgRef}

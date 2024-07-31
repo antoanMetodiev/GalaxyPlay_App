@@ -6,21 +6,34 @@ import onlineImage from "../../images/online image.png";
 import sendImageButton from "../../images/send-icon.png";
 import backToUsersList from "../../images/back-to-users-list.png";
 import showUserContainer from "../../images/show-user-list-container.png";
+import { useLocation } from "react-router-dom";
+
+import backgoundVideo from "../../videos/message-section-wallper.mp4";
+
+
+function isValidImageUrl(url) {
+	const pattern = /^(https?:\/\/.*\.(?:png|jpg|jpeg|gif|webp|svg|bmp|ico|tiff?))(?:\?.*)?$/i;
+	const flexiblePattern = /^(https?:\/\/.*\.(?:png|jpg|jpeg|gif|webp|svg|bmp|ico|tiff?))(\?.*)?$/i;
+	const keywordsPattern = /images|media|photo|photos|gallery|picture|img/i;
+
+	return pattern.test(url) || flexiblePattern.test(url) || keywordsPattern.test(url);
+}
 
 export const Chat = ({
 	myFriendUsername,
 	setShowConcreteChatPermissionHandler,
 	showUsersListImgRef,
+	bigImageRef,
+	showBigImage,
+	currentBigImageRef,
 }) => {
+	let location = useLocation();
 	let [currentFriendData, setCurrentFriendData] = useState({});
 	const [messageText, setMessageText] = useState("");
 	let mainContainerWrapper = useRef(null);
 
 	// Всички съобщения за конкретната дискусия:
-	let [
-		allMessagesForCurrentConversation,
-		setAllMessagesForCurrentConversation,
-	] = useState([]);
+	let [allMessagesForCurrentConversation, setAllMessagesForCurrentConversation] = useState([]);
 	const [receiver, setReceiver] = useState(myFriendUsername); // username на получателя
 
 	let currentUserUsername = JSON.parse(localStorage.getItem("user"));
@@ -31,14 +44,11 @@ export const Chat = ({
 	// This is event listener when user try to send me message:
 	useEffect(() => {
 
-		showUsersListImgRef.current.style.right = '26em';
+		showUsersListImgRef.current.style.right = '26.2em';
 		if (currentUserUsername) {
 			currentUserUsername = currentUserUsername.username;
 
-			const messagesRef = ref(
-				database,
-				`users/${currentUserUsername}/messages/${receiver}`
-			);
+			const messagesRef = ref(database, `users/${currentUserUsername}/messages/${receiver}`);
 
 			const unsubscribe = onValue(messagesRef, (snapshot) => {
 				const data = snapshot.val();
@@ -48,7 +58,7 @@ export const Chat = ({
 				setAllMessagesForCurrentConversation(messagesList);
 			});
 
-			// Връщаме функция за почистване на слушателя, когато компонентът се демонтира
+
 			return () => unsubscribe();
 		}
 	}, [receiver]);
@@ -56,15 +66,18 @@ export const Chat = ({
 	// Скролиране до дъното на контейнера при обновяване на съобщенията
 	useEffect(() => {
 		if (messagesContainerRef.current) {
-			messagesContainerRef.current.scrollTo({
-				top: messagesContainerRef.current.scrollHeight,
-				behavior: "smooth", // Плавно скролиране
-			});
+			setTimeout(() => {
+				messagesContainerRef.current.scrollTo({
+					top: messagesContainerRef.current.scrollHeight,
+					behavior: "smooth", // плавен скрол
+				});
+			}, 500);
 		}
 	}, [allMessagesForCurrentConversation]);
 
 	// I Send Message logic:
 	async function sendMessage(e) {
+		debugger;
 		e.preventDefault();
 
 		if (messageText.trim()) {
@@ -103,6 +116,7 @@ export const Chat = ({
 
 			if (response.ok) {
 				setMessageText("");
+
 				console.log("Send it!");
 			} else {
 				console.error("Error sending message: ", response.statusText);
@@ -129,7 +143,6 @@ export const Chat = ({
 		debugger;
 		let a = mainContainerWrapper.current;
 
-
 		mainContainerWrapper.current.classList.add(style["hide"]);
 		setTimeout(() => {
 			showUsersListImgRef.current.style.right = '22em';
@@ -137,11 +150,32 @@ export const Chat = ({
 		}, 500);
 	}
 
+
+	// Invoke showBigImage function in App:
+	function showBigImageHandler(event) {
+		let paths = location.pathname.split('/');
+		paths.shift();
+
+		debugger;
+		if (paths[0] === 'categories' && paths[1]) {
+			bigImageRef.current.style.height = '124vh';
+		} else {
+			bigImageRef.current.style.height = '100vh';
+		}
+
+		if ((paths.length == 2) && (paths[0] === 'categories' && paths[1] == 'games')) {
+			bigImageRef.current.style.height = '100vh';
+		}
+
+		currentBigImageRef.current.src = '';
+		bigImageRef.current.style.display = 'none';
+
+		showBigImage(event.currentTarget.src);
+	}
+
+
 	return (
 		<>
-
-
-
 			<article
 				ref={mainContainerWrapper}
 				className={style["chat-container-wrapper"]}
@@ -171,24 +205,75 @@ export const Chat = ({
 				</header>
 
 				<section
-					ref={messagesContainerRef} // Добавете референцията тук
+					ref={messagesContainerRef}
 					className={style["messages-section"]}
 				>
+
+
+					<p className={style['shadow']}></p>
+
+					<video
+						autoPlay
+						loop
+						muted
+						className={style['message-section-wallper-video']}
+						src={backgoundVideo} />
+
 					{allMessagesForCurrentConversation.map((msg) => (
-						<li
-							className={
-								msg.userName === currentUserUsername.username
-									? style["myMessage-item"]
-									: style["other-user-message-item"]
-							}
-							key={msg.id}
-						>
-							{msg.text}
-						</li>
+						isValidImageUrl(msg.text) ? (
+							msg.userName === currentUserUsername.username ? (
+
+								<div className={style['img-message-wrapper-container']}>
+									<img
+										onClick={showBigImageHandler}
+										// onMouseEnter={() => setIsHovered(true)}
+										// onMouseLeave={() => setIsHovered(false)}
+										value={msg.text} className={style['my-img-message']}
+										src={msg.text} alt="my-img-message" key={msg.id}
+									/>
+
+									{/* <div className={style['hidden-tag-in-img-messages']}>
+										<button onClick={showBigImageHandler}>View</button>
+									</div> */}
+								</div>
+
+							) : (
+
+								<div className={style['other-img-message-wrapper-container']}>
+									<img
+										onClick={showBigImageHandler}
+										value={msg.text} className={style['other-user-img-message']}
+										src={msg.text} alt="my-img-message" key={msg.id}
+									/>
+
+									{/* <img value={msg.text} className={style['other-user-img-message']}
+										src={msg.text} alt="other-user-img-message" key={msg.id} /> */}
+
+									{/* <div className={style['hidden-tag-in-img-messages']}>
+										<button onClick={showBigImageHandler}>View</button>
+									</div> */}
+								</div>
+
+
+
+
+							)
+						) : (
+							<li
+								className={
+									msg.userName === currentUserUsername.username
+										? style["myMessage-item"]
+										: style["other-user-message-item"]
+								}
+								key={msg.id}
+							>
+								{msg.text}
+							</li>
+						)
 					))}
 				</section>
 
-				<div className={style["chat-form"]}>
+				<form onSubmit={sendMessage} className={style["chat-form"]}>
 					<input
 						onChange={(e) => setMessageText(e.target.value)}
 						className={style["message-text-container"]}
@@ -202,8 +287,13 @@ export const Chat = ({
 						src={sendImageButton}
 						alt="Submit"
 					/>
-				</div>
+
+					<button hidden></button>
+				</form>
 			</article>
+
+
+
 		</>
 	);
 };
