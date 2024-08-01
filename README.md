@@ -82,7 +82,8 @@ __*Discover Page*__ - a page accessible to all registered and unregistered users
 ![](client/README-images/blog-description-2.png)
 
 
-[![Гледайте видеото в YouTube](https://img.youtube.com/vi/lXreUA_m_zg/0.jpg)](https://www.youtube.com/watch?v=lXreUA_m_zg)
+[![Watch Chat Video Usage:](https://img.youtube.com/vi/Ihcgyzh28Zw/0.jpg)](https://youtu.be/Ihcgyzh28Zw)
+
 
 
 
