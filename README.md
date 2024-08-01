@@ -26,9 +26,9 @@ __*Discover Page*__ - a page accessible to all registered and unregistered users
 
 ## - Private Area
 
-### __*Categories*__ - another series of pages accessible only to successfully registered users. Here you can find categories such as: Games (Ps5 Games, Ps4 Games, Xbox Games), Ps5, Ps4 and Xbox consoles, PC and Laptops.
+#### __*Categories*__ - another series of pages accessible only to successfully registered users. Here you can find categories such as: Games (Ps5 Games, Ps4 Games, Xbox Games), Ps5, Ps4 and Xbox consoles, PC and Laptops.
 
-#### __*Discover Page After Login (we have Categories, Blog, Profile Details and Log Out):*__
+### __*Discover Page After Login (we have Categories, Blog, Profile Details and Log Out):*__
 ![](client/README-images/discover-page-after-login.png)
 
 ### __*Categories:*__
@@ -67,6 +67,11 @@ __*Discover Page*__ - a page accessible to all registered and unregistered users
 
 ### __*Pagination:*__
 ![](client/README-images/pagination.png)
+
+
+### Blog - a place where every user can discover their new favorite game (which may not yet be available in the Store because it is too new or for other reasons...). Here, users can create posts in the form of Game reviews, which can gather likes and comments. Users can filter games by: Latest Release, Most Liked, Genres, Platforms, Publishers, Developers, and Franchises. They will also have access to dynamic game search in the search bar (currently displaying games based on what is typed in the search bar, and if there are no matches, nothing will be displayed). Let’s take a look...
+
+
 
 
 
