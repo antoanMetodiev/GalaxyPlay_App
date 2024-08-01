@@ -85,7 +85,7 @@ __*Discover Page*__ - a page accessible to all registered and unregistered users
 
 #### Chat System - every registered user can chat with other users in real-time and send them pictures.
 
-### Chat System
+### Click on the image to be taken to a YouTube link demonstrating an example of how the Chat System works.
 [![Watch Chat Video Usage:](https://img.youtube.com/vi/Ihcgyzh28Zw/0.jpg)](https://youtu.be/Ihcgyzh28Zw)
 
 
