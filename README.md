@@ -51,10 +51,16 @@ __*Game Details:*__
 
 ![](client/README-images/game-details-3.png)
 
-![](client/README-images/comments.png)
+![](client/README-images/game-details-trailer.png)
+
+![](client/README-images/game-details-comments.png)
 
 ![](client/README-images/game-details-makeComment.png)
 
+__*Favourites:*__
+![](client/README-images/game-details-favourites.png)
 
+__*Dynamic Search:*__
+![](client/README-images/dynamic-search.png)
 
 
