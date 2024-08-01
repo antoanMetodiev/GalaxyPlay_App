@@ -82,7 +82,9 @@ __*Discover Page*__ - a page accessible to all registered and unregistered users
 ![](client/README-images/blog-description-2.png)
 
 
-
+<video width="600" controls src="client/README-images/chat-useage.mkv">
+  Your browser does not support the video tag.
+</video>
 
 
 
