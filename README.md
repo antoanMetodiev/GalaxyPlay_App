@@ -26,8 +26,23 @@ __*Login Page*__
 
 # - Private Area
 
-__*Discover Page after login*__
+__*Discover Page After Login (we have Categories, Blog, Profile Details and Log Out):*__
 ![](client/README-images/discover-page-after-login.png)
+
+__*Categories:*__
+![](client/README-images/categories.png)
+
+__*Sample Category (only antoanMetodiev can create games):*__
+![](client/README-images/ps5-games.png)
+
+__*Create Game:*__
+![](client/README-images/create-game.png)
+
+__*Update Game:*__
+![](client/README-images/update-game.png
+
+__*Delete Game:*__
+![](client/README-images/delete-game.png
 
 
 
