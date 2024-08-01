@@ -39,16 +39,21 @@ __*Create Game:*__
 ![](client/README-images/create-game.png)
 
 __*Update Game:*__
-![](client/README-images/update-game.png
+![](client/README-images/update-game.png)
 
 __*Delete Game:*__
-![](client/README-images/delete-game.png
+![](client/README-images/delete-game.png)
 
+__*Game Details:*__
+![](client/README-images/game-details.png)
 
+![](client/README-images/game-details-2.png)
 
+![](client/README-images/game-details-3.png)
 
+![](client/README-images/comments.png)
 
-
+![](client/README-images/game-details-makeComment.png)
 
 
 
