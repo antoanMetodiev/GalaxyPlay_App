@@ -26,6 +26,8 @@ __*Login Page*__
 
 ## - Private Area
 
+__*Categories*__ - another series of pages accessible only to successfully registered users. Here you can find categories such as: Games (Ps5 Games, Ps4 Games, Xbox Games), Ps5, Ps4 and Xbox consoles, PC and Laptops.
+
 __*### Discover Page After Login (we have Categories, Blog, Profile Details and Log Out):*__
 ![](client/README-images/discover-page-after-login.png)
 
@@ -62,5 +64,7 @@ __*### Discover Page After Login (we have Categories, Blog, Profile Details and 
 
 ### __*Dynamic Search:*__
 ![](client/README-images/dynamic-search.png)
+
+
 
 
