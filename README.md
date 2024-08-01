@@ -1,4 +1,4 @@
-# __*GalaxyPlay*__
+![pagination](https://github.com/user-attachments/assets/754a9f66-7d7e-49a0-a0f3-91fd14f3afb8)# __*GalaxyPlay*__
 Welcome to __GalaxyPlay__! Initially conceived as a simple store for video games, consoles, laptops, computers, and electronics, we've evolved into a social network for gamers. In addition to accessing the GalaxyPlay store, __every user can chat with others in real-time and send pictures.__ Each registered user can __create posts__, such as video game reviews (with likes and comments). The GalaxyPlay Blog is where users can discover new games (not yet available in the GalaxyPlay store), find their new favorite game, and filter their searches by various criteria. Let's explore all the site's features in more detail below...
 
 ## - Public Area
@@ -17,10 +17,10 @@ __*Discover Page*__ - a page accessible to all registered and unregistered users
 ![](client/README-images/discover-page-3.png)
 
 
-__*Register Page*__
+### __*Register Page*__
 ![](client/README-images/register.png)
 
-__*Login Page*__
+### __*Login Page*__
 ![](client/README-images/login.png)
 
 
@@ -28,7 +28,7 @@ __*Login Page*__
 
 __*Categories*__ - another series of pages accessible only to successfully registered users. Here you can find categories such as: Games (Ps5 Games, Ps4 Games, Xbox Games), Ps5, Ps4 and Xbox consoles, PC and Laptops.
 
-__*### Discover Page After Login (we have Categories, Blog, Profile Details and Log Out):*__
+### __* Discover Page After Login (we have Categories, Blog, Profile Details and Log Out):*__
 ![](client/README-images/discover-page-after-login.png)
 
 ### __*Categories:*__
@@ -65,6 +65,8 @@ __*### Discover Page After Login (we have Categories, Blog, Profile Details and 
 ### __*Dynamic Search:*__
 ![](client/README-images/dynamic-search.png)
 
+### __*Pagination:*__
+![](client/README-images/pagination.png)
 
 
 
