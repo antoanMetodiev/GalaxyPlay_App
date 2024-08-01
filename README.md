@@ -1,4 +1,4 @@
-# __*GalaxyPlay*__
+![blog-description-2](https://github.com/user-attachments/assets/b35649af-e1cc-475a-8db2-fbe9b46582de)# __*GalaxyPlay*__
 Welcome to __GalaxyPlay__! Initially conceived as a simple store for video games, consoles, laptops, computers, and electronics, we've evolved into a social network for gamers. In addition to accessing the GalaxyPlay store, __every user can chat with others in real-time and send pictures.__ Each registered user can __create posts__, such as video game reviews (with likes and comments). The GalaxyPlay Blog is where users can discover new games (not yet available in the GalaxyPlay store), find their new favorite game, and filter their searches by various criteria. Let's explore all the site's features in more detail below...
 
 ## - Public Area
@@ -69,9 +69,17 @@ __*Discover Page*__ - a page accessible to all registered and unregistered users
 ![](client/README-images/pagination.png)
 
 
-### Blog - a place where every user can discover their new favorite game (which may not yet be available in the Store because it is too new or for other reasons...). Here, users can create posts in the form of Game reviews, which can gather likes and comments. Users can filter games by: Latest Release, Most Liked, Genres, Platforms, Publishers, Developers, and Franchises. They will also have access to dynamic game search in the search bar (currently displaying games based on what is typed in the search bar, and if there are no matches, nothing will be displayed). Let’s take a look...
+#### Blog - a place where every user can discover their new favorite game (which may not yet be available in the Store because it is too new or for other reasons...). Here, users can create posts in the form of Game reviews, which can gather likes and comments. Users can filter games by: Latest Release, Most Liked, Genres, Platforms, Publishers, Developers, and Franchises. They will also have access to dynamic game search in the search bar (currently displaying games based on what is typed in the search bar, and if there are no matches, nothing will be displayed). Let’s take a look...
 
+### __*Blog:*__
+![](client/README-images/blog-main-page.png)
 
+## __*Review Details:*__
+![](client/README-images/gameplay-video.png)
+
+![](client/README-images/blog-description.png)
+
+![](client/README-images/blog-description-2.png)
 
 
 
