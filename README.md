@@ -26,9 +26,9 @@ __*Discover Page*__ - a page accessible to all registered and unregistered users
 
 ## - Private Area
 
-__*Categories*__ - another series of pages accessible only to successfully registered users. Here you can find categories such as: Games (Ps5 Games, Ps4 Games, Xbox Games), Ps5, Ps4 and Xbox consoles, PC and Laptops.
+### __*Categories*__ - another series of pages accessible only to successfully registered users. Here you can find categories such as: Games (Ps5 Games, Ps4 Games, Xbox Games), Ps5, Ps4 and Xbox consoles, PC and Laptops.
 
-### __* Discover Page After Login (we have Categories, Blog, Profile Details and Log Out):*__
+#### __*Discover Page After Login (we have Categories, Blog, Profile Details and Log Out):*__
 ![](client/README-images/discover-page-after-login.png)
 
 ### __*Categories:*__
@@ -67,6 +67,9 @@ __*Categories*__ - another series of pages accessible only to successfully regis
 
 ### __*Pagination:*__
 ![](client/README-images/pagination.png)
+
+
+
 
 
 
