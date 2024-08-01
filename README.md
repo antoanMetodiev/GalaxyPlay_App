@@ -6,7 +6,7 @@ Welcome to __GalaxyPlay__! Initially conceived as a simple store for video games
 __*Discover Page*__ - a page accessible to all registered and unregistered users. At the top, there's a Live Wallpaper section that displays a different Live Wallpaper Video of a popular game with each page refresh, or allows users to change the wallpaper using the arrows (left or right). Further down, it showcases what benefits users would receive if they register.
 
 
-__*Discover Page*__
+### __*Discover Page*__
 
 ![](client/README-images/live-wallper-1.png)
 
@@ -29,22 +29,22 @@ __*Login Page*__
 __*### Discover Page After Login (we have Categories, Blog, Profile Details and Log Out):*__
 ![](client/README-images/discover-page-after-login.png)
 
-__*Categories:*__
+### __*Categories:*__
 ![](client/README-images/categories.png)
 
-__*Sample Category (only antoanMetodiev can create games):*__
+### __*Sample Category (only antoanMetodiev can create games):*__
 ![](client/README-images/ps5-games.png)
 
-__*Create Game:*__
+### __*Create Game:*__
 ![](client/README-images/create-game.png)
 
-__*Update Game:*__
+### __*Update Game:*__
 ![](client/README-images/update-game.png)
 
-__*Delete Game:*__
+### __*Delete Game:*__
 ![](client/README-images/delete-game.png)
 
-__*Game Details:*__
+### __*Game Details:*__
 ![](client/README-images/game-details.png)
 
 ![](client/README-images/game-details-2.png)
@@ -57,10 +57,10 @@ __*Game Details:*__
 
 ![](client/README-images/game-details-makeComment.png)
 
-__*Favourites:*__
+### __*Favourites:*__
 ![](client/README-images/game-details-favourites.png)
 
-__*Dynamic Search:*__
+### __*Dynamic Search:*__
 ![](client/README-images/dynamic-search.png)
 
 
