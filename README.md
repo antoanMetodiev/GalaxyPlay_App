@@ -9,5 +9,5 @@ __*Discover Page*__ - a page accessible to all registered and unregistered users
 ![](client/README-images/discover-page-1.png)
 ![](client/README-images/discover-page-2.png)
 ![](client/README-images/discover-page-3.png)
-![](client/README-images/register.png)
-![](client/README-images/login.png)
+![Register Page](client/README-images/register.png)
+![Login Page](client/README-images/login.png)
