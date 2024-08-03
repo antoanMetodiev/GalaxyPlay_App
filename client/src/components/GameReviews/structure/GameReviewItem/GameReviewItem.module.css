@@ -9,6 +9,7 @@ article.rewiew-container {
     background-color: #00000085;
     position: relative;
     animation: fadeIn 0.8s ease-in-out; /* Прилага анимацията при поява */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.8);
 }
 
 @keyframes fadeIn {

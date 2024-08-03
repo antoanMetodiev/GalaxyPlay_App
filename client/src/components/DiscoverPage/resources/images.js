@@ -12,7 +12,7 @@ import AlienWare from "../resources/images/alienware pc.jpg"
 
 import Lenovo from "../resources/images/lenovo legion.jpg";
 import Mac from "../resources/images/mac.jpg";
-import Acer from "../resources/images/acer laptop.png";
+import Acer from "../resources/images/acer-laptop.jpg";
 
 import Ps5Game from "../resources/images/ps5 game.jpg";
 import Ps4Game from "../resources/images/the last of us.jpg";
@@ -28,8 +28,8 @@ export let images = {
     AcerPredator: AcerPredator,
     AlienWare: AlienWare,
     LenovoLegion: Lenovo,
-    AsusTuf: Mac,
-    AlienWareLaptop: Acer,
+    Mac: Mac,
+    AcerAspire: Acer,
     Ps5Game: Ps5Game,
     Ps4Game: Ps4Game,
     XboxGame: XboxGame,

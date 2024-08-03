@@ -20,7 +20,8 @@
     padding-block: 2em;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    background-image: url("../DiscoverPage/resources/images/woman1.jpg");
+    background-image: url("./images/cartoon-tropical-island-landscape.jpg");
+    object-fit: cover;
     background-repeat: no-repeat;
     background-size: cover;
     margin-top: -1em;
@@ -29,7 +30,6 @@
 .create-reviews-wrapper form.create-reviews-container label {
     margin: 0em 0em 4px 7px;
     color: #fefefe;
-
 }
 
 .create-reviews-wrapper>form>section {
@@ -42,11 +42,13 @@
 .create-reviews-wrapper .create-reviews-container input {
     /* width: 20em; */
     border-radius: 1em;
-    border: 0.4px solid gray;
+    border: 1.7px solid gray;
+    color: rgb(9, 255, 9);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .create-reviews-wrapper .create-reviews-container input:focus {
-    border: 0.4px solid #000;
+    border: 1.7px solid gray;
 }
 
 button.create-review-button {
@@ -88,11 +90,11 @@ img.wallper-image {
 button.make-review-button {
     position: fixed;
     left: 1em;
-    bottom: 12em;
+    bottom: 13.5em;
     padding: 0.6em 1.2em;
     border-radius: 1em;
     border: none;
-    background-color: rgba(239, 178, 64, 0.7);
+    background-color: rgba(239, 178, 64, 0.8);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     letter-spacing: 1px;
     font-style: oblique;
@@ -105,11 +107,11 @@ button.make-review-button:hover {
 button.delete-review-button {
     position: fixed;
     left: 1em;
-    bottom: 16em;
+    bottom: 17.2em;
     padding: 0.6em 1.2em;
     border-radius: 1em;
     border: none;
-    background-color: rgba(239, 178, 64, 0.7);
+    background-color: rgba(239, 178, 64, 0.8);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     letter-spacing: 1px;
     font-style: oblique;
@@ -122,10 +124,10 @@ button.delete-review-button:hover {
 button.update-review-button {
     position: fixed;
     left: 1em;
-    bottom: 20em;
+    bottom: 21em;
     border-radius: 1em;
     border: none;
-    background-color: rgba(239, 178, 64, 0.7);
+    background-color: rgba(239, 178, 64, 0.8);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     letter-spacing: 1px;
     font-style: oblique;
@@ -145,4 +147,26 @@ button.update-review-button:hover {
 .update-reviews-wrapper >  form.create-reviews-container {
   height: 40em;
   padding-top: 6em;  
+}
+
+
+/* CRUD OPERATIONS CONTAINER */
+.crud-operations-container {
+    display: none;
+}
+
+.show-crud-operations-button {
+    position: fixed;
+    bottom: 8.5em;
+    left: 0.7em;
+    padding: 0.6em 1.4em;
+    background-color: rgba(21, 205, 211, 0.6);
+    border-radius: 0.7em;
+    border: none;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.8);
+}
+
+.show-crud-operations-button:hover {
+    background-color: rgba(21, 205, 211, 9);
+    cursor: pointer;
 }

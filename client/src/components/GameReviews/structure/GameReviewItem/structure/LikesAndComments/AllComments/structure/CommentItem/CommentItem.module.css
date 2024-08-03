@@ -2,7 +2,7 @@
 
 .comment-item {
     width: 41em;
-    background-color: #87CEEB;
+    background-color: rgba(135, 206, 235, 0.88);
     border-radius: 1em;
     height: 18em;
     margin-top: 5em;
@@ -37,6 +37,7 @@ textarea.comment-text {
     border-radius: 0.6em;
     margin: 2em 0em 0em 0.4em;
     border: none;
+    padding: 5.5px 0px 0px 8px;
 }
 
 .update-button {

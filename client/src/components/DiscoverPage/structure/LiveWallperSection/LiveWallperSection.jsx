@@ -14,47 +14,37 @@ export const LiveWallperSection = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [fading, setFading] = useState(false);
 
-
+    
     useEffect(() => {
         const result = getRandomIntInclusive(0, allVideos.length - 1);
         setCurrentIndex(result);
     }, []);
 
+
     function onRightWallperHandler() {
-        setFading(true);
-        setTimeout(() => {
-            if (currentIndex + 1 >= allVideos.length) setCurrentIndex(0);
-            else setCurrentIndex(currentIndex + 1);
-            setFading(false);
-        }, 500);
+        if (currentIndex + 1 >= allVideos.length) setCurrentIndex(0);
+        else setCurrentIndex(currentIndex + 1);
     }
 
     function onLeftWallperHandler() {
-        setFading(true);
-        setTimeout(() => {
-            if (currentIndex - 1 < 0) setCurrentIndex(allVideos.length - 1);
-            else setCurrentIndex(currentIndex - 1);
-            setFading(false);
-        }, 500);
+        if (currentIndex - 1 < 0) setCurrentIndex(allVideos.length - 1);
+        else setCurrentIndex(currentIndex - 1);
     }
 
-    // debugger;
-    // let gameTitle = allVideos[currentIndex].split('/');  // current game title!
-    // gameTitle = gameTitle[gameTitle.length - 1].split('%20').join(' ');
-    // gameTitle = gameTitle.split('.')[0];
 
+    let gameTitle = allVideos[currentIndex].split('/');  // current game title!
+    gameTitle = gameTitle[gameTitle.length - 1].split('%20').join(' ');
+    gameTitle = gameTitle.split('.')[0];
     return (
         <section className={styles["first-section"]}>
             <video
-                className={`${styles["background-clip"]} ${fading ? styles.fading : ""}`}
+                className={`${styles["background-clip"]}`}
                 src={allVideos[currentIndex]}
                 autoPlay
                 loop
                 muted
                 preload="metadata"
             ></video>
-
-            {/* <h2 className={styles['game-title']}>{gameTitle}</h2> */}
 
             <FontAwesomeIcon
                 onClick={onRightWallperHandler}

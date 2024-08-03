@@ -2,7 +2,7 @@ import styles from "../Games/Game_Categories.module.css"
 
 import ps5GamesImage from "./images/ps5 games.webp";
 import ps4GamesImage from "./images/ps4 games.jpg";
-import xboxGamesImage from "./images/xbox games.jpg";
+import xboxGamesImage from "./images/xbox_games.jpg";
 import { useNavigate } from "react-router-dom";
 import { useRef } from "react";
 

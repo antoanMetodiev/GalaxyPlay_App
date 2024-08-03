@@ -2,8 +2,6 @@ import { useRef } from "react";
 import style from "../CreateGame/CreateGame.module.css";
 import { useLocation } from "react-router-dom";
 
-import woman1 from "../../../../../../DiscoverPage/resources/images/woman1.jpg";
-
 export const CreateGame = ({
 	gameList,
 	renderGameList,

@@ -1,5 +1,4 @@
 import style from "./GameItem.module.css";
-import starsImage from "../../../images/stars-image.png";
 
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useRef } from "react";

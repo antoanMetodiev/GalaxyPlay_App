@@ -16,7 +16,7 @@ export const Filter = ({
 
     function makeFilterHandler(event) {
 
-        if (event.target.value === 'The Latest (Release Date)') {
+        if (event.target.value === 'Latest Release') {
 
             let allReleaseDates = []; // all release dates:
 
@@ -158,6 +158,10 @@ export const Filter = ({
         setFilteredReviewsBySelectListHandler(filteredObject);
     }
 
+    function sibmitFormHandler() {
+        formRef.current.submit();
+    }
+
     return (
         <>
             <select
@@ -189,13 +193,16 @@ export const Filter = ({
                     placeholder={`Search...`}
                 />
 
+                <i
+                    onClick={sibmitFormHandler}
+                    className="fa-solid fa-magnifying-glass" />
 
-                <input
+                {/* <input
                     className={style['input-image']}
                     type="image"
                     src={inputImage}
                     alt="input-image"
-                />
+                /> */}
 
                 <button type="submit" style={{ display: 'none' }}></button>
             </form>

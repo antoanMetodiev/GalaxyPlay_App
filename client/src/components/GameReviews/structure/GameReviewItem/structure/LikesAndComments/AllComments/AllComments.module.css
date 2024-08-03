@@ -1,9 +1,10 @@
 article.main-comment-wrapper {
-    min-height: 50em;
-    background-color: rgba(192, 192, 192, 0.5);
+    min-height: 20em;
+    background-color: #00000085;
     border-bottom-left-radius: 1em;
     border-bottom-right-radius: 1em;
     padding-top: 0.1em;
+    padding-bottom: 2em;
 }
 
 form.make-comment-container {
@@ -13,25 +14,30 @@ form.make-comment-container {
     align-items: center;
     gap: 0.4em;
     justify-content: center;
+    
 }
 
 form.make-comment-container img.user-image {
     width: 3em;
     border-radius: 50%;
     object-fit: cover;
-    
 }
 
 form.make-comment-container > input {
     width: 25em;
     height: 2.7em;
     border-radius: 3em;
-    border: 0.3px solid gray;
+    border: 1.8px solid gray;
     margin-top: 3px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+form.make-comment-container > input::placeholder {
+    color: silver;
 }
 
 form.make-comment-container > input:focus {
-    border: 0.3px solid gray;
+    border: 1.8px solid gray;
 }
 
 .no-comments-header {

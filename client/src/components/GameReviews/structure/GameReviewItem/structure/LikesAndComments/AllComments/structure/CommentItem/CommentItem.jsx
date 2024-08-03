@@ -67,9 +67,13 @@ export const CommentItem = ({
         setIsDisabledImage(true);
     };
 
+    console.log(commentObj);
+
     return (
         <section
-            // style={{ backgroundColor: comment.gender === 'Female' ? 'pink' : '#87CEEB' }}
+            style={{
+                backgroundColor: commentObj.gender === 'Female' && 'pink',
+                opacity: commentObj.gender === 'Female' && '0.88'}}
             className={style["comment-item"]}>
             <div className={style["profile-image_name-container"]}>
                 <img

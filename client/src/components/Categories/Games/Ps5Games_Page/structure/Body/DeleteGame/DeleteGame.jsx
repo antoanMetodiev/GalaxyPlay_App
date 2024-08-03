@@ -1,7 +1,6 @@
 import { useRef, useState } from "react";
 import style from "../DeleteGame/DeleteGame.module.css";
 
-import dontDoItImage from "../../../images/dont-do-it.png";
 
 export const DeleteGame = ({
 	gameList,

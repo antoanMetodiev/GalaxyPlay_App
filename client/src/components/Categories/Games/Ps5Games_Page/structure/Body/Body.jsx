@@ -9,10 +9,8 @@ import { DeleteGame } from "./DeleteGame/DeleteGame";
 import { UpdateGame } from "./UpdateGame/UpdateGame";
 import { PaginationList } from "./PaginationList/PaginationList";
 
-import PcWallperVideo from "../../../../../DiscoverPage/resources/videos/Cyber Punk.mp4";
 import Ps5WallperVideo from "../../../../../DiscoverPage/resources/videos/ps5-wallper-video.mp4";
 import GamesWallperVideo from "../../../../../DiscoverPage/resources/videos/Ghost Of Tsushima.mp4";
-import Ps4WallperVideo from "../../../../../DiscoverPage/resources/videos/Cyberpunk-2077-VR.mp4";
 import XboxWallperVideo from "../../../../../DiscoverPage/resources/videos/Xbox-wallper.mp4";
 import LaptopWallperVideo from "../../../../../DiscoverPage/resources/videos/lofi-headphones.mp4";
 
@@ -62,9 +60,9 @@ export const Body = ({
 	useEffect(() => {
 		let wallperVideos = {
 			game: GamesWallperVideo,
-			pc: PcWallperVideo,
+			pc: GamesWallperVideo,
 			ps5: Ps5WallperVideo,
-			ps4: Ps4WallperVideo,
+			ps4: Ps5WallperVideo,
 			xbox: XboxWallperVideo,
 			laptop: LaptopWallperVideo,
 		};

@@ -16,6 +16,7 @@ export const GameReviews = () => {
     const [filteredReviewsBySelectList, setFilteredReviewsBySelectList] = useState([]);
 
     // References:
+    let crudContainer = useRef(null);
     let createReviewModalRef = useRef(null);
     let deleteReviewModalRef = useRef(null);
     let updateReviewModalRef = useRef(null);
@@ -24,7 +25,7 @@ export const GameReviews = () => {
         let getReviews = async () => {
             let responce = await fetch('https://galaxyplay-15910-default-rtdb.europe-west1.firebasedatabase.app/reviews.json');
 
-            debugger;
+            // debugger;
             responce = await responce.json();
             let result = {};
 
@@ -60,7 +61,7 @@ export const GameReviews = () => {
         };
 
         event.target.reset();
-        debugger;
+        // debugger;
 
         let responce = await fetch('https://galaxyplay-15910-default-rtdb.europe-west1.firebasedatabase.app/reviews.json', {
             method: 'POST',
@@ -84,7 +85,7 @@ export const GameReviews = () => {
     async function deleteReviewHandler(event) {
         event.preventDefault();
 
-        debugger;
+        // debugger;
         let gameForRemove = event.currentTarget.gameTitleName.value;
         let gameId = '';
 
@@ -109,8 +110,6 @@ export const GameReviews = () => {
     async function updateReviewHandler(event) {
         event.preventDefault();
 
-        console.log(event.currentTarget);
-
         let oldReview = {};    // This is The Old Review:
         let oldReviewKey = '';
         for (const key in allReviewsList) {
@@ -120,27 +119,25 @@ export const GameReviews = () => {
             }
         }
 
-        debugger;
-        
+        // debugger;
 
         // fun fact: Dobre che e Alt + Right Click:
-
         let updatedReview = {
-            gameTitleName: event.target.newGameTitleName.value.trim().length == 0 ? oldReview[oldReviewKey].gameTitleName : event.target.newGameTitleName.value, 
-            genres: event.target.genres.value.trim().length == 0 ? oldReview[oldReviewKey].genres : event.target.genres.value, 
-            imgCoverUrl: event.target.imgCoverUrl.value.trim().length == 0 ? oldReview[oldReviewKey].imgCoverUrl : event.target.imgCoverUrl.value, 
-            otherImages: event.target.otherImages.value.trim().length == 0 ? oldReview[oldReviewKey].otherImages : event.target.otherImages.value, 
-            description: event.target.description.value.trim().length == 0 ? oldReview[oldReviewKey].description : event.target.description.value, 
-            platforms: event.target.platforms.value.trim().length == 0 ? oldReview[oldReviewKey].platforms : event.target.platforms.value, 
-            developers: event.target.developers.value.trim().length == 0 ? oldReview[oldReviewKey].developers : event.target.developers.value, 
-            publishers: event.target.publishers.value.trim().length == 0 ? oldReview[oldReviewKey].publishers : event.target.publishers.value, 
-            releaseDate: event.target.releaseDate.value.trim().length == 0 ? oldReview[oldReviewKey].releaseDate : event.target.releaseDate.value, 
-            franchises: event.target.franchises.value.trim().length == 0 ? oldReview[oldReviewKey].franchises : event.target.franchises.value, 
-            trailer: event.target.trailer.value.trim().length == 0 ? oldReview[oldReviewKey].trailer : event.target.trailer.value, 
-            gameplay: event.target.gameplay.value.trim().length == 0 ? oldReview[oldReviewKey].gameplay : event.target.gameplay.value, 
+            gameTitleName: event.target.newGameTitleName.value.trim().length == 0 ? oldReview[oldReviewKey].gameTitleName : event.target.newGameTitleName.value,
+            genres: event.target.genres.value.trim().length == 0 ? oldReview[oldReviewKey].genres : event.target.genres.value,
+            imgCoverUrl: event.target.imgCoverUrl.value.trim().length == 0 ? oldReview[oldReviewKey].imgCoverUrl : event.target.imgCoverUrl.value,
+            otherImages: event.target.otherImages.value.trim().length == 0 ? oldReview[oldReviewKey].otherImages : event.target.otherImages.value,
+            description: event.target.description.value.trim().length == 0 ? oldReview[oldReviewKey].description : event.target.description.value,
+            platforms: event.target.platforms.value.trim().length == 0 ? oldReview[oldReviewKey].platforms : event.target.platforms.value,
+            developers: event.target.developers.value.trim().length == 0 ? oldReview[oldReviewKey].developers : event.target.developers.value,
+            publishers: event.target.publishers.value.trim().length == 0 ? oldReview[oldReviewKey].publishers : event.target.publishers.value,
+            releaseDate: event.target.releaseDate.value.trim().length == 0 ? oldReview[oldReviewKey].releaseDate : event.target.releaseDate.value,
+            franchises: event.target.franchises.value.trim().length == 0 ? oldReview[oldReviewKey].franchises : event.target.franchises.value,
+            trailer: event.target.trailer.value.trim().length == 0 ? oldReview[oldReviewKey].trailer : event.target.trailer.value,
+            gameplay: event.target.gameplay.value.trim().length == 0 ? oldReview[oldReviewKey].gameplay : event.target.gameplay.value,
         };
 
-        
+
         // Update Request is Heree:
         let response = await fetch(`https://galaxyplay-15910-default-rtdb.europe-west1.firebasedatabase.app/reviews/${oldReviewKey}.json`, {
             method: 'PUT',
@@ -155,7 +152,7 @@ export const GameReviews = () => {
         if (response) {
             updatedReview.id = oldReviewKey;
 
-            let newObject = {...allReviewsList};
+            let newObject = { ...allReviewsList };
             newObject[oldReviewKey] = updatedReview;
 
             setAllReviewsList(newObject);
@@ -169,6 +166,9 @@ export const GameReviews = () => {
     // Functions About show Create/Delete/Update Modals:
     function showCreateReviewPermission() {
         if (createReviewModalRef.current.style.display === 'none' || createReviewModalRef.current.style.display === '') {
+            window.scrollTo(0, 0);
+            deleteReviewModalRef.current.style.display = 'none';
+            updateReviewModalRef.current.style.display = 'none';
             createReviewModalRef.current.style.display = 'block';
         } else {
             createReviewModalRef.current.style.display = 'none';
@@ -177,6 +177,9 @@ export const GameReviews = () => {
 
     function showDeleteReviewPermission() {
         if (deleteReviewModalRef.current.style.display === 'none' || deleteReviewModalRef.current.style.display === '') {
+            window.scrollTo(0, 0);
+            createReviewModalRef.current.style.display = 'none';
+            updateReviewModalRef.current.style.display = 'none';
             deleteReviewModalRef.current.style.display = 'block';
         } else {
             deleteReviewModalRef.current.style.display = 'none';
@@ -185,6 +188,9 @@ export const GameReviews = () => {
 
     function showUpdateReviewPermission() {
         if (updateReviewModalRef.current.style.display === 'none' || updateReviewModalRef.current.style.display === '') {
+            window.scrollTo(0, 0);
+            deleteReviewModalRef.current.style.display = 'none';
+            createReviewModalRef.current.style.display = 'none';
             updateReviewModalRef.current.style.display = 'block';
         } else {
             updateReviewModalRef.current.style.display = 'none';
@@ -205,6 +211,14 @@ export const GameReviews = () => {
         setAllReviewsList(value);
     };
 
+    function showCrudOperationsHandler() {
+        if (crudContainer.current.style.display === 'none' || crudContainer.current.style.display === '') {
+            crudContainer.current.style.display = 'block';
+        } else {
+            crudContainer.current.style.display = 'none';
+        }
+    };
+
 
     return (
         <>
@@ -219,20 +233,27 @@ export const GameReviews = () => {
             />
 
             {/* Create, Delete, Udpate - Review: */}
-            <button
-                onClick={showCreateReviewPermission}
-                className={style['make-review-button']}
-            >Create Review</button>
 
             <button
-                onClick={showDeleteReviewPermission}
-                className={style['delete-review-button']}
-            >Delete Review</button>
+                className={style['show-crud-operations-button']}
+                onClick={showCrudOperationsHandler}>CRUD</button>
 
-            <button
-                onClick={showUpdateReviewPermission}
-                className={style['update-review-button']}
-            >Update Review</button>
+            <div ref={crudContainer} className={style['crud-operations-container']}>
+                <button
+                    onClick={showCreateReviewPermission}
+                    className={style['make-review-button']}
+                >Create Review</button>
+
+                <button
+                    onClick={showDeleteReviewPermission}
+                    className={style['delete-review-button']}
+                >Delete Review</button>
+
+                <button
+                    onClick={showUpdateReviewPermission}
+                    className={style['update-review-button']}
+                >Update Review</button>
+            </div>
 
 
             {/* Filter Reviews */}

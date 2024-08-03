@@ -2,7 +2,7 @@ import { DiscoverPage } from "./components/DiscoverPage/DiscoverPage";
 import { Register } from "./components/Register-Login_Page/Register/Register";
 import { Login } from "./components/Register-Login_Page/Login/Login";
 import { Routes, Route, useLocation } from "react-router-dom";
-import { useContext, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { Categories } from "./components/Categories/Categories";
 import { Game_Categories } from "./components/Categories/Games/Game_Categories";
@@ -18,8 +18,7 @@ import { InvalidPath } from "./components/InvalidPath/InvalidPath";
 import { GameReviews } from "./components/GameReviews/GameReviews";
 
 function App() {
-	let firstRender = useRef(false);  // it is just a flag for bug between InvalidPath && WithoutPermission!
-
+	let [firstRender, setFirstRender] = useState(true);
 	const [userData, setUserData] = useState({});
 	let [logStatus, setLogStatus] = useState(false);
 	let location = useLocation();
@@ -28,10 +27,11 @@ function App() {
 	let bigImageRef = useRef(null);  // this is wrapper on bigImageRef, you should remove name!!!
 	let currentBigImageRef = useRef(null);
 
+	// debugger;
 	useEffect(() => {
 		if (JSON.parse(localStorage.getItem('user'))) {
-			firstRender.current = true;
 			setLogStatus(true);
+			setFirstRender(false);
 		}
 
 	}, [location.pathname, JSON.parse(localStorage.getItem('user'))]);
@@ -48,9 +48,13 @@ function App() {
 	}
 
 
+
+	let exp = localStorage.getItem('user');
+	exp = exp == null ? undefined : exp;
 	return (
 		<>
-			<AudioPlayer />
+			{/* <AudioPlayer /> */}
+
 			{logStatus && (
 				<>
 					<AllChats
@@ -61,7 +65,8 @@ function App() {
 
 					<BigImage
 						currentBigImageRef={currentBigImageRef}
-						bigImageRef={bigImageRef} />
+						bigImageRef={bigImageRef}
+					/>
 				</>
 			)}
 
@@ -115,13 +120,11 @@ function App() {
 					</>
 				)}
 
-				{(!logStatus && firstRender.current) && (
-					<>
-						<Route
-							path="*"
-							element={<WithoutPermission />}
-						/>
-					</>
+				{!logStatus && !exp && (
+					<Route
+						path="*"
+						element={<WithoutPermission />}
+					/>
 				)}
 			</Routes>
 		</>

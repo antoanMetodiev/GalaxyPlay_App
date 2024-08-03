@@ -5,17 +5,35 @@
     width: 6.2em;
     height: 1.6em;    
     /* top: 46.8em; */
-    bottom: 4em;
+    bottom: 3.1em;
     z-index: 14;
     transform: rotate(-90deg); /* Завъртане на слайдера */
     left: -0.9em;
     -webkit-appearance: none; /* Отменяйте стилизацията по подразбиране на браузъра */
     appearance: none;
-    background: gray;
+    background: rgba(128, 128, 128, 0.7);
     outline: none;
     transform: rotate(-90deg); /* Завъртане на слайдера */
     transform-origin: 50% 50%;
     border-radius: 3em;
-    box-shadow: 0px 10px 30px rgba(0, 0, 255, 0.8); /* Син цвят с 80% непрозрачност */
+    box-shadow: 0px 8px 17px rgba(0, 0, 255, 0.6); /* Син цвят с 80% непрозрачност */
     animate: 0.2s;
 }
+
+#next-song {
+    position: fixed;
+    bottom: 0.7em;
+    z-index: 30;
+    left: 2.8em;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #fefefec0;
+}
+
+#next-song:hover {
+    cursor: pointer;
+    /* box-shadow: 0 0 30px 15px rgba(0, 0, 255, 0.75); */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+

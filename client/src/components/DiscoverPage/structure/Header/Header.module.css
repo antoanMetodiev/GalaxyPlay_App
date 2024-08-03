@@ -20,16 +20,16 @@ header.site-header > * {
     gap: 2em;
     margin-left: 2em;
     position: relative;
-    margin-top: -0.6em;
+    margin-top: -1em;
 }
 
 .logo-data-wrapper img {
-    height: 58%;
-    width: 58%;
+    height: 5.1em;
+    width: 5.1em;
     border-radius: 50%;
     object-fit: cover;
     transform: scale(1.3);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 1);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
 }
 
 .header-nav {
@@ -45,13 +45,13 @@ header.site-header > * {
 }
 
 .logo-data-wrapper .site-title {
-    margin-top: 1.3em;
+    margin-top: 1.4em;
     align-self: flex-start;
     color: #FFF;
     font-style: oblique;
     font-weight: 430;
     font-size: 1.8em;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  
     letter-spacing: 0.3px;
 }
 
@@ -63,11 +63,12 @@ header.site-header > * {
 .logo-data-wrapper .title-border {
     position: absolute;
     background-color: #FFF;
-    height: 2px;
+    height: 1.5px;
     width: 10.3em;
-    top: 5.1em;
-    left: 8.15em;
+    top: 5.22em;
+    left: 7.2em;
     border-radius: 8px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Слаба текстова сянка */
 }
 
 .logo-data-wrapper .title-border:hover {

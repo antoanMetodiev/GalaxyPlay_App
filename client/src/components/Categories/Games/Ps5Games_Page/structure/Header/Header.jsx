@@ -1,5 +1,5 @@
 import styles from "../Header/Header.module.css";
-import site_logo from "../../images/old-logo.jfif";
+import site_logo from "../../images/old-logo.jpg";
 
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useRef } from "react";

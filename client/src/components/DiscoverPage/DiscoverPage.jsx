@@ -6,12 +6,12 @@ import { Footer } from "./structure/Footer/Footer";
 
 export const DiscoverPage = () => {
 
-  return (
-	<>
-	  <Header />
-	  <LiveWallperSection />
-	  <Overview />
-	  {/* <Footer /> */}
-	</>
-  );
+	return (
+		<>
+			<Header />
+			<LiveWallperSection />
+			<Overview />
+			{/* <Footer /> */}
+		</>
+	);
 };

@@ -44,7 +44,7 @@ export const GameReviewItem = ({
         <div>
             <article className={style['rewiew-container']}>
 
-                <img className={style['game-review-img']} src={rewiew.imgCoverUrl} alt="game-review-img" />
+                <img className={style['game-review-img']} src={rewiew.imgCoverUrl} alt="game-review-img" loading="lazy"/>
 
                 <div className={style['content']}>
 

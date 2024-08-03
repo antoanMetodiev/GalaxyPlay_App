@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import style from "../Header/Header.module.css";
-import LastLogo from "../../../../components/DiscoverPage/resources/images/old-log.jfif";
+import LastLogo from "../../images/new-logo.jpg";
 
 import { Link } from "react-router-dom";
 
@@ -12,7 +12,14 @@ export const Header = () => {
     let userImage = JSON.parse(localStorage.getItem('user')).photoUrl;
 
     function navigateToWantedPath(event) {
-        navigate(event.target.value);
+        debugger;
+        if (event.target.textContent === 'Log Out') {
+            localStorage.removeItem('user');
+            navigate(event.target.value);
+            window.location.reload();
+        } else {
+            navigate(event.target.value);
+        }
     }
 
 
@@ -29,40 +36,36 @@ export const Header = () => {
                     <ul style={{ listStyle: "none" }}>
                         {!localStorage.getItem("user") && (
                             <>
-
                                 <Link to="/login">Sign In</Link>
-
-
                                 <Link to="/register">Sign Up</Link>
-
                             </>
                         )}
 
                         {localStorage.getItem("user") && (
                             <>
                                 <li>
+                                    <button value="/" onClick={navigateToWantedPath}>Home</button>
+                                </li>
+                                <li>
                                     <button value="/categories" onClick={navigateToWantedPath}>Categories</button>
+                                </li>
+
+                                <li>
+                                    <button value="/profile-details" onClick={navigateToWantedPath}>Profile Details</button>
+                                </li>
+
+                                <li>
+                                    <button value="/" onClick={navigateToWantedPath}>Log Out</button>
                                 </li>
                             </>
                         )}
-
-                        <li>
-                            <button value="/about-us" onClick={navigateToWantedPath}>About Us</button>
-                        </li>
-
-                        {localStorage.getItem("user") && (
-                            <li>
-                                <button value="/" onClick={navigateToWantedPath}>Log Out</button>
-                            </li>
-                        )}
                     </ul>
 
-                    <HeaderContacts />
                 </nav>
 
-                <img 
-                className={style['user-image']}
-                src={userImage} alt="user-image" />
+                <img
+                    className={style['user-image']}
+                    src={userImage} alt="user-image" />
             </header>
         </>
     );

@@ -3,9 +3,6 @@ import { useLocation, useParams } from "react-router-dom";
 import { Link } from "react-scroll";
 
 import style from "./GameInfo.module.css";
-import gameStarsImage from "../../../../../../../images/stars-image.png";
-
-
 
 export const GameInfoHeader = ({
 	gameDetails,

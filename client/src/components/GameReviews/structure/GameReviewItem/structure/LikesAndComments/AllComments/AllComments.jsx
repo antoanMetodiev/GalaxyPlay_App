@@ -7,10 +7,25 @@ export const AllComments = ({
     rewiew,
 }) => {
     let [allComments, setAllComments] = useState({});
-    let user = JSON.parse(localStorage.getItem('user'));
+    let username = JSON.parse(localStorage.getItem('user')).username;
+
+    let [user, setUser] = useState({});
+    useEffect(() => {
+        const getChatUserData = async () => {
+            let responce = await fetch(`https://galaxyplay-15910-default-rtdb.europe-west1.firebasedatabase.app/chatUsers/${username}.json`);
+
+            responce = await responce.json();
+            responce = Object.entries(responce)[0][1];
+            setUser(responce);
+        }
+
+        getChatUserData();
+
+    }, [])
+
+    console.log(user);
 
     useEffect(() => {
-
         let initialObject = {};
 
         const getComments = async () => {
@@ -35,10 +50,12 @@ export const AllComments = ({
 
         let makeComment = async () => {
 
+            debugger;
             let makedObj = {
-                image: user.photoUrl,
+                image: user.photoURL,
                 username: user.username,
                 text: event.currentTarget.commentText.value,
+                gender: user.gender,
             };
             event.currentTarget.commentText.value = '';
 
@@ -50,7 +67,7 @@ export const AllComments = ({
                 body: JSON.stringify(makedObj),
             });
 
-            let newObj = {...allComments};
+            let newObj = { ...allComments };
             responce = await responce.json();
             newObj[responce.name] = makedObj;
 
@@ -66,7 +83,7 @@ export const AllComments = ({
         makeComment();
     };
 
-    
+
     function setAllCommentsHandler(value) {
         setAllComments(value);
     }
@@ -79,8 +96,8 @@ export const AllComments = ({
 
             {/* // Make Comment: */}
             <form onSubmit={makeCommentHandler} className={style['make-comment-container']}>
-                <img className={style['user-image']} src={user.photoUrl} alt="user-image" />
-                <input name="commentText" type="text" placeholder="Write Something..." />
+                <img className={style['user-image']} src={user.photoURL} alt="user-image" />
+                <input name="commentText" type="text" placeholder="Write Comment..." />
                 <button>Post</button>
             </form>
 
@@ -89,11 +106,11 @@ export const AllComments = ({
 
                 {exp > 0 &&
                     Object.keys(allComments).map(commentKey => {
-                        return <CommentItem key={commentKey} 
-                        commentObj={allComments[commentKey]}
-                        rewiew={rewiew}
-                        allComments={allComments}
-                        setAllCommentsHandler={setAllCommentsHandler}
+                        return <CommentItem key={commentKey}
+                            commentObj={allComments[commentKey]}
+                            rewiew={rewiew}
+                            allComments={allComments}
+                            setAllCommentsHandler={setAllCommentsHandler}
                         />
                     })
                 }

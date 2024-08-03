@@ -1,19 +1,21 @@
 
 select.filter {
     position: fixed;
-    top: 11.3em;
+    top: 18.2em;
     left: 1em;
     padding: 3px;
     font-size: 1.18em;
     border-radius: 0.5em;
-    background-color: gray;
-    color: #fefefeb5;
+    background-color: rgba(128, 128, 128, 0.6); 
+    color: #000000ef;
     width: 10em;
     border: none;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4), 2px 2px 4px rgba(0, 0, 0, 0.3);
     font-style: italic;
+    letter-spacing: 1.3px;
+    font-weight: 520;
 }
 
 select.filter:hover {
@@ -29,17 +31,22 @@ select.filter:focus-visible {
 }
 
 select.filter option {
-    background-color: gray;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: #fefefe8f;
     width: 8em;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4), 2px 2px 4px rgba(0, 0, 0, 0.3);
     display: flex;
-    font-size: 1.25em;
+    
     font-style: italic;
     letter-spacing: 1px;
     font-weight: 400;
     cursor: pointer;
+    background-color: none; */
+
+    background-color: rgba(128, 128, 128, 0.4); 
+    font-size: 1.25em;
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 1.5px;
 }
 
 select.filter option:hover {
@@ -50,30 +57,38 @@ input.choose-concrete-filter {
     position: fixed;
     width: 10em;
     height: 2.4em;
-    left: 1.1em;
-    top: 20em;
+    left: 1.4em;
+    top: 25em;
     border-radius: 2.3em;
-    border: 1px solid #fefefe;
+    border: 1.8px solid gray;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4), 2px 2px 4px rgba(0, 0, 0, 0.3);
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-input.choose-concrete-filter:focus {
-    border: 1px solid #fefefe;
+input.choose-concrete-filter:focus  {
+    border: 1.8px solid gray;
 }
 
 input.choose-concrete-filter::placeholder {
-    color: #fefefebf;
+    color: silver;
 }
 
 form.invisible-form {
     display: none;
 }
 
-input.input-image {
-    position: absolute;
-    top: 10em;
-    left: 5em;
+.invisible-form i {
+    position: fixed;
+    top: 18.3em;
+    left: 8.7em;
     z-index: 1;
-    width: 3em;
+    font-size: 1.4em;
+    background-color: unset !important; 
+    padding: 1px;
+}
+
+
+.invisible-form i:hover {
+    cursor: pointer;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
 }
