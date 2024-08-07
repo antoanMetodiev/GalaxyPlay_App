@@ -1,0 +1,134 @@
+
+
+.add-comment-request-h2 {
+    margin: 2em 0em 0.4em 1.1em;
+    font-size: 1.6em;
+}
+
+.comment-container {
+    width: 50em;
+    margin-left: 1.2em;
+    background-color: #000;
+    color: #fff;
+    border-radius: 12px;
+    padding: 0.8em 1em ;
+    background-color: #d4e6d1;
+    margin-bottom: 3em;
+}
+
+.comment-container .profile-image_name-container {
+    display: flex;
+    gap: 0.7em;
+}
+
+.profile-image_name-container .profile-image {
+    width: 6em;
+    height: 6em;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-name {
+    margin-top: 0.4em;
+    color: #000;
+    font-weight: 500;
+}
+
+.comment-container .comment-text {
+    font-size: 1.1em;
+    margin-block: 1.2em;
+    padding: 0.7em 0.6em;
+    width: 43em;
+    height: 8em;
+    resize: none;
+    border-radius: 5px;
+}
+
+.comment-container section {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.comment-container button {
+    padding: 0.7em 1.7em;
+    background-color: #0089FF;
+    border-radius: 6px;
+    color: #fff;
+    margin-right: 0.8em;
+    border: none;
+}
+
+p.comment-form-border {
+    background-color: #000;
+    width: 100%;
+    height: 1.6em;
+    font-size: 2em;
+    text-align: center;
+    color: #fff;
+    letter-spacing: 4px;
+    margin-block: -0.6em 1.2em;
+}
+
+.comment-container > div {
+    display: flex;
+}
+
+.comment-container > div > button {
+    align-self: flex-end;
+    margin-bottom: 0.3em;
+    cursor: pointer;
+}
+
+.profile-image_name-container {
+    display: flex;  
+    gap: 1em;
+    margin: 1em 0em 0.4em 2em;
+}
+
+.article-container {
+    background-color: #d4e6d1;
+    width: 52em;
+    border-radius: 8px;
+    margin-left: 1em;
+    padding-top: 1em;
+}
+
+.button-container {
+    display: flex;  
+    justify-content: flex-end;
+}
+
+.comment-formWrapper-container{
+    display: none;
+}
+
+.make-comment-button {
+    position: absolute;
+
+    /* 88.6em */
+    top: 6em;
+    right: 7.5em;
+    padding: 0.6em 2em;
+    border-radius: 6px;
+    border: none;
+    margin-top: -1.2em;
+    background-color: #ff5700;
+    align-self: center;
+    color: #fefefe;
+    transition: background-color 0.5s ease-in-out;
+    text-decoration: none;
+}
+
+.make-comment-button:hover {
+    background-color: unset;
+    cursor: pointer;
+    background-color: #000;
+}
+
+.comment-formWrapper-container {
+    display: none;
+}
+
+.main-wrapper {
+    position: relative;
+}
