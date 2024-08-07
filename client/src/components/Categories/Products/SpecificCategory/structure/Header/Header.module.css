@@ -1,0 +1,178 @@
+/* Animations: */
+.title-animation {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: revealText 2.8s steps(40, end);
+}
+
+.site-header {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 10em;
+    display: flex;
+    justify-content: space-between;
+    top: 0em;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+h1 span {
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+
+@keyframes revealText {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+header.site-header>* {
+    height: 100%;
+}
+
+.logo-data-wrapper {
+    position: absolute;
+    top: 8em;
+    width: 18.8em;
+    display: flex;
+    align-items: center;
+    gap: 2.5em;
+    margin-left: 2em;
+    position: relative;
+    margin-top: -6.6em;
+}
+
+.logo-data-wrapper img {
+    position: relative;
+    z-index: 1;
+    height: 5.1em;
+    width: 5.1em;
+    border-radius: 50%;
+    object-fit: cover;
+    transform: scale(1.3);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 1);
+}
+
+.header-nav {
+    position: absolute;
+    top: 7.7em;
+    z-index: 4;
+    right: 0;
+    display: flex;
+    gap: 2em;
+    align-items: flex-start;
+    margin: 1.7em 2em 0em 0em;
+    font-size: 0.9em;
+    width: 44em;
+    justify-content: center;
+    cursor: default;
+}
+
+.header-nav ul {
+    margin-top: -0.3em;
+    height: 100%;
+    display: flex;
+    gap: 2em;
+    width: 40em;
+    backdrop-filter: blur(30px);
+    box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37);
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    justify-content: center;
+    border-radius: 1em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    cursor: default;
+    padding-block: 1px;
+}
+
+.header-nav ul a {
+    font-size: 1.1em;
+    font-weight: 300;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    cursor: default;
+    letter-spacing: 1px;
+}
+
+.header-nav ul a:hover {
+    color: silver;
+    cursor: default;
+    text-shadow: 2px 2px 4px black;
+}
+
+.logo-data-wrapper h1.site-title {
+    position: relative;
+    margin-top: 0.24em;
+    align-self: flex-start;
+    color: #FFF;
+    font-style: oblique;
+    font-size: 1.8em;
+    margin-left: -0.2em;
+    /* border-bottom: 3px solid #fefefe; */
+    z-index: 12;
+    text-shadow: 6px 6px 12px rgba(0, 0, 0, 0.9);
+}
+
+.logo-data-wrapper span.title-border {
+    position: absolute;
+    z-index: 3;
+    height: 2.4px;
+    width: 10.3em;
+    top: 3.2em;
+    left: 7.3em;
+    border-radius: 8px;
+}
+
+.logo-data-wrapper .site-title:hover {
+    color: #646cff;
+    cursor: default;
+}
+
+.logo-data-wrapper .title-border {
+    position: absolute;
+    background-color: #FFF;
+    height: 2px;
+    width: 10.3em;
+    top: 4em;
+    left: 8.15em;
+    border-radius: 8px;
+}
+
+.logo-data-wrapper .title-border:hover {
+    background-color: #646cff;
+}
+
+.header-nav a {
+    text-decoration: none;
+    color: #000;
+    font-size: 1.05em;
+    letter-spacing: 1.1px;
+    color: #fefefe;
+    font-weight: 900;
+}
+
+.header-nav a:hover {
+    color: #646cff;
+}
+
+.header-nav>* {
+    display: flex;
+    gap: 1em;
+}
+
+.header-nav ul:nth-of-type(2) {
+    margin-right: 3em;
+}
+
+.header-nav .user-image {
+    width: 4em;
+    border-radius: 50%;
+    margin: -1em -0.5em 0em 0em;
+}
+
