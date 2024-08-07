@@ -1,0 +1,151 @@
+.create-game-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* background-color: rgba(255, 255, 255, 0.1); */
+    background-image: url("../../../../../../DiscoverPage/resources/images/woman2.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    object-fit: cover;
+    z-index: 2;
+    width: 43em;
+    height: 56em;
+    padding: 1.6em 1.7em;
+    border-radius: 1em;
+    display: none;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 255, 0.6);
+    animation: fadeIn 0.4s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.9);
+    }
+}
+
+.fade-out {
+    animation: fadeOut 0.4s ease-in-out forwards;
+}
+
+.create-game-container form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2em;
+    z-index: 1;
+    margin-top: -0.4em;
+}
+
+.create-game-container form input {
+    border: none;
+    border-radius: 1em;
+    background-color: rgba(128, 128, 128, 0.5);
+    color: rgba(133, 255, 122, 1);
+}
+
+.create-game-container form label {
+    width: fit-content;
+    letter-spacing: 1px;
+    color: rgba(133, 255, 122, 1);
+    background-color: gray;
+    border-radius: 1em;
+    padding-inline: 6px;
+}
+
+.create-game-container form div textarea {
+    width: 100%;
+    height: 10em;
+    resize: none;
+    padding: 0.3em 0em 0em 0.3em;
+    background-color: unset;
+    border: 1px solid #000;
+    color: rgba(133, 255, 122, 1);
+    border-radius: 1em;
+    background-color: rgba(128, 128, 128, 0.6);
+    font-size: 1.1em;
+    margin-top: 1px;
+}
+
+.create-game-container form div textarea:focus {
+    border-color: rgba(133, 255, 122, 1);
+}
+
+.create-game-container form > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+}
+
+.create-game-container form button {
+    align-self: center;
+    padding: 0.7em 2em;
+    border-radius: 8px;
+    border: none;
+    background-color: darkcyan;
+    cursor: pointer;
+    color: #fefefe;
+}
+
+.create-game-container form button:hover {
+    background-color: rgba(0, 0, 255, 0.6);
+}
+
+.lets-goo-image {
+    position: absolute;
+    width: 7.6em;
+    object-fit: cover;
+    left: 2em;
+    top: 2px;
+}
+
+.x-button {
+    align-self: flex-end;
+    background-color: red;
+    margin-bottom: -1em;
+    padding: 0.3em 0.5em;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.show-game-create {
+    position: fixed;
+    z-index: 5;
+    bottom: 10.3em;
+    left: 1.3em;
+    padding: 0.69em 1.1em;
+    border: none;
+    background-color: rgba(243, 113, 46, 0.89);
+    color: #fff;
+    font-weight: 100;
+    cursor: pointer;
+    transition: background-color 0.5s ease-in-out;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding-left: -2em;
+    padding-right: 1em;
+    border-radius: 1em;
+    font-style: oblique;
+}
+
+.show-game-create:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.85);
+}
