@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import profileImage from "../../images/profile-image.png";
 import style from "./CommentForm.module.css";
 // import { getAuth, onAuthStateChanged } from "firebase/auth";
@@ -6,6 +6,7 @@ import { POST } from "../../../../../../../../../../../../../services/service";
 import { useLocation } from "react-router-dom";
 
 
+import { AllAvatarsContext } from "../../../../../../../../../../../../../contexts/allAvatarsContext";
 
 export const CommentForm = ({
 	gameDetails,
@@ -53,6 +54,10 @@ export const CommentForm = ({
 		}
 	};
 
+
+	// Context: 
+	let { allAvatarsReversed } = useContext(AllAvatarsContext);
+
 	return (
 		<>
 			<article className={style['main-wrapper']}>
@@ -66,7 +71,7 @@ export const CommentForm = ({
 						<div className={style["profile-image_name-container"]}>
 							<img
 								className={style["profile-image"]}
-								src={userData.photoURL}
+								src={allAvatarsReversed[userData.photoURL]}
 								alt="profile-image"
 							/>
 							<h2 className={style["profile-name"]}>{userData.username}</h2>
