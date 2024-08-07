@@ -315,7 +315,7 @@ export const Chat = ({
 	}
 
 	function showOtherBackgroundVideosHandler(event) {
-		if (event.target.textContent == 'Change background video') {
+		if (event.target.textContent == 'Change background') {
 
 			hiddenAllBackgroundVideosDivRef.current.style.display = 'flex';
 			event.target.textContent = 'Hide background videos'
@@ -323,7 +323,7 @@ export const Chat = ({
 		} else if (event.target.textContent == 'Hide background videos') {
 
 			hiddenAllBackgroundVideosDivRef.current.style.display = 'none';
-			event.target.textContent = 'Change background video';
+			event.target.textContent = 'Change background';
 		}
 
 		optionsDivContainerRef.current.style.display = 'none';
@@ -432,13 +432,11 @@ export const Chat = ({
 					/>
 
 
-
-
 					<div
 						ref={optionsDivContainerRef}
 						className={style['options-div-container']}
 					>
-						<h4 onClick={showOtherBackgroundVideosHandler}>Change background video</h4>
+						<h4 onClick={showOtherBackgroundVideosHandler}>Change background</h4>
 						<h4 ref={blockOrNotRef} onClick={blockOrUnblockUserHandler}>Block</h4>
 						<h4 onClick={deleteMessagesHandler}>Delete Messages</h4>
 					</div>
