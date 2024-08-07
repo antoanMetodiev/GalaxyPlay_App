@@ -4,14 +4,16 @@ import { LiveWallperSection } from "./structure/LiveWallperSection/LiveWallperSe
 import { Overview } from "./structure/Overview/Overview";
 import { Footer } from "./structure/Footer/Footer";
 
-export const DiscoverPage = () => {
+export const DiscoverPage = ({
+	removeLogStatus,
+	logStatus,
+}) => {
 
 	return (
 		<>
-			<Header />
+			<Header removeLogStatus={removeLogStatus} logStatus={logStatus} />
 			<LiveWallperSection />
 			<Overview />
-			{/* <Footer /> */}
 		</>
 	);
 };

@@ -1,19 +1,45 @@
-import LastLogo from "../../resources/images/old-log.jpg";
-
-import { Link } from "react-router-dom";
+import LastLogo from "../../resources/images/old-log.webp";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./Header.module.css"; // Импорт на CSS модул стиловете
-import { useState } from "react";
-
+import { useState, useEffect } from "react";
 import { HeaderContacts } from "../HeaderContacts";
+import { auth, signOut } from '../../../../firebase/firebase'; // Коригирайте пътя към firebase.js
+import { onAuthStateChanged } from "firebase/auth";
 
-export const Header = () => {
-	const [imLogOut, setImLogOut] = useState(false);
+import Cookies from "js-cookie";
 
-	function logOutUserHandler() {
-		localStorage.removeItem("user");
-		window.location.reload();
-		setImLogOut(true);
-	}
+export const Header = ({
+	removeLogStatus,
+	logStatus
+}) => {
+	const [user, setUser] = useState(null);
+	const [showContacts, setShowContacts] = useState(false);
+	const navigate = useNavigate();
+
+	useEffect(() => {
+		const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+			setUser(currentUser);
+			console.log(currentUser);
+		});	
+
+		return () => unsubscribe(); // Чистене на подписката при размонтиране на компонента
+	}, []);
+
+	const logOutUserHandler = async () => {
+
+		debugger;
+		try {
+			await signOut(auth); // Изчакване на завършване на операцията по излизане
+			Cookies.remove('session'); // Изтриване на cookie при изход
+			removeLogStatus();
+		} catch (error) {
+			console.error('Error during logout:', error); // Обработка на грешки
+		}
+	};
+
+	const showContactsHandler = () => {
+		setShowContacts(prevShowContacts => !prevShowContacts);
+	};
 
 	return (
 		<header className={styles["site-header"]} id="HomePage-header">
@@ -24,7 +50,7 @@ export const Header = () => {
 			</div>
 			<nav className={styles["header-nav"]}>
 				<ul style={{ listStyle: "none" }}>
-					{!localStorage.getItem("user") && (
+					{!logStatus ? (
 						<>
 							<li>
 								<Link to="/login">Sign In</Link>
@@ -33,26 +59,23 @@ export const Header = () => {
 								<Link to="/register">Sign Up</Link>
 							</li>
 						</>
-					)}
-
-					{localStorage.getItem("user") && (
+					) : (
 						<>
 							<Link to="/categories">Categories</Link>
-
 							<Link to="/game-reviews">Blog</Link>
-
 							<Link to="/profile-details">Profile Details</Link>
+							<li onClick={logOutUserHandler}>
+								<Link to="#">Log Out</Link>
+							</li>
 						</>
-					)}
-
-					{localStorage.getItem("user") && (
-						<li onClick={logOutUserHandler}>
-							<Link>Log Out</Link>
-						</li>
 					)}
 				</ul>
 
-				<HeaderContacts />
+				<ul className={styles['contacts-li-item']}>
+					<li onClick={showContactsHandler}>Contacts</li>
+				</ul>
+
+				{showContacts && <HeaderContacts />}
 			</nav>
 		</header>
 	);

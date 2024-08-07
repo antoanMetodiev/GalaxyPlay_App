@@ -10,7 +10,6 @@ export const SearchEngine = ({
     function filterUsers(event) {
         let filteredObject = {};
 
-        debugger;
         for (const key in allChatUsers) {
             if (key.toLowerCase().includes(event.currentTarget.value)) {
                 filteredObject[key] = allChatUsers[key];

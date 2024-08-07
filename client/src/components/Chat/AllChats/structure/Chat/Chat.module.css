@@ -1,10 +1,10 @@
 .chat-container-wrapper {
     position: fixed;
-    bottom: -1em;
+    bottom: 10em;
     right: 1.4em;
     width: 24.5em;
     height: 39em;
-    border-radius: 1em;
+    border-radius: 0.8em;
     z-index: 17;
     animation: fadeInUp 0.5s ease-in-out;
     position: fixed;
@@ -12,6 +12,9 @@
     right: 1.4em;
     width: 24.5em;
     height: 39em;
+    box-shadow: 4px 4px 10px black;
+    height: fit-content;
+    margin-bottom: 2em;
 }
 
 @keyframes fadeInUp {
@@ -43,13 +46,13 @@
 }
 
 .messages-section {
-    height: 30em;
-    background-clip: url('https://cdn.pixabay.com/video/2022/03/18/111101-689925384_large.mp4');
+    height: 31.1em;
     list-style-type: none;
     flex-direction: column;
     display: flex;
     gap: 1em;
     overflow-y: scroll;
+    overflow-x: hidden;
     padding-block: 0.8em;
 }
 
@@ -58,14 +61,20 @@ input.message-text-container {
     width: 21em;
     height: 2.7em;
     margin: 0.4em 0.5em 0.4em 0.5em;
-    border-radius: 1.5em;
-    border: 1px solid grey;
+    border-radius: 2em;
+    border: 1px solid #ffffffb3;
     margin-top: 9px;
     margin-right: -1.3em;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+input.message-text-container::placeholder {
+    color: #ffffffb2;
 }
 
 input.message-text-container:focus {
-    border: 1px solid grey;
+    border: 1px solid #ffffffb3;
 }
 
 .myMessage-item {
@@ -116,22 +125,21 @@ input.message-text-container:focus {
 }
 
 .send-message-button:hover {
-    text-shadow: 2px 2px 5px rgba(0, 0, 139, 0.3); /* по-силна тъмен синя сянка с малко по-голямо размиване */;
     cursor: pointer;
+    text-shadow: 2px 2px 4px blue;
 }
 
 .chat-form {
     display: flex;
     width: 100%;
-    background-color: rgba(192, 192, 192, 0.9);
-    /* Светло сив с 50% прозрачност */
-    height: 4em;
-    border-bottom-left-radius: 1.2em;
-    border-bottom-right-radius: 1.2em;
+    background-color: rgba(128, 128, 128, 0.842);
+    height: 3.8em;
+    border-bottom-left-radius: 0.8em;
+    border-bottom-right-radius: 0.8em;
 }
 
 .username-and-avatar {
-    background-color: rgba(192, 192, 192, 0.9);
+    background-color: #ffffff93;
     /* Светло сив с 50% прозрачност */
     height: 3.4em;
     border-top-left-radius: 1em;
@@ -176,17 +184,23 @@ input.message-text-container:focus {
 }
 
 .back-to-users-list {
-    width: 2.1em;
-    height: 2.1em;
+    width: 2em;
+    height: 2em;
     object-fit: cover;
     position: absolute;
     z-index: 20;
-    right: 1em;
+    right: 0.4em;
     top: 0.7em;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     /* Черна сянка */
-    border-radius: 2.1em;
+    border-radius: 2em;
 }
+
+.back-to-users-list:hover {
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+}
+
 
 .messages-section .user-avatar-image {
     width: 2em;
@@ -227,6 +241,7 @@ img.my-img-message:hover {
     /* opacity: 0.9; */
     box-shadow: 12px 12px 30px rgba(0, 0, 0, 0.9); /* много силна черна сянка */
 }
+
 
 div.other-img-message-wrapper-container {
     width: 10em;
@@ -283,23 +298,121 @@ div.hidden-tag-in-img-messages button:hover {
     background-color: unset;
 }
 
-.message-section-wallper-video{
-    height: 470px;
+.message-section-wallper-video { 
+    height: 438.6px;
+    margin-top: 3.39em;
     width: 340px;
     object-fit: cover;
     position: absolute;
-    top: 1em;
+    background-size: cover;
+    top: 2em;
     z-index: -2;
     top: 0;
-    border-top-left-radius: 1.1em;
-    border-top-right-radius: 1.1em;
 }
 
 p.shadow {
     position: absolute;
-    top: 3.2em;
+    top: 3.3em;
     width: 100%;
-    height: 78%;
+    height: 82%;
     background-color: #0000008f;
     z-index: -1;
+}
+
+
+/* Options: */
+
+#options {
+    position: absolute;
+    top: 0.45em;
+    right: 1.92em;
+    font-size: 1.6em;
+    padding: 3px;
+    border-radius: 1em;
+}
+
+#options:hover {
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+
+.options-div-container {
+    position: absolute;
+    z-index: 20;
+    background-color: rgba(192, 192, 192, 0.87);
+    top: 4em;
+    right: 3.9em;
+    padding: 4px;
+    border-radius: 0.4em;
+    display: none;
+}
+
+.options-div-container h4 {
+    border-radius: 0.7em;
+    padding-inline: 5px;
+    padding-block: 2px;
+}
+
+
+.options-div-container > h4:hover {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    background-color: #000000d2;
+    color: white;
+    cursor: pointer;
+    
+}
+
+.all-background-videos-container {
+    position: absolute;
+    top: -3.7em;
+    z-index: 20;
+    display: none;
+    gap: 1em;
+    background-color: #fefefea7;
+    min-width: 24.2em;
+    border-radius: 1em;
+    padding: 2px;
+}
+
+
+.all-background-videos-container img {
+    width: 3em;
+    height: 3em;
+    object-fit: cover;
+    border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+}
+
+.all-background-videos-container img:hover {
+    cursor: pointer;
+}
+
+.blocked-user-container {
+    position: absolute;
+    z-index: 10;
+    background-color: #fefefec5;
+    width: 97.5%;
+    text-align: center;
+    padding-block: 2px;
+    display: none;
+    text-shadow: 2px 2px 4px white;
+}
+
+.blocked-user-container h2 {
+    color: rgba(255, 0, 0, 0.607);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.pillar {
+    position: absolute;
+    height: 2.1em;
+    width: 10px;
+    top: 3.1em;
+    right: 3.9em;
+    background-color: rgba(192, 192, 192, 0.87);
+    z-index: 1;
+    border-radius: 3em;
+    display: none;
 }

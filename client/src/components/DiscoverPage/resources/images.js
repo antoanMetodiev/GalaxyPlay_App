@@ -1,22 +1,22 @@
 import Playstation5Image from "../resources/images/ps-5.webp";
-import Playstation4ProImage from "../resources/images/ps4 pro.jpg";
-import Playstation4SlimImage from "../resources/images/ps4 slim.png";
+import Playstation4ProImage from "../resources/images/ps4 pro.webp";
+import Playstation4SlimImage from "../resources/images/ps4 slim.webp";
 
-import Xbox_X from "../resources/images/xbox x.jpg";
-import Xbox_S from "../resources/images/xbox s.jpg";
-import Xbox_One from "../resources/images/xbox one.jpg";
+import Xbox_X from "../resources/images/xbox x.webp";
+import Xbox_S from "../resources/images/xbox s.webp";
+import Xbox_One from "../resources/images/xbox one.webp";
 
-import Corsair from "../resources/images/corsair.jpg"
+import Corsair from "../resources/images/corsair.webp"
 import AcerPredator from "../resources/images/acer predator.webp"
-import AlienWare from "../resources/images/alienware pc.jpg"
+import AlienWare from "../resources/images/alienware pc.webp"
 
-import Lenovo from "../resources/images/lenovo legion.jpg";
-import Mac from "../resources/images/mac.jpg";
-import Acer from "../resources/images/acer-laptop.jpg";
+import Lenovo from "../resources/images/lenovo legion.webp";
+import Mac from "../resources/images/mac.webp";
+import Acer from "../resources/images/acer-laptop.webp";
 
-import Ps5Game from "../resources/images/ps5 game.jpg";
-import Ps4Game from "../resources/images/the last of us.jpg";
-import XboxGame from "../resources/images/forza horizon.jpg";
+import Ps5Game from "../resources/images/ps5 game.webp";
+import Ps4Game from "../resources/images/the last of us.webp";
+import XboxGame from "../resources/images/forza horizon.webp";
 
 export let images = {
     Playstation5Image: Playstation5Image,

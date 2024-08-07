@@ -37,14 +37,14 @@
     position: relative;
     z-index: 16;
     border-radius: 1.2em;
-    
+    padding-block: 3px;
 }
 
 .chat-user-item:hover {
     /* border: 0.5px solid silver; */
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.53);
     cursor: default;
-    text-shadow: 6px 6px 12px rgba(0, 0, 0, 1);
+    text-shadow: 6px 6px 12px rgba(0, 0, 0, 2);
     
 }
 
@@ -62,7 +62,6 @@
     color: #ffff;
     letter-spacing: 1px;
 }
-
 
 .show-users-list-img {
     width: 3.4em;
@@ -83,19 +82,19 @@
 /* Search Engine */
 input.search-engine {
     border-radius: 0em;
-    margin-top: 4px;
+    margin-top: 5px;
     border-radius: 3em;
-    border: 0.7px solid gray;
+    border: 0.7px solid #ffffffa0;
     width: 18em;
     margin: -1px auto 0px auto;
-    color: rgb(192, 192, 192);
+    color: #ffffffd7;
     text-shadow: 3px 3px 7px rgba(0, 0, 0, 1);
 }
 
 input.search-engine:focus {
-    border: 1.1px solid gray;
+    border: 0.7px solid #ffffffa0;
 }
 
 input.search-engine::placeholder {
-    color: silver;
+    color: #ffffffd7;
 }

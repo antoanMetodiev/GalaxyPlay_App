@@ -1,11 +1,11 @@
 import { Chat } from "./structure/Chat/Chat";
 import style from "../AllChats/AllChats.module.css";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 
 import { SearchEngine } from "./structure/SearchEngine/SearchEngine";
+import showUserContainer from "../AllChats/images/show-user-list-container.webp";
 
-import showUserContainer from "../AllChats/images/show-user-list-container.png";
-
+import { AllAvatarsContext } from "../../../contexts/allAvatarsContext";
 
 export const AllChats = ({
 	bigImageRef,
@@ -18,6 +18,9 @@ export const AllChats = ({
 	let myUsername = JSON.parse(localStorage.getItem("user")).username;
 	let [myFriendUsername, setmyFriendUsername] = useState("");
 	let [showUsersList, setShowUsersList] = useState(false);
+
+
+	let { allAvatarsReversed } = useContext(AllAvatarsContext);
 
 
 	function setFilteredUsersHandler(value) {
@@ -116,7 +119,7 @@ export const AllChats = ({
 										className={style["chat-user-item"]}
 									>
 										<img
-											src={chatUser.photoURL}
+											src={allAvatarsReversed[chatUser.photoURL]}
 											alt={`${chatUser.username}'s profile`}
 										/>
 										<p>{chatUser.username}</p>

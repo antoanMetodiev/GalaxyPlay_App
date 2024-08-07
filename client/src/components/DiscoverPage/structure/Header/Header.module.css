@@ -9,7 +9,7 @@ header.site-header {
     color: #000;
 }
 
-header.site-header > * {
+header.site-header>* {
     height: 100%;
 }
 
@@ -51,7 +51,7 @@ header.site-header > * {
     font-style: oblique;
     font-weight: 430;
     font-size: 1.8em;
-  
+
     letter-spacing: 0.3px;
 }
 
@@ -68,7 +68,8 @@ header.site-header > * {
     top: 5.22em;
     left: 7.2em;
     border-radius: 8px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Слаба текстова сянка */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    /* Слаба текстова сянка */
 }
 
 .logo-data-wrapper .title-border:hover {
@@ -86,16 +87,188 @@ header.site-header > * {
     letter-spacing: 1px;
 }
 
+.contacts-li-item li {
+    list-style-type: none;
+    color: #000;
+    font-size: 1.1em;
+    letter-spacing: 1.1px;
+    color: #fefefe;
+    font-weight: 470;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    letter-spacing: 1px;
+}
+
+.contacts-li-item li:hover {
+    color: rgb(211, 211, 211);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+    cursor: pointer;
+}
+
 .header-nav a:hover {
-    color: rgb(211, 211, 211); /* Светъл сив */
+    color: rgb(211, 211, 211);
+    /* Светъл сив */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
 }
 
-.header-nav > * {
+.header-nav>* {
     display: flex;
     gap: 1em;
 }
 
 .header-nav ul:nth-of-type(2) {
     margin-right: 3em;
+}
+
+
+/* Contacts Container: */
+
+div.contacts-container {
+    position: absolute;
+    top: 13em;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 60em;
+    height: 30em;
+    background-color: #000000c3;
+    color: #fefefec3;
+    border-radius: 1em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 1);
+}
+
+div.contacts-container .meta-info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    font-size: 1.2em;
+    font-weight: 400;
+    margin: 0em 0em 0em -1.3em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+div.contacts-container .meta-info-container h3 {
+    color: #ffffffdd;
+}
+
+div.contacts-container .meta-info-container h3:hover {
+    color: #646cffd5;
+    cursor: default;
+}
+
+div.contacts-container .background-image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.6;
+    border-radius: 1em;
+}
+
+h2.contacts-title {
+    position: absolute;
+    z-index: 10;
+    top: 4.8em;
+    left: 50%;
+    transform: translate(-50%, 0);
+    color: #fefefec6;
+    width: 21.4em;
+    height: 2.7em;
+    font-size: 2.6em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 2px;
+    font-weight: 600;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 1),
+        6px 6px 15px rgba(0, 0, 0, 0.8);
+}
+
+.our-shops {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+    width: 20em;
+    margin-top: 3em;
+    margin-right: -2em;
+}
+
+.our-shops h2 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    font-size: 1.8em;
+    color: #fefefec7;
+}
+
+.our-shops h3 {
+    background-color: rgba(128, 128, 128, 0.598);
+    border-radius: 2em;
+    padding: 2px 0px 2px 7px;
+    color: #ffffffd8;
+    font-weight: 530;
+}
+
+.our-shops h3:hover {
+    background-color: #000000dd;
+    cursor: default;
+}
+
+
+/* CREATOR: */
+
+.creator-container {
+    position: absolute;
+    color: silver;
+    top: 27.8em;
+    left: -2.7em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    width: 25em;
+}
+
+.creator-container span {
+    color: #ffffff88;
+}
+
+.creator-container h2 {
+    font-weight: 500;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 1);
+    max-width: 150px;
+    color: #ffffffc4;
+}
+
+.typing-animation {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid;
+    /* Симулира курсор */
+    animation: typing 2.5s steps(16) 1s 1 normal both, blink 0.8s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+
+    from,
+    to {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: black;
+    }
 }
