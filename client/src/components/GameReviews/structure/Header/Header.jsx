@@ -1,21 +1,26 @@
 import { useNavigate } from "react-router-dom";
 import style from "../Header/Header.module.css";
-import LastLogo from "../../images/new-logo.jpg";
+import LastLogo from "../../images/new-logo.webp";
 
 import { Link } from "react-router-dom";
 
-import { HeaderContacts } from "../../../DiscoverPage/structure/HeaderContacts";
+import Cookies from "js-cookie";
+
+import { AllAvatarsContext } from "../../../../contexts/allAvatarsContext";
+import { useContext } from "react";
 
 export const Header = () => {
     let navigate = useNavigate();
 
+    let { allAvatars, allAvatarsReversed } = useContext(AllAvatarsContext);
     let userImage = JSON.parse(localStorage.getItem('user')).photoUrl;
 
     function navigateToWantedPath(event) {
         debugger;
         if (event.target.textContent === 'Log Out') {
             localStorage.removeItem('user');
-            navigate(event.target.value);
+            Cookies.remove("session");
+            navigate('/');
             window.location.reload();
         } else {
             navigate(event.target.value);
@@ -65,7 +70,7 @@ export const Header = () => {
 
                 <img
                     className={style['user-image']}
-                    src={userImage} alt="user-image" />
+                    src={allAvatarsReversed[userImage]} alt="user-image" />
             </header>
         </>
     );

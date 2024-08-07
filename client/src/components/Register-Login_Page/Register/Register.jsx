@@ -9,7 +9,9 @@ import coolSpinner from "../images/coll-spiner.gif";
 
 import { AvatarSection } from "../Register/structure/AvatarSection/AvatarSection";
 
-export const Register = () => {
+export const Register = ({
+	setUserDataHandler,
+}) => {
 	let navigate = useNavigate();
 	const [imageState, setImageState] = useState(profileImageModel);
 	let [registerOrNotText, setRegisterOrNot] = useState('');
@@ -39,20 +41,23 @@ export const Register = () => {
 		);
 
 	function showAvatarSectionHandler() {
-		showAvatarContainerRef.current.classList.remove(
-			showAvatarContainerRef.current.classList[1]
-		);
+		if (showAvatarContainerRef.current.classList.length > 1) {
+			showAvatarContainerRef.current.classList.remove(
+				showAvatarContainerRef.current.classList[1]
+			);
+		}
+
 		showAvatarContainerRef.current.style.display = "flex";
 	}
 
-	function setNewAvatarHandler(avatarUrl) {
-		choosenAvatarImage.current = avatarUrl;
-		setImageState(avatarUrl);
+	function setNewAvatarHandler(urlAndLocalePicture) {
+		choosenAvatarImage.current = urlAndLocalePicture.url;
+		setImageState(urlAndLocalePicture.image);
 	}
 
 	function callOnSubmitRegisterFunction(event) {
 		event.preventDefault();
-		onSubmitRegisterHandler(event, choosenAvatarImage, setRegisterOrNotHandler);
+		onSubmitRegisterHandler(event, choosenAvatarImage, setRegisterOrNotHandler, setUserDataHandler);
 	};
 
 	return (

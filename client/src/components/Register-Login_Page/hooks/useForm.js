@@ -5,6 +5,8 @@ import { email, password, phoneNumber, username } from "../utils/formValidations
 import { updateProfile } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
+import Cookies from "js-cookie";
+
 export const useForm = (initialValues) => {
 	const [formValues, setFormValues, choosenAvatarImage] = useState(initialValues);
 	const [error, setError] = useState("");
@@ -49,7 +51,7 @@ export const useForm = (initialValues) => {
 	}
 
 
-	async function onSubmitRegisterHandler(event, choosenAvatarImage, setRegisterOrNotHandler) {
+	async function onSubmitRegisterHandler(event, choosenAvatarImage, setRegisterOrNotHandler, setUserDataHandler) {
 
 		// Check if user are inlcudes:
 		let isIncludedUsername = await fetch(`https://galaxyplay-15910-default-rtdb.europe-west1.firebasedatabase.app/usernames/${formValues.username}.json`);
@@ -57,7 +59,6 @@ export const useForm = (initialValues) => {
 		// Ako se sudurja vutre ne pravq zaqvka:
 		isIncludedUsername = await isIncludedUsername.json();
 
-		debugger;
 		if (isIncludedUsername) {
 
 			let text = 'Username already taken!'.slice(0);
@@ -81,7 +82,19 @@ export const useForm = (initialValues) => {
 				const userCredential = await createUserWithEmailAndPassword(auth, formValues.email, formValues.password,);
 				const user = userCredential.user;
 				let number = event.target.phoneNumber.value;
-				const myToken = await user.getIdToken(); 
+				const myToken = await user.getIdToken();
+
+				// Запазвам токена в cookies:
+
+				debugger;
+				if (myToken) {
+					setUserDataHandler(user);
+					Cookies.set('session', myToken, { expires: 1, secure: process.env.NODE_ENV === 'production', sameSite: 'Strict' });
+					localStorage.setItem('user', JSON.stringify({
+						username: formValues.username,
+						photoUrl: formValues,
+					}));
+				}
 
 				// Send Datas in Firebase Database for Users:
 
@@ -123,17 +136,17 @@ export const useForm = (initialValues) => {
 					photoURL: choosenAvatarImage.current,
 					gender: event.target.gender.value,
 				});
-				
+
 				debugger;
 				localStorage.setItem('user', JSON.stringify({
 					username: formValues.username,
-					token: myToken,
 					photoUrl: choosenAvatarImage.current,
+					gender: event.target.gender.value,
 				}));
 
 				setFormValues(initialValues);
 				cleariRegisterValues();
-				
+
 
 				// and finnaly we can navigate to '/':
 				navigate('/');
@@ -147,10 +160,12 @@ export const useForm = (initialValues) => {
 
 
 
-	async function onSubmitLoginHandler(event) {
+	async function onSubmitLoginHandler() {
 
+		debugger;
 		try {
 			const result = await signInWithEmailAndPassword(auth, formValues.email, formValues.password);
+
 			cleariInputValues();
 			setError('Successful login.');
 			return result;

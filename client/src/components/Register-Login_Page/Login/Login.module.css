@@ -18,9 +18,9 @@ html {
 
 .video-bkg {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     object-fit: cover;
-    aspect-ratio: 16/7.77;
+    aspect-ratio: 16/7.68;
     margin-bottom: -1em;
 }
 
@@ -34,7 +34,7 @@ html {
 @media (max-aspect-ratio: 16/9) {
     .video-bkg {
         width: auto;
-        height: 100%;
+        height: 100vh;
     }
 }
 

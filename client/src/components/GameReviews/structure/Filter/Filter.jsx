@@ -134,6 +134,8 @@ export const Filter = ({
 
 
     function showFilterResults(event) {
+
+        debugger;
         event.preventDefault();
 
         filteredObject.length = 0;
@@ -146,8 +148,8 @@ export const Filter = ({
             let random = allReviewsList[key][category];
             random = random.toLowerCase();
 
-            if (random.includes(event.currentTarget.inputText.value.trim() === ''
-                ? event.currentTarget.inputText.value : event.currentTarget.inputText.value.toLowerCase())) {
+            if (random.includes(formRef.current.inputText.value.trim() === ''
+                ? formRef.current.inputText.value : formRef.current.inputText.value.toLowerCase())) {
 
                 // Note:
                 // - The Spagheti code above Me saying: (if the value is '' - dont use .toLowerCase(), but if not - use them!)
@@ -156,10 +158,6 @@ export const Filter = ({
         }
 
         setFilteredReviewsBySelectListHandler(filteredObject);
-    }
-
-    function sibmitFormHandler() {
-        formRef.current.submit();
     }
 
     return (
@@ -194,7 +192,7 @@ export const Filter = ({
                 />
 
                 <i
-                    onClick={sibmitFormHandler}
+                    onClick={showFilterResults}
                     className="fa-solid fa-magnifying-glass" />
 
                 {/* <input

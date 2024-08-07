@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import style from "../WithoutPermission/WithoutPermission.module.css";
 
-import gates from "../WithoutPermission/images/without-permission.jpg";
+import gates from "../WithoutPermission/images/without-permission.webp";
 import coolSpinner from "../Register-Login_Page/images/coll-spiner.gif";
 
 export const WithoutPermission = () => {

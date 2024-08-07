@@ -11,7 +11,8 @@ export const DeleteReview = ({
 
         <article
             ref={deleteReviewModalRef}
-            className={style['create-reviews-wrapper']}>
+            className={`${style['create-reviews-wrapper']} ${style['delete-reviews-wrapper']}`}
+        >
 
             <form
                 onSubmit={deleteReviewHandler}

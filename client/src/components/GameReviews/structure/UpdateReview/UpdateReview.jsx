@@ -11,7 +11,9 @@ export const UpdateReview = ({
 
         <article
             ref={updateReviewModalRef}
-            className={`${style['create-reviews-wrapper']} ${style['update-reviews-wrapper']}`}>
+            className={`${style['create-reviews-wrapper']} ${style['update-reviews-wrapper']}`}
+        >
+
 
             <form
                 onSubmit={updateReviewHandler}
