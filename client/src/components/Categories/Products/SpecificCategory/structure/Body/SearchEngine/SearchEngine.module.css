@@ -1,0 +1,26 @@
+input.search-engine {
+    position: absolute;
+    z-index: 5;
+    top: 4.5em;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 32em;
+    color: #ffffffdd;
+    border: 0.8px solid silver;
+    border-radius: 1.5em;
+    box-shadow: 15px 15px 45px rgba(0, 0, 0, 0.8);
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+#search-engine-container-id:hover {
+    cursor: pointer;
+}
+
+.search-engine::placeholder {
+    color: #ffffffce;
+}
+
+input.search-engine:focus {
+    border: 0.3px solid silver;
+}
+
