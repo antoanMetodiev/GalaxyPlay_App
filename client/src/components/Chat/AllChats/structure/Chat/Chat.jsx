@@ -30,7 +30,6 @@ function isValidImageUrl(url) {
 
 import { AllAvatarsContext } from "../../../../../contexts/allAvatarsContext";
 
-
 export const Chat = ({
 	myFriendUsername,
 	setShowConcreteChatPermissionHandler,
@@ -44,7 +43,6 @@ export const Chat = ({
 	let [currentFriendData, setCurrentFriendData] = useState({});
 	const [messageText, setMessageText] = useState("");
 	let mainContainerWrapper = useRef(null);
-
 
 	// Avatars Context:
 	let { allAvatarsReversed } = useContext(AllAvatarsContext);
@@ -63,7 +61,6 @@ export const Chat = ({
 	let inputRef = useRef(null); // това ми е инпута в който си пиша съобщенията!
 	let blockOrNotRef = useRef(null);
 	let pillarRef = useRef(null);
-
 
 	// Background Video state: 
 	let [backgoundImage, setBackgoundImage] = useState(allBackImages[1]);
@@ -208,7 +205,7 @@ export const Chat = ({
 
 	useEffect(() => {
 
-		// Референция към пътя, който искаш да слушаш
+		// Референция към пътя, който искамда слушаш
 		const blockedRef = ref(database, `users/${receiver}/blockedUsers/${currentUserUsername}`);
 
 		// Добавяне на слушател към този път

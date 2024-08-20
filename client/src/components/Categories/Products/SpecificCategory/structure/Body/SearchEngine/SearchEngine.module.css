@@ -17,7 +17,7 @@ input.search-engine {
 }
 
 .search-engine::placeholder {
-    color: #ffffffce;
+    color: #ffffffe0;
 }
 
 input.search-engine:focus {

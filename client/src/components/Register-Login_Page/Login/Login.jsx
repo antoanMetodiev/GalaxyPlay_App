@@ -31,6 +31,8 @@ export const Login = ({
 		try {
 			const result = await onSubmitLoginHandler(event);
 
+			console.log(result);
+
 			debugger;
 			// Извличане на idToken от result
 			const idToken = result._tokenResponse?.idToken;
@@ -40,9 +42,10 @@ export const Login = ({
 			if (idToken) {
 				const userData = { username, photoUrl };
 				setUserDataHandler(result);
-				localStorage.setItem("user", JSON.stringify(userData)); // Запазване на данни в localStorage
+				localStorage.setItem("user", JSON.stringify(userData));
 
 				// Съхранявам сесията в JS Cookies:
+				Cookies.remove('session');
 				Cookies.set('session', idToken, { expires: 1, secure: process.env.NODE_ENV === 'production', sameSite: 'Strict' });
 				navigate("/");
 

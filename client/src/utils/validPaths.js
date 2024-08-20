@@ -1,0 +1,15 @@
+export let validPaths = [
+    '/categories',
+    '/categories/games',
+    '/categories/games/ps4-games',
+    '/categories/games/ps5-games',
+    '/game-reviews',
+    '/categories/pc',
+    '/categories/xbox',
+    '/categories/ps4',
+    '/categories/laptop',
+    '/categories/ps5',
+    '/profile-details',
+    '',
+    '/',
+];

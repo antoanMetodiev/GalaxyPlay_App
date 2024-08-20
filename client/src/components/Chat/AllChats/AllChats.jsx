@@ -41,8 +41,6 @@ export const AllChats = ({
 
 				result = await result.json();
 
-				console.log("Fetched Data:", result);
-
 				result = Object.fromEntries(
 					Object.entries(result).filter(([key]) => key !== myUsername)
 				);

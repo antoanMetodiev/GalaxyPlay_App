@@ -2,7 +2,7 @@
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, onValue, query, startAt, limitToFirst, orderByKey } from "firebase/database";
 import { getAnalytics } from "firebase/analytics";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, signInWithCustomToken } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -29,5 +29,5 @@ const auth = getAuth(app);
 export {
     database, ref, onValue, query, startAt, limitToFirst,
     auth, createUserWithEmailAndPassword,
-    signInWithEmailAndPassword, orderByKey, signOut
+    signInWithEmailAndPassword, orderByKey, signOut, signInWithCustomToken, getAuth
 };

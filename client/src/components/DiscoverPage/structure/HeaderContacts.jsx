@@ -1,18 +1,21 @@
-
 import style from "./Header/Header.module.css";
-
 import backgroundImage from "../resources/images/old-log.webp";
+import { useNavigate } from "react-router-dom";
 
 export const HeaderContacts = () => {
+	let navigate = useNavigate();
 
 
+	
 
 
-
+	function navigateToOpenStreetMap(event) {
+		if (event.target.tagName === 'H3') {
+			navigate(`/maps/${event.target.textContent}`);
+		}
+	};
 	return (
 		<>
-
-
 			<h2 className={style['contacts-title']}>GalaxyPlay</h2>
 
 			<div className={style['contacts-container']}>
@@ -31,15 +34,15 @@ export const HeaderContacts = () => {
 					</div>
 				</section>
 
-				<section className={style['our-shops']}>
+				<section onClick={navigateToOpenStreetMap} className={style['our-shops']}>
 					<h2>Our Shops:</h2>
-					<h3>GalaxyPlay  Bulgaria Mall</h3>
-					<h3>GalaxyPlay Park Center</h3>
+					{/* <h3>GalaxyPlay Bulgaria Mall</h3> */}
+					{/* <h3>GalaxyPlay Park Center</h3> */}
 					<h3>GalaxyPlay Sofia Ring Mall</h3>
-					<h3>GalaxyPlay Bulgaria Mall</h3>
-					<h3>GalaxyPlay South Mall</h3>
-					<h3>GalaxyPlay Grand Mall Varna</h3>
-					<h3>GalaxyPlay Grand Mall Plovdiv</h3>
+					{/* <h3>GalaxyPlay Bulgaria Mall</h3> */}
+					{/* <h3>GalaxyPlay South Mall</h3> */}
+					<h3 datatype="Varna">GalaxyPlay Grand Mall Varna</h3>
+					<h3 datatype="Plovdiv">GalaxyPlay Grand Mall Plovdiv</h3>
 				</section>
 
 				<div className={style['creator-container']}>

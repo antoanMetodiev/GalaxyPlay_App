@@ -7,40 +7,20 @@ import { faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { FavouriteProductItem } from "./structure/FavouriteProductItem/FavouriteProductItem";
 
 export const ProductsList = ({
-	// GameList for every 18 games:
 	productList,
 	setGameListHandler,
-
-	// Render or Not Flag:
 	renderGameList,
-
-	// Flag for initital mount for AllGames or Not:
 	initialMountForAllGames,
-
-	// Flag for initital mount for First18Games or Not:
 	initialMountForFirst_18_Games,
-
-	// Object with start and end indexes:
 	startAndEndIndexes,
-
-	// AllGames for current category:
 	allProducts,
 	setAllGamesListHandler,
-
 	savedFirstCollection,
 	setSavedFirstCollection,
-
-	// Save previous path name for condition:
 	previousPathName,
 	setPreviousPathNameHandler,
-
-	// Save previous page index when user click on GameDetails:
 	savePreviousPageIndex,
-
-
 	cleanUpForGameDetails,
-
-
 	setallFavouritesProductsCountHandler,
 	myFavContainerRef,
 
@@ -128,6 +108,7 @@ export const ProductsList = ({
 	useEffect(() => {
 		const solve = () => {
 			// debugger;
+
 			if (subCategory == undefined || subCategory === "details") {
 				concreteUrl = `https://galaxyplay-15910-default-rtdb.europe-west1.firebasedatabase.app/${specificCategory}.json`;
 			}
@@ -169,12 +150,12 @@ export const ProductsList = ({
 		// }, 10000);
 
 
-		// TOVA SI BQHA ZAVISIMOSTITE V TOZI DEPENDANCY ARRAY: concreteUrl, allGames]
+
 	}, [allProducts]);
 
-	// Search Engine Logic:
-	//----------------------------------------------------------
 
+	
+	// Search Engine Logic:
 	const setAllGamesWithPatternHandler = (newArr) => {
 		setAllGamesWithPattern(newArr);
 	};

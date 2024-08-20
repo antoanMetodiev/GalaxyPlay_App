@@ -86,7 +86,6 @@ export const useForm = (initialValues) => {
 
 				// Запазвам токена в cookies:
 
-				debugger;
 				if (myToken) {
 					setUserDataHandler(user);
 					Cookies.set('session', myToken, { expires: 1, secure: process.env.NODE_ENV === 'production', sameSite: 'Strict' });
@@ -137,7 +136,6 @@ export const useForm = (initialValues) => {
 					gender: event.target.gender.value,
 				});
 
-				debugger;
 				localStorage.setItem('user', JSON.stringify({
 					username: formValues.username,
 					photoUrl: choosenAvatarImage.current,
@@ -146,7 +144,6 @@ export const useForm = (initialValues) => {
 
 				setFormValues(initialValues);
 				cleariRegisterValues();
-
 
 				// and finnaly we can navigate to '/':
 				navigate('/');

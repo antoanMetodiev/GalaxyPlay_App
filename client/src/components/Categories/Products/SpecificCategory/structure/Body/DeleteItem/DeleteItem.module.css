@@ -147,6 +147,7 @@
 
 .show-game-delete:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.85);
+    background-color: rgba(243, 113, 46, 0.4);
 }
 
 .dont-do-it-image {
