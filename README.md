@@ -1,5 +1,5 @@
 
-### PROJECT URL - __*https://galaxyplay-15910.firebaseapp.com*__
+### PROJECT URL - __*https://galaxyplay-15910.web.app/*__
 
 
 
