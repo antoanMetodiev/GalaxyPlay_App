@@ -24,8 +24,12 @@ export const OpenStreetMap = () => {
         if (videoRef.current) {
             videoRef.current.play();
         }
-    }, []);
 
+        // setTimeout(() => {
+        //     videoRef.current.play();
+        // }, 5000);
+
+    }, []);
 
     return (
         <article className={style['main-wrapper-container']}>
@@ -35,7 +39,6 @@ export const OpenStreetMap = () => {
             <video
                 ref={videoRef}
                 className={style['back-video']}
-                loop
                 autoPlay
                 muted
                 src={carVideo}

@@ -11,7 +11,6 @@ export const GameReviewItem = ({
     setAllReviewsListHandler,
 }) => {
 
-
     // console.log(rewiew);
     let [showDetails, setShowDetails] = useState(false);
     let [showComments, setShowComments] = useState(false);
@@ -41,7 +40,7 @@ export const GameReviewItem = ({
 
 
     return (
-        <div>
+        <div className={style['main-wrapper']}>
             <article className={style['rewiew-container']}>
 
                 <img className={style['game-review-img']} src={rewiew.imgCoverUrl} alt="game-review-img" loading="lazy"/>

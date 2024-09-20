@@ -115,6 +115,19 @@ img.wallper-image {
     height: auto;
 }
 
+
+/* @media (max-width: 1550px) {
+    .all-reviews-wrapper {
+        width: 100%;
+    }
+
+    
+
+
+} */
+
+
+
 .all-reviews-container {
     display: flex;
     flex-direction: column;

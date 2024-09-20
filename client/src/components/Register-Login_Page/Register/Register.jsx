@@ -25,7 +25,6 @@ export const Register = ({
 	let showAvatarContainerRef = useRef(null);
 	let choosenAvatarImage = useRef("");
 
-
 	const { formValues, onChangeHandler, onSubmitRegisterHandler, error } =
 		useForm(
 			{

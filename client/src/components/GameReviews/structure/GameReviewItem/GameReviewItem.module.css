@@ -8,29 +8,48 @@ article.rewiew-container {
     border-top-right-radius: 1em;
     background-color: #00000085;
     position: relative;
-    animation: fadeIn 0.8s ease-in-out; /* Прилага анимацията при поява */
+    animation: fadeIn 0.8s ease-in-out;
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.8);
 }
+
+/* @media (max-width: 600px) {
+    article.rewiew-container {
+        width: 25em;
+        height: auto;
+        flex-direction: column;
+        margin: 0em auto -6em auto;
+    }
+
+    article.rewiew-container img.game-review-img {
+        width: 20em;
+        margin: 0em auto -1.5em auto;
+    }
+
+    section.table-item {
+        flex-direction: column;
+    }
+} */
+
 
 @keyframes fadeIn {
     0% {
         opacity: 0;
-        transform: translateY(20px); /* Премества елемента малко надолу */
+        transform: translateY(20px); 
     }
     100% {
         opacity: 1;
-        transform: translateY(0); /* Връща елемента в първоначалната му позиция */
+        transform: translateY(0); 
     }
 }
 
-article.rewiew-container img.game-review-img {
+.rewiew-container img.game-review-img {
     width: 22em;
     border-radius: 1em;
     object-fit: cover;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-article.rewiew-container div.content {
+.rewiew-container div.content {
     padding-block: 1em;
 }
 

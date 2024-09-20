@@ -21,7 +21,7 @@ export const DeleteReview = ({
                 <section>
                     <div>
                         <label htmlFor="gameTitleName">Game Title Name</label>
-                        <input type="text" name="gameTitleName" id="gameTitleName" />
+                        <input type="text" name="gameTitleName" id="gameTitleName" required/>
                     </div>
                 </section>
 

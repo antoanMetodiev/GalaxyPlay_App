@@ -62,3 +62,18 @@ span.likes-count {
     border-bottom-left-radius: 0.7em;
     text-shadow: 4px 4px 10px rgba(0, 0, 0, 1); /* По-интензивна черна сянка */
 }
+
+/* @media (max-width: 1550px) {
+    form.comments-from {
+        max-width: 40em;
+        gap: 1.3em;
+        margin: 0 auto;
+        bottom: -5em;
+        margin-bottom: 7em;
+    }
+
+    form.comments-from > :nth-child(2) {
+        margin-left: 1.3em;
+    }
+
+} */

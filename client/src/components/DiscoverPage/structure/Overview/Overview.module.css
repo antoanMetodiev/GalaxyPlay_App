@@ -13,9 +13,12 @@
     background-size: cover;
     position: relative;
     z-index: 10;
+    width: 100%;
+    height: 100%;  
+    padding-bottom: 2em;
 }
 
-.demo-website-preview > h2 {
+.demo-website-preview>h2 {
     height: fit-content;
     margin-block: 1.2em -0.8em;
     font-size: 2em;
@@ -26,7 +29,7 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
 }
 
-.demo-website-preview > h2:first-of-type {
+.demo-website-preview>h2:first-of-type {
     margin-block: 1.2em -0.9em;
 }
 
@@ -45,6 +48,14 @@ article.playstation {
     position: relative;
     box-shadow: 0 12px 24px rgba(0, 0, 0, 1);
     border-radius: 12px;
+}
+
+.playstation._5:first-of-type {
+    margin-left: 2.5em;
+}
+
+.playstation._5:last-of-type {
+    margin-right: 2.5em;
 }
 
 .content {
@@ -101,5 +112,51 @@ article.playstation {
     width: 100%;
     object-fit: cover;
     border-radius: 12px;
-    
+}
+
+
+
+/* MEDIA PHONES: */
+
+@media screen and (max-width: 830px) {
+    article.playstation {
+        flex-direction: column;
+        height: auto;
+       
+    }
+
+    .playstation._5 {
+        width: 70%;
+        height: 13.2em;
+    }
+
+    .playstation._5 h2 {
+        font-size: 1.5em;
+    }
+
+    .playstation._5 a {
+        font-size: 0.9em;
+    }
+
+    .playstation._5:first-of-type {
+        margin-left: 0em;
+    }
+
+    .playstation._5:last-of-type {
+        margin-right: 0em;
+    }
+
+    article.playstation {
+        gap: 3.5em;
+    }
+
+    .demo-website-preview>h2 {
+        font-size: 2.5em;
+        margin-block: 2em 0.01em;
+    }
+
+    .demo-website-preview>h2:first-of-type {
+        margin-block: 1.2em -0.4em;
+        font-size: 2.5em;
+    }
 }

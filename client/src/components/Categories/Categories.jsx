@@ -30,7 +30,7 @@ export const Categories = () => {
 
 			<section className={styles["demo-website-preview"]}>
 				{/* Categories */}
-				<h2>Categories</h2>
+				{/* <h2>Categories</h2> */}
 
 				<article className={styles.playstation}>
 					<div className={`${styles.playstation} ${styles._5}`}>
@@ -58,6 +58,7 @@ export const Categories = () => {
 						<span className={styles["bkg-color"]}></span>
 					</div>
 				</article>
+
 				<article className={styles.playstation}>
 					<div className={`${styles.playstation} ${styles._5}`}>
 						<img src={ps4} alt="games-image" />

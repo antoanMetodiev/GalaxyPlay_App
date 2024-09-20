@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import style from "../GameReviews/GameReviews.module.css";
-import marsWallper from "../GameReviews/images/creative-mars.webp";
+import marsWallper from "../GameReviews/images/creative-mars.jpg";
 
 import { GameReviewItem } from "./structure/GameReviewItem/GameReviewItem";
 import { SearchEngine } from "./structure/SearchEngine/SearchEngine";

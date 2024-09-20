@@ -27,13 +27,11 @@ export const Login = ({
 	async function doLogin(event) {
 		event.preventDefault();
 
-		debugger;
 		try {
 			const result = await onSubmitLoginHandler(event);
 
 			console.log(result);
 
-			debugger;
 			// Извличане на idToken от result
 			const idToken = result._tokenResponse?.idToken;
 			const username = result.user.displayName;

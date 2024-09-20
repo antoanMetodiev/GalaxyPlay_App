@@ -5,7 +5,6 @@ import style from "./CommentForm.module.css";
 import { POST } from "../../../../../../../../../../../../../services/service";
 import { useLocation } from "react-router-dom";
 
-
 import { AllAvatarsContext } from "../../../../../../../../../../../../../contexts/allAvatarsContext";
 
 export const CommentForm = ({
@@ -24,8 +23,6 @@ export const CommentForm = ({
 	const pathName = location.pathname.split("/");
 	pathName.shift();
 
-	// debugger;
-
 	let baseUrl = '';
 	if (pathName[2] === undefined || pathName[2] === 'details') {
 		baseUrl = `https://galaxyplay-15910-default-rtdb.europe-west1.firebasedatabase.app/${pathName[1]}`;
@@ -37,11 +34,13 @@ export const CommentForm = ({
 
 	const makeCommentHandler = async (event) => {
 		event.preventDefault();
+
+		if (comment.trim().length == 0) return;
+
 		const newComment = { writer: username, text: comment, gender: userData.gender, photoURL: userData.photoURL };
 
 		try {
 			const url = `${baseUrl}/${gameId}/comments.json`;
-			debugger;
 			const generatedId = await POST(
 				url,
 				newComment

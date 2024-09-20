@@ -20,7 +20,7 @@ export const Header = ({
 		const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
 			setUser(currentUser);
 			console.log(currentUser);
-		});	
+		});
 
 		return () => unsubscribe(); // Чистене на подписката при размонтиране на компонента
 	}, []);
@@ -61,9 +61,15 @@ export const Header = ({
 						</>
 					) : (
 						<>
-							<Link to="/categories">Categories</Link>
-							<Link to="/game-reviews">Blog</Link>
-							<Link to="/profile-details">Profile Details</Link>
+							<li>
+								<Link to="/categories">Categories</Link>
+							</li>
+							<li>
+								<Link to="/game-reviews">Blog</Link>
+							</li>
+							<li>
+								<Link to="/profile-details">Profile Details</Link>
+							</li>
 							<li onClick={logOutUserHandler}>
 								<Link to="#">Log Out</Link>
 							</li>

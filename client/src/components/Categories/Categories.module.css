@@ -20,6 +20,26 @@
     transform: translate(-50%, -50%);
 }
 
+@media (max-width: 700px) {
+    .container {
+        min-height: 100vh;
+        max-height: 500em;
+    }
+
+    section.demo-website-preview {
+        margin-top: 25em;
+        height: 100vh;
+        gap: 40em;
+    }
+
+    article.playstation {
+        flex-direction: column;
+    }
+}
+
+
+
+
 .demo-website-preview > h2 {
     height: fit-content;
     margin-bottom: -0.3em;
@@ -37,7 +57,7 @@
     cursor: default;
 }
 
-article.playstation {
+.playstation {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -106,13 +126,13 @@ article.playstation {
 
 .background-clip {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     object-fit: cover;
-    aspect-ratio: 16/9;
+    /* aspect-ratio: 16/9; */
 }
 
 
-@media (min-aspect-ratio: 16/8) {
+/* @media (min-aspect-ratio: 16/8) {
     .background-clip {
         width: 100%;
         height: 100vh;
@@ -124,4 +144,4 @@ article.playstation {
         width: auto;
         height: 100%;
     }
-}
+} */

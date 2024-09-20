@@ -9,7 +9,6 @@ import { useRef } from "react";
 export const Game_Categories = () => {
 	const navigate = useNavigate();
 
-
 	function navigateToPathHandler(event) {
 		navigate(`${event.target.previousSibling.textContent.toLowerCase().split(" ").join('-')}`);
 	};
@@ -17,7 +16,6 @@ export const Game_Categories = () => {
 	return (
 		<article className={styles["container"]}>
 			<section className={styles["demo-website-preview"]}>
-				<h2>Game Categories</h2>
 
 				<article className={styles.playstation}>
 
