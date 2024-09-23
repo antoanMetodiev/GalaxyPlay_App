@@ -1,16 +1,32 @@
 import { images } from '../../resources/images';
 import styles from '../Overview/Overview.module.css'; // Import на CSS модул стиловете
+import backImage from "../../resources/images/3d sales.webp";
 
 import { Link, useNavigate } from 'react-router-dom';
+import { useInView } from 'react-intersection-observer';
 
 export const Overview = () => {
+	const { ref, inView } = useInView({
+        triggerOnce: true, // Анимацията да се стартира само веднъж
+        threshold: 0.1, // Процент от видимостта, за да се активира анимацията
+    });
+
 
 	return (
 		<section className={styles['demo-website-preview']}>
+
+			<img 
+				className={styles['back-image']}
+				src={backImage} 
+				alt="backImage" 
+			/>
+
 			{/* Games */}
 			<h2>Games</h2>
 
-			<article className={styles.playstation}>
+			<article 
+				ref={ref}
+				className={styles.playstation}>
 				<div className={`${styles.playstation} ${styles._5}`}>
 					<img
 						className={`${styles.playstation} ${styles._5}_img`}

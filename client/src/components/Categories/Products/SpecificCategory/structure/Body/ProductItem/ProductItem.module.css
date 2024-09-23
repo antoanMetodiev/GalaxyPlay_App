@@ -8,7 +8,23 @@
     opacity: 0.0; 
     transform: translateY(20px); 
     transition: transform 0.5s ease, opacity 0.5s ease; 
-   
+    animation: levitate 1.4s infinite ease-in-out; /* Добавяме анимация */
+}
+
+@keyframes levitate {
+    0% {
+        transform: translateY(8px);
+        /* opacity: 0.0; */
+        box-shadow: 0 2px 8px rgba(255, 255, 0, 0.4), 0 0 10px rgba(255, 255, 0, 0.2);
+    }
+    50% {
+        transform: translateY(0px);
+        opacity: 1.0; 
+    }
+    100% {
+        transform: translateY(8px);
+        /* opacity: 0.0; */
+    }
 }
 
 @keyframes fadeInUp {
@@ -24,7 +40,8 @@
       opacity: 1;
       transform: translateY(0) scale(1);
     }
-  }
+}
+
 .game-item-image {
     width: 100%;
     height: 23em;

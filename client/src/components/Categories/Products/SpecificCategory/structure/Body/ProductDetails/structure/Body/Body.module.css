@@ -32,14 +32,29 @@ html {
     position: relative;
     z-index: 1;
     padding-top: 10em;
+    opacity: 0; /* Първоначално скрит */
+    transform: translateY(200px); /* Преместване надолу */
+    animation: slideUp 1.5s forwards; /* Анимация при показване */
 }
+
+@keyframes slideUp {
+    to {
+        opacity: 1; /* Прозрачност на 1 */
+        transform: translateY(0); /* Връща се в оригиналното си положение */
+    }
+}
+
+
+
+
 
 .content-main-container {
     width: 82em;
     margin: 0 auto;
     padding-bottom: 7em;
     background-color: rgba(255, 255, 255, 0.6);
-    border-radius: 14em;
+    /* border-radius: 14em; */
+
     box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.6);
     position: relative;
     z-index: 1;
@@ -62,4 +77,5 @@ html {
     height: 100vh;
     object-fit: cover;
     z-index: -1;
+    opacity: 0.65;
 }

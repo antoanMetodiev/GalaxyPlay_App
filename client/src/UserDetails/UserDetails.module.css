@@ -5,6 +5,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 .user-details-container {
@@ -19,7 +21,22 @@
     padding-left: 2.1em;
     position: relative;
     flex-wrap: wrap;
+    animation: slideInFromBottom 1.2s ease-out forwards; /* Добави анимацията */
+    opacity: 0; /* Скриваме елемента по подразбиране */
 }
+
+
+@keyframes slideInFromBottom {
+    from {
+        transform: translateY(100%); /* Започва отдолу извън екрана */
+        opacity: 0; /* Започва скрит */
+    }
+    to {
+        transform: translateY(0); /* Премества се в централната позиция */
+        opacity: 1; /* Показва се */
+    }
+}
+
 
 .user-details-wrapper .content {
     width: 43em;

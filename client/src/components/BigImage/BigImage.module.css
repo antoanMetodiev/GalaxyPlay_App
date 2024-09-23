@@ -9,9 +9,6 @@ div.big-image-wrapper {
 }
 
 .big-image {
-    
-    /* 70x40 - this is previous size */
-
     width: 70em;
     height: 40em;
     position: absolute;
@@ -21,6 +18,19 @@ div.big-image-wrapper {
     transform: translate(-50%, -50%);
     border-radius: 1em;
     object-fit: cover;
-    /* box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3); */
     background-color: unset;
+    animation: slideInFromRight 0.8s ease-out forwards; /* Добави анимацията */
+    opacity: 0; /* Скриваме елемента по подразбиране */
 }
+
+@keyframes slideInFromRight {
+    from {
+        transform: translate(100%, -50%); /* Започва отдясно извън екрана */
+        opacity: 0; /* Започва скрит */
+    }
+    to {
+        transform: translate(-50%, -50%); /* Премества се в центъра */
+        opacity: 1; /* Показва се */
+    }
+}
+

@@ -39,7 +39,6 @@ export const ProductItem = ({
                 favouriteProductsKeys[responceData[key].name] = responceData[key];
             }
 
-            debugger;
 
             console.log(favouriteProductsKeys);
 
@@ -79,10 +78,15 @@ export const ProductItem = ({
             gameItemRef.current.style.opacity = 1;
             gameItemRef.current.style.transform = "translateY(20px)";
 
-            gameItemRef.current.style.animation = `${style.fadeInUp} 0.5s forwards`;
+            gameItemRef.current.style.animation = `${style.fadeInUp} 0.55s forwards`;
         };
 
         solve();
+
+        setTimeout(() => {
+            gameItemRef.current.style.animation = `${style.levitate} 2s infinite ease-in-out`;
+        }, 1500);
+
     }, []);
 
     // console.log(data);

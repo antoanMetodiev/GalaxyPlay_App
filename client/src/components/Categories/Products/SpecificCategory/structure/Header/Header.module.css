@@ -47,7 +47,23 @@ header.site-header>* {
     margin-left: 2em;
     position: relative;
     margin-top: -6.6em;
+    animation: slideInFromLeftLogo 1.2s ease-out forwards; /* Добави анимацията */
+    opacity: 0; /* Скриваме елемента по подразбиране */
 }
+
+@keyframes slideInFromLeftLogo {
+    from {
+        transform: translateX(-150%); /* Започва отляво извън екрана */
+        opacity: 0; /* Започва скрит */
+    }
+    to {
+        transform: translateX(0); /* Премества се в оригиналната позиция */
+        opacity: 1; /* Показва се */
+    }
+}
+
+
+
 
 .logo-data-wrapper img {
     position: relative;
@@ -73,7 +89,24 @@ header.site-header>* {
     width: 44em;
     justify-content: center;
     cursor: default;
+    animation: slideInFromRight 1.2s ease-out forwards; /* Добави анимацията */
+    opacity: 0; /* Скриваме елемента по подразбиране */
 }
+
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(150%); /* Започва отляво извън екрана */
+        opacity: 0; /* Започва скрит */
+    }
+    to {
+        transform: translateX(0); /* Премества се в оригиналната позиция */
+        opacity: 1; /* Показва се */
+    }
+}
+
+
+
+
 
 .header-nav ul {
     margin-top: -0.3em;

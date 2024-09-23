@@ -3,6 +3,8 @@ import styles from "../Products/Game_Categories.module.css"
 import ps5GamesImage from "./images/ps5 games.webp";
 import ps4GamesImage from "./images/ps4 games.webp";
 import xboxGamesImage from "./images/xbox_games.webp";
+import backImage from "./images/1.webp";
+
 import { useNavigate } from "react-router-dom";
 import { useRef } from "react";
 
@@ -15,6 +17,13 @@ export const Game_Categories = () => {
 
 	return (
 		<article className={styles["container"]}>
+
+			<img
+				className={styles['back-image']}
+				src={backImage}
+				alt="backImage"
+			/>
+
 			<section className={styles["demo-website-preview"]}>
 
 				<article className={styles.playstation}>

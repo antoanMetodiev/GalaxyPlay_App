@@ -19,7 +19,7 @@ import picture3 from "../../videos/mountain.webp";
 import backgoundVideo1 from "../../videos/message-section-wallper.mp4";
 import backgoundVideo3 from "../../videos/cars-video.mp4";
 
-let allBackImages = [picture1, picture2, picture3];
+let allBackImages = [backgoundVideo1, backgoundVideo3];
 
 function isValidImageUrl(url) {
 	const pattern = /^(https?:\/\/.*\.(?:png|jpg|jpeg|gif|webp|svg|bmp|ico|tiff?))(?:\?.*)?$/i;
@@ -395,9 +395,9 @@ export const Chat = ({
 				<div
 					ref={hiddenAllBackgroundVideosDivRef}
 					className={style['all-background-videos-container']}>
-					<img onClick={changeWallperHandler} src={picture1} alt="0" />
-					<img onClick={changeWallperHandler} src={picture2} alt="1" />
-					<img onClick={changeWallperHandler} src={picture3} alt="2" />
+					<img onClick={changeWallperHandler} src={image1} alt="0" />
+					<img onClick={changeWallperHandler} src={image3} alt="1" />
+					{/* <img onClick={changeWallperHandler} src={image3} alt="" /> */}
 				</div>
 
 				<header className={style["username-and-avatar"]}>
@@ -419,10 +419,10 @@ export const Chat = ({
 
 					<p
 						ref={pillarRef}
-						className={style['pillar']}></p>
+						className={style['pillar']}>
+					</p>
 
 					<i
-
 						onClick={showChatOptionsHandler}
 						id={style['options']}
 						className="fa-solid fa-gear"
@@ -463,9 +463,12 @@ export const Chat = ({
 
 					<p className={style['shadow']}></p>
 
-					<img
+					<video
 						className={style['message-section-wallper-video']}
 						src={backgoundImage}
+						autoPlay
+						loop
+						muted						
 					/>
 
 					{allMessagesForCurrentConversation.map((msg) => (

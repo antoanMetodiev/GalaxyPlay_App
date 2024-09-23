@@ -12,6 +12,7 @@ input.search-engine {
     text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
 }
 
+
 #search-engine-container-id:hover {
     cursor: pointer;
 }
